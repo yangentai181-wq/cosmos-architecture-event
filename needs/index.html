@@ -1,0 +1,1332 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="南茨木の学生寮計画について、今回の敷地・競合・留学生調査から大学生のニーズを導いたチーム検討資料。">
+  <meta property="og:title" content="ワークシート②−①｜今回の条件から導く大学生のニーズ">
+  <meta property="og:description" content="事実、推論、未検証仮説を分け、学生寮の入居判断と『お互いが、留学先』の成立条件を整理。">
+  <meta property="og:type" content="article">
+  <title>ワークシート②−①｜今回の条件から導く大学生のニーズ</title>
+  <style>
+    :root {
+      --paper: #f4f1e8;
+      --paper-2: #ebe5d8;
+      --surface: #fffdf8;
+      --ink: #142833;
+      --muted: #5f6c70;
+      --line: #c9c2b5;
+      --blue: #255e70;
+      --blue-soft: #dce9eb;
+      --orange: #8c3f23;
+      --orange-soft: #f4e3d8;
+      --green: #2f6c5b;
+      --green-soft: #dfece6;
+      --yellow: #654907;
+      --yellow-soft: #f3ead1;
+      --red: #9d403d;
+      --red-soft: #f2dfdc;
+      --max: 1160px;
+      --shadow: 0 18px 55px rgba(20, 40, 51, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(20, 40, 51, 0.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 40, 51, 0.026) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.22em;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      color: var(--blue);
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .topbar-inner {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+
+    .topbar strong {
+      letter-spacing: 0.12em;
+    }
+
+    .topbar a {
+      color: #fff;
+      opacity: 0.82;
+    }
+
+    .hero {
+      padding: 74px 0 58px;
+      background:
+        radial-gradient(circle at 88% 15%, rgba(218, 176, 99, 0.28), transparent 24rem),
+        linear-gradient(135deg, #17313d 0%, #102630 62%, #213b43 100%);
+      color: #fff;
+      border-bottom: 8px solid #d7b466;
+    }
+
+    .kicker,
+    .section-number,
+    .eyebrow,
+    .priority,
+    .status,
+    .mini-label {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+    }
+
+    .kicker {
+      margin-bottom: 18px;
+      color: #e3ca92;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+      gap: 54px;
+      align-items: end;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 24px;
+      font-size: clamp(2.55rem, 6.6vw, 5.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 18px;
+      color: #e3ca92;
+      font-size: clamp(1rem, 1.9vw, 1.35rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.55;
+    }
+
+    .hero-lead {
+      max-width: 730px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(1rem, 1.5vw, 1.16rem);
+    }
+
+    .hero-finding {
+      padding: 26px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-finding .eyebrow {
+      color: #e3ca92;
+    }
+
+    .hero-finding p {
+      margin: 12px 0 0;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .legend {
+      padding: 18px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legend-inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    .legend-title {
+      margin-right: 8px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      font-size: 0.73rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .badge::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    .verified {
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .inference {
+      color: var(--yellow);
+      background: var(--yellow-soft);
+    }
+
+    .open {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .category {
+      color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .hero-context {
+      margin: 28px 0 0;
+      padding: 14px 18px;
+      color: rgba(255, 255, 255, 0.84);
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid #e3ca92;
+      font-size: 0.82rem;
+    }
+
+    .section {
+      padding: 78px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:nth-of-type(even) {
+      background: rgba(255, 253, 248, 0.52);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.7fr) minmax(340px, 1.3fr);
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .section-number {
+      margin-bottom: 8px;
+      color: var(--orange);
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .section-intro {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .summary-grid,
+    .condition-grid,
+    .need-grid,
+    .segment-grid,
+    .boundary-grid,
+    .validation-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .summary-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      min-width: 0;
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 12px 0 10px;
+      font-size: 1.2rem;
+      line-height: 1.45;
+    }
+
+    .card p:last-child,
+    .card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .summary-card {
+      position: relative;
+      padding-top: 55px;
+    }
+
+    .summary-card .priority {
+      position: absolute;
+      inset: 0 auto auto 0;
+      padding: 9px 14px;
+      color: #fff;
+      background: var(--ink);
+    }
+
+    .summary-card.primary {
+      border-top: 5px solid var(--blue);
+    }
+
+    .summary-card.support {
+      border-top: 5px solid var(--green);
+    }
+
+    .summary-card.hypothesis {
+      border-top: 5px solid var(--orange);
+    }
+
+    .decision-line {
+      margin-top: 22px;
+      padding: 22px 25px;
+      background: var(--ink);
+      color: #fff;
+      border-left: 7px solid #d7b466;
+    }
+
+    .decision-line strong {
+      color: #e3ca92;
+    }
+
+    .target-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 18px;
+    }
+
+    .target-main {
+      padding: 34px;
+      background: var(--blue);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .target-main h3 {
+      margin: 12px 0 12px;
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      line-height: 1.2;
+    }
+
+    .target-main p {
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .target-main .mini-label {
+      color: #d7e9ec;
+    }
+
+    .target-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .target-side .card {
+      box-shadow: none;
+    }
+
+    .target-side .avoid {
+      background: var(--orange-soft);
+      border-color: #d7a68f;
+    }
+
+    .condition-grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .condition-card {
+      grid-column: span 2;
+      box-shadow: none;
+    }
+
+    .condition-card.wide {
+      grid-column: span 3;
+    }
+
+    .condition-number {
+      display: block;
+      color: var(--orange);
+      font-size: 2.7rem;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .metric {
+      display: block;
+      margin: 15px 0 4px;
+      color: var(--blue);
+      font-size: clamp(1.45rem, 2.6vw, 2rem);
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .source-note {
+      display: block;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.77rem;
+      line-height: 1.6;
+    }
+
+    .source-note a {
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      padding: 18px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: #fff;
+      background: var(--ink);
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td:first-child {
+      width: 20%;
+      font-weight: 800;
+    }
+
+    td:nth-child(2) {
+      width: 24%;
+    }
+
+    td:nth-child(4) {
+      width: 15%;
+    }
+
+    .confidence {
+      white-space: nowrap;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .need-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .need-card {
+      position: relative;
+      padding-left: 92px;
+      box-shadow: none;
+    }
+
+    .need-card::before {
+      position: absolute;
+      top: 25px;
+      left: 24px;
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 900;
+      content: attr(data-rank);
+    }
+
+    .need-card.core {
+      border-left: 5px solid var(--blue);
+    }
+
+    .need-card.supporting {
+      border-left: 5px solid var(--green);
+    }
+
+    .need-card.concept {
+      border-left: 5px solid var(--orange);
+    }
+
+    .need-card .status {
+      color: var(--muted);
+    }
+
+    .need-card h3 {
+      margin-top: 4px;
+    }
+
+    .need-card ul,
+    .segment-card ul,
+    .boundary-card ul,
+    .validation-card ol,
+    .validation-card ul {
+      padding-left: 1.25em;
+    }
+
+    .segment-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .segment-card {
+      box-shadow: none;
+    }
+
+    .segment-card h3 {
+      font-size: 1.35rem;
+    }
+
+    .segment-card .job {
+      padding: 14px;
+      color: var(--ink);
+      background: var(--paper-2);
+      border-left: 4px solid var(--blue);
+      font-weight: 700;
+    }
+
+    .segment-card.caution {
+      background: var(--orange-soft);
+    }
+
+    .worksheet-panel {
+      padding: clamp(28px, 5vw, 58px);
+      background: var(--surface);
+      border: 2px solid var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .worksheet-label {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 9px 14px;
+      color: #fff;
+      background: #000;
+      font-weight: 800;
+    }
+
+    .worksheet-copy {
+      margin-bottom: 0;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-weight: 700;
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+    }
+
+    .worksheet-foot {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 22px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .worksheet-foot > div {
+      padding: 18px;
+      background: var(--paper);
+    }
+
+    .worksheet-foot strong,
+    .worksheet-foot span {
+      display: block;
+    }
+
+    .worksheet-foot span {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .boundary-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .boundary-card {
+      box-shadow: none;
+    }
+
+    .boundary-card h3 {
+      margin-top: 14px;
+    }
+
+    .boundary-card.dont {
+      color: #fff;
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .boundary-card.dont .badge {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .validation-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .validation-card {
+      box-shadow: none;
+    }
+
+    .validation-card.accent {
+      color: #fff;
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .test-box {
+      margin-top: 18px;
+      padding: 18px;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .source-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .source-index {
+      color: var(--orange);
+      font-size: 1.35rem;
+      font-weight: 300;
+    }
+
+    .source-item strong,
+    .source-item small {
+      display: block;
+    }
+
+    .source-item small {
+      margin-top: 6px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .footer {
+      padding: 38px 0;
+      color: rgba(255, 255, 255, 0.8);
+      background: var(--ink);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-head,
+      .target-layout,
+      .summary-grid,
+      .segment-grid,
+      .boundary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .condition-card,
+      .condition-card.wide {
+        grid-column: span 3;
+      }
+
+      .source-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        width: min(calc(100% - 24px), var(--max));
+      }
+
+      .topbar-inner,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-block: 14px;
+      }
+
+      .hero {
+        padding: 48px 0 42px;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .need-grid,
+      .validation-grid,
+      .worksheet-foot {
+        grid-template-columns: 1fr;
+      }
+
+      .condition-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .condition-card,
+      .condition-card.wide {
+        grid-column: auto;
+      }
+
+      .need-card {
+        padding: 78px 21px 22px;
+      }
+
+      .need-card::before {
+        top: 20px;
+        left: 21px;
+      }
+
+      .table-wrap {
+        overflow: visible;
+        border: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+
+      table,
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      tr {
+        margin-bottom: 14px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+      }
+
+      td,
+      td:first-child,
+      td:nth-child(2),
+      td:nth-child(4) {
+        position: relative;
+        width: auto;
+        padding: 12px 15px 12px 42%;
+        border-bottom: 1px solid var(--line);
+      }
+
+      td::before {
+        position: absolute;
+        left: 15px;
+        width: calc(42% - 24px);
+        color: var(--muted);
+        font-size: 0.7rem;
+        font-weight: 800;
+        content: attr(data-label);
+      }
+
+      td:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      :root {
+        --paper: #fff;
+        --surface: #fff;
+        --shadow: none;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      body {
+        background: #fff;
+        font-size: 9.5pt;
+      }
+
+      .topbar {
+        display: none;
+      }
+
+      .hero,
+      .footer,
+      .target-main,
+      .decision-line,
+      th,
+      .boundary-card.dont,
+      .validation-card.accent {
+        color: #111;
+        background: #fff;
+        border-color: #111;
+      }
+
+      .hero {
+        padding: 32px 0;
+        border-bottom: 3px solid #111;
+      }
+
+      .hero-lead,
+      .hero-finding p,
+      .target-main p {
+        color: #222;
+      }
+
+      .section {
+        padding: 34px 0;
+        break-inside: avoid;
+      }
+
+      .card,
+      .table-wrap,
+      .worksheet-panel {
+        box-shadow: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <strong>COSMOS ARCHITECTURE EVENT</strong>
+      <a href="../proposal.html">現状案・SWOT分析へ戻る ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="shell">
+        <span class="kicker">WORKSHEET 02—01 · STUDENT NEEDS</span>
+        <div class="hero-grid">
+          <div>
+            <h1>大学生のニーズ<span>一般論ではなく、南茨木・国際学生寮という今回の条件から導く。</span></h1>
+            <p class="hero-lead">対象は「国際交流に興味がある学生全般」ではない。まず、進学・留学・長時間通学などにより住居を必要とする学生。その入居判断を支える必須条件の上に、「お互いが、留学先」という体験価値を選べる形で重ねる。</p>
+          </div>
+          <aside class="hero-finding">
+            <span class="eyebrow">結論</span>
+            <p><strong>住居として成立</strong>することが先。<br>国際交流は、入居理由と決めつけず、<strong>選べる付加価値</strong>として検証する。</p>
+          </aside>
+        </div>
+        <p class="hero-context"><strong>前提：</strong>これは、配布課題が設定された時点へ戻って検討する歴史的な仮想再提案です。2026年現在、対象地にはコスモグラシア南茨木が完成しており、同物件は事後ベンチマークとして扱います。</p>
+      </div>
+    </section>
+
+    <aside class="legend" aria-label="根拠の強さ">
+      <div class="shell legend-inner">
+        <span class="legend-title">EVIDENCE LEVEL</span>
+        <span class="badge verified">確認済み</span>
+        <span class="badge inference">根拠のある推論</span>
+        <span class="badge open">未検証仮説</span>
+      </div>
+    </aside>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">00 / SUMMARY</span><h2>ニーズを<br>三層に分ける</h2></div>
+          <p class="section-intro">「欲しい設備」を並べる前に、入居を決める条件、暮らしを続ける条件、コンセプト固有の価値を分離する。三層の証拠の強さは同じではない。</p>
+        </div>
+        <div class="summary-grid">
+          <article class="card summary-card primary">
+            <span class="priority">LAYER 1 · MUST</span>
+            <span class="badge category">選択条件</span>
+            <h3>住居として外せない</h3>
+            <p>総費用、大学までの実移動、周辺利便、静かで安全に一人になれる居場所。ここで競合水準を外すと、交流価値があっても選ばれない。</p>
+          </article>
+          <article class="card summary-card support">
+            <span class="priority">LAYER 2 · SUPPORT</span>
+            <span class="badge category">継続条件</span>
+            <h3>生活を立ち上げやすい</h3>
+            <p>家具・ネット、多言語契約、保証、行政手続、緊急時対応。特に留学生や初めて一人暮らしをする学生の摩擦を減らす。</p>
+          </article>
+          <article class="card summary-card hypothesis">
+            <span class="priority">LAYER 3 · VALUE</span>
+            <span class="badge open">要検証</span>
+            <h3>交流を自分で選べる</h3>
+            <p>一人になれる場所へ退避できる前提で、食・言語・生活文化を日常的に交換できる。ただし、この価値への追加家賃を払う意思は未確認。</p>
+          </article>
+        </div>
+        <div class="decision-line"><strong>優先順位：</strong>「交流できる寮」ではなく、「安心して住める寮に、交流という選択肢がある」と定義する。</div>
+      </div>
+    </section>
+
+    <section class="section" id="target">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">01 / TARGET</span><h2>誰のニーズを<br>考えるか</h2></div>
+          <p class="section-intro">住宅需要と国際交流への関心を混同しない。最初に狙うのは、体験のためだけに引っ越す人ではなく、すでに下宿・転居の必要がある人である。</p>
+        </div>
+        <div class="target-layout">
+          <article class="target-main">
+            <span class="mini-label">PRIMARY TARGET</span>
+            <h3>もともと南茨木周辺で<br>住居を探す必要がある学生</h3>
+            <p>遠方から進学する新入生、日本で住居を探す留学生、長時間通学から転居を考える学生。OICだけでなく、阪急・モノレール沿線の大学へ通う学生を含む。</p>
+            <p><strong>共通の用事：</strong>限られた予算で、通学と日常生活を無理なく回し、安心して休める拠点を確保する。</p>
+          </article>
+          <div class="target-side">
+            <article class="card">
+              <span class="badge inference">候補セグメント</span>
+              <h3>大学寮の期間・対象から外れる層</h3>
+              <p>OIC I-Houseは入寮が原則1年。2年目以降、他大学生、大学寮へ入れなかった学生は候補になり得る。ただし人数・応募倍率・待機数は未確認。</p>
+            </article>
+            <article class="card avoid">
+              <span class="badge category">主対象にしない</span>
+              <h3>交流体験だけで実家を出る学生</h3>
+              <p>国際交流への関心が、そのまま長期入居や家賃プレミアムにつながる証拠はない。通い型・短期型で別に検証する。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="conditions">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">02 / CONDITIONS</span><h2>今回だけの<br>五つの条件</h2></div>
+          <p class="section-intro">ニーズの根拠になる立地・市場・競合・コンセプト条件。全国の大学生一般へ広げず、この計画へ効く範囲だけを使う。</p>
+        </div>
+        <div class="condition-grid">
+          <article class="card condition-card">
+            <span class="condition-number">01</span>
+            <h3>二路線の結節点</h3>
+            <span class="metric">阪急3分<br>モノレール5分</span>
+            <p>単一大学の門前ではなく、OIC、阪大方面、大阪・京都方面へ動けることが強み。</p>
+            <span class="source-note">現行物件の公開値。玄関から教室までの時間、待ち時間、定期代は別途確認。</span>
+          </article>
+          <article class="card condition-card">
+            <span class="condition-number">02</span>
+            <h3>同じ場所に強い基準商品</h3>
+            <span class="metric">139室<br>食事・家具・管理</span>
+            <p>コスモグラシア南茨木には基本設備が揃う。設備を足すだけでは、新しいニーズへの回答にならない。</p>
+            <span class="source-note">主要3費目は月 <strong>10万6,200〜11万7,700円</strong>。一方、OIC周辺の大学契約物件平均は家賃＋共益費 <strong>66,976円</strong>（2024年度値、費目が異なる）。</span>
+          </article>
+          <article class="card condition-card">
+            <span class="condition-number">03</span>
+            <h3>高等教育機関の私費留学生</h3>
+            <span class="metric">費用78.9%<br>通学67.3%</span>
+            <p>交流より先に、家賃・初期費用、学校までの距離、周辺の暮らしやすさが選ばれている。</p>
+            <span class="source-note">周辺利便 <strong>43.3%</strong>。日本人との交流 <strong>2.5%</strong>、留学生同士の交流 <strong>3.1%</strong>。全国の高等教育機関在籍の私費外国人留学生の値で、OIC限定ではない。なお、配布資料の「学生の声」は保護者回答であり、学生本人の直接ニーズには数えない。</span>
+          </article>
+          <article class="card condition-card wide">
+            <span class="condition-number">04</span>
+            <h3>徒歩圏に既存の国際寮</h3>
+            <span class="metric">個室＋6人1ユニット<br>月64,200円・原則1年</span>
+            <p>OIC I-Houseは168室、RMによる生活・日本語支援もある。G-Houseも国内学生と留学生の混住。「混住」「共有リビング」「地域交流」だけでは差別化にならない。</p>
+          </article>
+          <article class="card condition-card wide">
+            <span class="condition-number">05</span>
+            <h3>便利だが、居住摩擦がある敷地</h3>
+            <span class="metric">交通環境 × 住宅・病院</span>
+            <p>幹線道路、鉄道・モノレール、隣接住宅・マンション、病院が近い。移動利便と同時に、睡眠、学習、視線、夜間動線を守る必要がある。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence-chain">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">03 / REASONING</span><h2>条件からニーズを<br>どう割り出したか</h2></div>
+          <p class="section-intro">事実から直接「欲しい空間」へ飛ばず、学生の生活上の意味を挟む。最後の列がワークシートへ残すニーズである。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>今回の事実</th><th>学生にとっての意味</th><th>導かれるニーズ</th><th>ニーズの確度</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="今回の事実">二路線＋OIC徒歩・自転車圏</td>
+                <td data-label="学生にとっての意味">大学、アルバイト、課外活動を一つの交通手段に固定せず回せる。</td>
+                <td data-label="導かれるニーズ">玄関から教室までの時間・交通費・雨天時を含め、移動を選べること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">高等教育機関の私費留学生は費用78.9%、通学67.3%を重視</td>
+                <td data-label="学生にとっての意味">交流以前に、毎月払えることと授業へ無理なく通えることが選択条件。</td>
+                <td data-label="導かれるニーズ">家賃だけでなく年間総支払額が分かり、必要なサービスを選べること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">同一地の食事付き学生住宅は月10万円超</td>
+                <td data-label="学生にとっての意味">管理・食事を含む住宅市場はあるが、価格差の理由が見えないと比較できない。</td>
+                <td data-label="導かれるニーズ">食事・管理・光熱・ネット・初期費用を同条件で比較できること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">交通施設と住宅・病院が近接</td>
+                <td data-label="学生にとっての意味">利便性の裏側で、睡眠・集中・帰宅時の安心が損なわれる可能性がある。</td>
+                <td data-label="導かれるニーズ">騒音・光・視線から退避し、静かに休み学び、一人になれる居場所。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">保証人を求められた留学生48.7%</td>
+                <td data-label="学生にとっての意味">部屋があっても、契約・保証・日本の生活ルールで入居が止まり得る。</td>
+                <td data-label="導かれるニーズ">保証、多言語契約、行政手続、保険、退去まで一つの窓口で進められること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">既存国際寮は個室＋小ユニット＋RM</td>
+                <td data-label="学生にとっての意味">共有だけでなく、一人で戻れる場所と支援する人を組み合わせている。</td>
+                <td data-label="導かれるニーズ">プライバシーを保ち、必要なときだけ関係や支援へ接続できること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">高等教育機関の私費留学生では交流2.5%・3.1%</td>
+                <td data-label="学生にとっての意味">国際交流を前面に出しても、入居の主理由になるとは限らない。</td>
+                <td data-label="導かれるニーズ">交流への参加頻度を自分で選び、参加しない日も暮らしが成立すること。</td>
+                <td data-label="ニーズの確度"><span class="confidence open">未検証仮説</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prioritized-needs">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">04 / NEEDS</span><h2>優先順位つき<br>大学生のニーズ</h2></div>
+          <p class="section-intro">上ほど入居判断への影響が強い。下ほど今回のコンセプト固有だが、同時に検証不足も大きい。</p>
+        </div>
+        <div class="need-grid">
+          <article class="card need-card core" data-rank="P0">
+            <span class="status">選択条件 01</span>
+            <h3>総生活費を予算内で制御したい</h3>
+            <p>表面家賃ではなく、共益費、光熱、ネット、食費、家具、初期費用、通学定期を含む実質月額を見通したい。</p>
+          </article>
+          <article class="card need-card core" data-rank="P0">
+            <span class="status">選択条件 02</span>
+            <h3>大学と日常の行動先へ無理なく移動したい</h3>
+            <p>阪急、モノレール、徒歩、自転車を使い分け、雨天・荷物・遅い帰宅でも生活を崩したくない。</p>
+          </article>
+          <article class="card need-card core" data-rank="P0">
+            <span class="status">選択条件 03</span>
+            <h3>静かに休み学び、一人になれる居場所を確保したい</h3>
+            <p>交通環境の近くでも睡眠、学習、オンライン通話を守り、共同生活から退避したい。既存事例では個室が多いが、今回の部屋形式への選好は要検証。</p>
+          </article>
+          <article class="card need-card supporting" data-rank="P1">
+            <span class="status">継続条件 04</span>
+            <h3>一人暮らしをすぐ始め、困った時だけ頼りたい</h3>
+            <p>家具・ネットを整え、契約、保証、行政手続、病気・災害時の相談を迷わず進めたい。支援は過干渉でないことも必要。</p>
+          </article>
+          <article class="card need-card supporting" data-rank="P1">
+            <span class="status">継続条件候補 05</span>
+            <h3>授業・アルバイト・生活習慣を崩さず暮らしたい</h3>
+            <p>食事、共有、一人の時間を固定されず、宗教や生活習慣にも合わせたい。自炊・食事提供の選択制は解決策候補であり、需要は未確認。</p>
+          </article>
+          <article class="card need-card concept" data-rank="P2">
+            <span class="status">体験価値 06</span>
+            <h3>負担なく異文化を日常へ取り入れたい</h3>
+            <p>留学生は日本の生活知識を、日本人学生は言語・異文化対応を学べる。ただし全員参加や交流価値への追加家賃を前提にしない。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="segments">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">05 / SEGMENTS</span><h2>同じ建物でも<br>用事は違う</h2></div>
+          <p class="section-intro">「留学生」と「日本人学生」を国籍で一括りにせず、生活上の用事で見る。入居後の相互価値は、両者の必須条件を損なわない範囲で成立させる。</p>
+        </div>
+        <div class="segment-grid">
+          <article class="card segment-card">
+            <span class="badge category">留学生</span>
+            <h3>日本で生活を立ち上げる</h3>
+            <p class="job">「契約や生活ルールでつまずかず、大学へ通える安全な部屋を確保したい」</p>
+            <ul>
+              <li>年間総費用と契約条件の理解</li>
+              <li>保証・行政手続・医療・緊急時支援</li>
+              <li>個室、宗教・食・生活習慣への配慮</li>
+              <li>必要に応じた日本語・生活知識の支援</li>
+            </ul>
+          </article>
+          <article class="card segment-card">
+            <span class="badge category">日本人学生</span>
+            <h3>生活と留学準備を両立する</h3>
+            <p class="job">「普通の学生生活を崩さず、日常の中で異文化対応を試したい」</p>
+            <ul>
+              <li>競合と比較できる費用・通学条件</li>
+              <li>学習・アルバイトを優先できる自由</li>
+              <li>個室へ戻れること</li>
+              <li>言語・文化交流の頻度を選べること</li>
+            </ul>
+          </article>
+          <article class="card segment-card caution">
+            <span class="badge category">両者に共通</span>
+            <h3>関係を強制されたくない</h3>
+            <p class="job">「交流する日もしない日も、自分で決めたい」</p>
+            <ul>
+              <li>一人1寝室を基本にする</li>
+              <li>共有は小単位から段階化する</li>
+              <li>イベント参加を契約上の義務にしない</li>
+              <li>生活習慣の衝突時に相談・変更できる</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="worksheet">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">06 / WORKSHEET</span><h2>②−①へ<br>記入する文章</h2></div>
+          <p class="section-intro">根拠の強い必須条件を先に置き、コンセプト固有の価値には「選べる」という留保を残した推奨文案。</p>
+        </div>
+        <div class="worksheet-panel">
+          <span class="worksheet-label">① 大学生のニーズ</span>
+          <p class="worksheet-copy">南茨木周辺で住居を必要とする学生が、阪急・モノレール・自転車を使い分け、大学や日常の行動先へ無理なく通えること。家賃・食費・光熱費・初期費用などを含む総生活費を見通し、交通環境の近くでも静かで安全な自分の居場所で休み、学び、一人になれること。留学生を含む一人暮らしの契約・生活立上げを支えながら、食事や交流を自分に無理のない頻度で取り入れ、プライバシーを保ったまま異文化を日常へ取り入れられること。</p>
+          <div class="worksheet-foot">
+            <div><strong>入居の土台</strong><span>総費用・移動・静穏・安全</span></div>
+            <div><strong>生活の支え</strong><span>契約・保証・生活立上げ</span></div>
+            <div><strong>今回の価値</strong><span>選べる日常的な異文化交流</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="boundaries">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">07 / BOUNDARIES</span><h2>言えることと<br>まだ言えないこと</h2></div>
+          <p class="section-intro">根拠のない断定を避けることが、チーム内でニーズを共有するための前提。数字は結論ではなく、判断範囲を示す。</p>
+        </div>
+        <div class="boundary-grid">
+          <article class="card boundary-card">
+            <span class="badge verified">確認済み</span>
+            <h3>現時点で言える</h3>
+            <ul>
+              <li>高等教育機関在籍の私費留学生調査では、費用・通学・利便が上位</li>
+              <li>南茨木に月10万円超の学生住宅商品がある</li>
+              <li>OIC徒歩圏に混住型国際寮がすでにある</li>
+              <li>I-Houseは原則1年で、個室＋小ユニット</li>
+            </ul>
+          </article>
+          <article class="card boundary-card">
+            <span class="badge open">未検証仮説</span>
+            <h3>調査しないと言えない</h3>
+            <ul>
+              <li>「お互いが、留学先」への長期入居需要は未確認</li>
+              <li>交流価値へ追加家賃を払う意思</li>
+              <li>南茨木で必要な室数と入居者比率</li>
+              <li>相部屋の受容率と家賃低減効果</li>
+            </ul>
+          </article>
+          <article class="card boundary-card dont">
+            <span class="badge">書かない</span>
+            <h3>根拠を越える表現</h3>
+            <ul>
+              <li>「大学生は国際交流を求めている」</li>
+              <li>「留学生は相部屋を好む」</li>
+              <li>「競合満室だから国際交流寮も満室になる」</li>
+              <li>「交流スペースを作れば交流が起きる」</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="validation">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">08 / VALIDATION</span><h2>次に、何を<br>確かめるか</h2></div>
+          <p class="section-intro">「興味がありますか」だけでは、室数も家賃も決められない。同じ条件で価格と行動を比較し、回答上の関心と支払い行動を分ける。</p>
+        </div>
+        <div class="validation-grid">
+          <article class="card validation-card accent">
+            <span class="mini-label">PRICE TEST</span>
+            <h3>価格を出した二択で測る</h3>
+            <div class="test-box">
+              <strong>A｜通常の個室型学生寮</strong><br>
+              家賃・管理・食事・通学費を明示<br><br>
+              <strong>B｜交流機能を加えた個室型学生寮</strong><br>
+              同じ費目＋プログラム頻度＋追加額を明示
+            </div>
+            <p>「どちらに住みたいか」に加え、実際に申込・仮予約するかまで測る。</p>
+          </article>
+          <article class="card validation-card">
+            <span class="badge category">確認順</span>
+            <h3>四つの不足データ</h3>
+            <ol>
+              <li><strong>大学寮の需給：</strong>応募倍率、待機、退寮理由、2年目以降の転居先</li>
+              <li><strong>価格付き需要：</strong>総月額別の入居意向、食事の要否、追加家賃の上限</li>
+              <li><strong>生活の選好：</strong>個室・任意2人室、共有人数、交流頻度、部屋変更条件</li>
+              <li><strong>敷地の実測：</strong>昼夜の騒音、夜間動線、自転車経路、玄関から教室までの時間</li>
+            </ol>
+          </article>
+          <article class="card validation-card">
+            <span class="badge category">対象を分ける</span>
+            <h3>最低でも三群で聞く</h3>
+            <ul>
+              <li>OICへ進学・在学する留学生</li>
+              <li>海外留学を予定・志向する日本人下宿生</li>
+              <li>阪急・モノレール沿線の他大学生</li>
+            </ul>
+            <p>自宅生向けの通い型イベント調査は、長期入居調査と分ける。</p>
+          </article>
+          <article class="card validation-card">
+            <span class="badge category">判断ゲート</span>
+            <h3>結果で計画を変える</h3>
+            <ul>
+              <li>追加支払意思が弱い → 交流は任意・低コスト化</li>
+              <li>個室希望が強い → 相部屋を標準にしない</li>
+              <li>大学寮の空きが多い → 対象大学・役割を再設定</li>
+              <li>騒音が大きい → 住戸配置と外皮性能を先に見直す</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">09 / SOURCES</span><h2>使った根拠と<br>その限界</h2></div>
+          <p class="section-intro">公開情報は2026年9月3日時点。各資料が示す範囲を越えて、南茨木での入居人数や支払意思へ外挿しない。</p>
+        </div>
+        <div class="source-list">
+          <article class="source-item">
+            <span class="source-index">01</span>
+            <div><strong><a href="https://www.studyinjapan.go.jp/ja/_mt/2024/10/Seikatsu2023.pdf" target="_blank" rel="noopener noreferrer">JASSO 私費外国人留学生生活実態調査</a></strong><small>高等教育機関在籍者では費用78.9%、通学67.3%、利便43.3%、交流2.5%・3.1%。調査全体には日本語教育機関在籍者等も含むため、全回答7,867人の総計ではなく高等教育機関区分を使用。全国調査でOIC限定ではない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">02</span>
+            <div><strong><a href="https://www.studyinjapan.go.jp/ja/statistics/daily-life/data/2410311100.html" target="_blank" rel="noopener noreferrer">JASSO 調査概要ページ</a></strong><small>調査対象1万人、有効回答7,867人。短期交換留学生等は対象外。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">03</span>
+            <div><strong><a href="https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm/" target="_blank" rel="noopener noreferrer">立命館大学 OIC I-House</a></strong><small>168室、6人1ユニットの個室、RM、月64,200円、入寮原則1年。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">04</span>
+            <div><strong><a href="https://en.ritsumei.ac.jp/gla/campus/" target="_blank" rel="noopener noreferrer">立命館大学 OIC G-House</a></strong><small>国内学生・留学生の混住と地域交流空間。混住だけでは新規性にならない根拠。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">05</span>
+            <div><strong><a href="https://unilife.co.jp/view/12855" target="_blank" rel="noopener noreferrer">学生会館 コスモグラシア南茨木</a></strong><small>139室、家賃、食費、管理費、設備の事後ベンチマーク。満室理由は公開情報だけでは分からない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">06</span>
+            <div><strong><a href="https://www.ritsumei.ac.jp/accessmap/oic/" target="_blank" rel="noopener noreferrer">立命館大学 OICアクセス</a></strong><small>南茨木駅から徒歩約10分。実敷地の玄関から教室までは未計測。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">07</span>
+            <div><strong><a href="https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000017.html" target="_blank" rel="noopener noreferrer">国土交通省 外国人の民間賃貸住宅への円滑な入居</a></strong><small>多言語の部屋探しガイド、契約書例、生活ルール。個別物件の需要は示さない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">08</span>
+            <div><strong><a href="https://www.jasso.go.jp/statistics/gakusei_chosa/2024.html" target="_blank" rel="noopener noreferrer">JASSO 令和6年度学生生活調査</a></strong><small>居住形態別の生活費を比較する全国調査。南茨木の価格へ直接置き換えない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">09</span>
+            <div><strong><a href="https://www.ritsumei.ac.jp/file.jsp?id=685130" target="_blank" rel="noopener noreferrer">立命館大学 2026年度奨学金案内</a></strong><small>OIC周辺の大学契約物件は、2024年度値で家賃59,428円＋共益費7,548円。全物件の相場ではない。</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <span>WORKSHEET ②−① · TEAM REVIEW</span>
+      <span>事実 → 意味 → ニーズ → 検証 · 2026.09.03</span>
+    </div>
+  </footer>
+</body>
+</html>
