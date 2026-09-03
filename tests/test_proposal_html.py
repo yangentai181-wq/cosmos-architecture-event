@@ -14,8 +14,11 @@ class ProposalParser(HTMLParser):
         self.images = []
         self.lang = None
         self.text = []
+        self._ignored_depth = 0
 
     def handle_starttag(self, tag, attrs):
+        if tag in {"style", "script"}:
+            self._ignored_depth += 1
         values = dict(attrs)
         if tag == "html":
             self.lang = values.get("lang")
@@ -27,7 +30,12 @@ class ProposalParser(HTMLParser):
             self.images.append(values)
 
     def handle_data(self, data):
-        self.text.append(data)
+        if not self._ignored_depth:
+            self.text.append(data)
+
+    def handle_endtag(self, tag):
+        if tag in {"style", "script"} and self._ignored_depth:
+            self._ignored_depth -= 1
 
 
 class ProposalHtmlTest(unittest.TestCase):
@@ -66,7 +74,19 @@ class ProposalHtmlTest(unittest.TestCase):
             "13.6年",
             "22.1年",
             "土地取得費7億円",
+            "正式要件",
+            "仮想再提案",
         ):
+            self.assertIn(phrase, self.text)
+
+    def test_current_access_and_official_finance_judgment_are_accurate(self):
+        self.assertIn("阪急3分", self.text)
+        self.assertIn("モノレール5分", self.text)
+        self.assertIn("約4.53%", self.text)
+        self.assertNotIn("条件内", self.text)
+
+    def test_high_risk_assumptions_are_explicitly_qualified(self):
+        for phrase in ("単純計算で360%", "回答者59人", "139室", "満室前提"):
             self.assertIn(phrase, self.text)
 
     def test_sources_are_direct_and_site_image_is_local(self):
@@ -86,6 +106,10 @@ class ProposalHtmlTest(unittest.TestCase):
     def test_page_has_no_script_or_external_stylesheet(self):
         self.assertNotIn("<script", self.source.lower())
         self.assertNotIn('rel="stylesheet"', self.source.lower())
+
+    def test_finance_table_reflows_on_narrow_screens(self):
+        self.assertIn("td::before", self.source)
+        self.assertGreaterEqual(self.source.count("data-label="), 12)
 
 
 if __name__ == "__main__":

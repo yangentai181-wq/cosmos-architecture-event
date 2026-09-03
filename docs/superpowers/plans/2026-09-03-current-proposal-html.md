@@ -135,9 +135,9 @@ Expected: 5 tests pass with exit code 0.
 
 - [ ] **Step 4: Validate HTML and references**
 
-Run: `xmllint --html --noout proposal.html`
+Run: `tidy -qe proposal.html`
 
-Expected: exit code 0 and no parser errors.
+Expected: exit code 0 and no HTML warnings or errors. `xmllint` is not used because its HTML4 parser rejects valid HTML5 semantic elements.
 
 Run: `python3 - <<'PY'
 from pathlib import Path
@@ -180,6 +180,6 @@ Check every completion condition and replace unsupported wording with qualified 
 
 - [ ] **Step 2: Run the complete verification suite**
 
-Run: `python3 -m unittest tests/test_proposal_html.py -v && xmllint --html --noout proposal.html && git diff --check`
+Run: `python3 -m unittest tests/test_proposal_html.py -v && tidy -qe proposal.html && git diff --check`
 
 Expected: all tests pass, HTML parser reports no errors, diff check is clean, and the combined command exits 0.

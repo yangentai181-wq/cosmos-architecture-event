@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="COSMOS Architecture Event 学生寮案のグループ検討用資料。事実、解釈、未検証事項を分けて整理しています。">
+  <title>CROSS BASE 南茨木｜現状案・根拠整理</title>
+  <style>
+    :root {
+      --ink: #142633;
+      --muted: #5d6b72;
+      --paper: #f6f2e9;
+      --surface: #fffdf8;
+      --line: #d9d4c8;
+      --navy: #123b4a;
+      --navy-soft: #dce9e9;
+      --verified: #176b61;
+      --verified-soft: #e0f0eb;
+      --inference: #8a6218;
+      --inference-soft: #f4ead2;
+      --open: #ba4934;
+      --open-soft: #f8e2dc;
+      --shadow: 0 18px 50px rgba(20, 38, 51, 0.08);
+      --radius: 18px;
+      --content: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(18, 59, 74, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(18, 59, 74, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--navy); text-underline-offset: 0.18em; }
+    a:hover { color: var(--open); }
+    img { max-width: 100%; display: block; }
+    p, h1, h2, h3, h4 { margin-top: 0; }
+    p:last-child { margin-bottom: 0; }
+    :focus-visible { outline: 3px solid var(--open); outline-offset: 4px; }
+
+    .page-shell {
+      width: min(calc(100% - 40px), var(--content));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(217, 212, 200, 0.85);
+      background: rgba(246, 242, 233, 0.92);
+      backdrop-filter: blur(16px);
+    }
+    .topbar-inner {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .wordmark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .wordmark-mark {
+      width: 14px;
+      height: 14px;
+      border-radius: 2px 8px 2px 8px;
+      background: var(--open);
+      transform: rotate(12deg);
+    }
+    .topnav {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+    .topnav::-webkit-scrollbar { display: none; }
+    .topnav a { color: var(--muted); text-decoration: none; }
+
+    .hero {
+      padding: 56px 0 34px;
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      margin-bottom: 14px;
+      color: var(--open);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
+      gap: clamp(28px, 6vw, 76px);
+      align-items: end;
+    }
+    h1 {
+      max-width: 850px;
+      margin-bottom: 20px;
+      font-size: clamp(2.55rem, 7vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+    }
+    h1 span {
+      display: block;
+      margin-top: 18px;
+      color: var(--navy);
+      font-size: clamp(1.1rem, 2.3vw, 1.8rem);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+    .hero-lead {
+      max-width: 760px;
+      margin-bottom: 24px;
+      color: #344952;
+      font-size: clamp(1rem, 1.9vw, 1.24rem);
+    }
+    .status-row, .legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      padding: 5px 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+    }
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+    .verified { color: var(--verified); background: var(--verified-soft); border-color: #bfded4; }
+    .inference { color: var(--inference); background: var(--inference-soft); border-color: #e8d59f; }
+    .open { color: var(--open); background: var(--open-soft); border-color: #efc1b5; }
+    .neutral { color: var(--navy); background: var(--navy-soft); border-color: #bdd3d4; }
+
+    .review-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .review-card h2 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+    .review-card p { color: var(--muted); font-size: 0.88rem; }
+    .review-card .legend-row { margin-top: 18px; }
+
+    .snapshot {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      margin-top: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .snapshot-item {
+      min-width: 0;
+      padding: 18px;
+      border-right: 1px solid var(--line);
+    }
+    .snapshot-item:last-child { border-right: 0; }
+    .snapshot-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.67rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+    .snapshot-value {
+      display: block;
+      margin: 4px 0 2px;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+    .snapshot-note { color: var(--muted); font-size: 0.68rem; }
+
+    main { padding-bottom: 80px; }
+    .section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 60px;
+    }
+    .section:last-child { border-bottom: 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
+      gap: 44px;
+      margin-bottom: 36px;
+    }
+    .section-number {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--open);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+    }
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.8rem, 4vw, 3.3rem);
+      line-height: 1.15;
+      letter-spacing: -0.045em;
+    }
+    .section-intro {
+      max-width: 760px;
+      margin: 6px 0 0 auto;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    h3 { margin-bottom: 10px; font-size: 1.05rem; line-height: 1.45; }
+    h4 { margin-bottom: 8px; font-size: 0.82rem; letter-spacing: 0.05em; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .card p { color: var(--muted); font-size: 0.9rem; }
+    .card .badge { margin-bottom: 16px; }
+    .source-note {
+      display: block;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.55;
+    }
+    .source-note strong { color: var(--ink); }
+
+    .logic-chain {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      counter-reset: logic;
+    }
+    .logic-step {
+      position: relative;
+      min-height: 260px;
+      padding: 74px 24px 24px;
+      border: 1px solid var(--line);
+      border-right: 0;
+      background: var(--surface);
+      counter-increment: logic;
+    }
+    .logic-step:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .logic-step:last-child { border-right: 1px solid var(--line); border-radius: 0 var(--radius) var(--radius) 0; }
+    .logic-step::before {
+      content: "0" counter(logic);
+      position: absolute;
+      top: 20px;
+      left: 24px;
+      color: var(--open);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+    .logic-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      z-index: 2;
+      top: 24px;
+      right: -13px;
+      width: 26px;
+      height: 26px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--navy);
+      background: var(--paper);
+      text-align: center;
+      line-height: 24px;
+      font-weight: 900;
+    }
+    .logic-step p { color: var(--muted); font-size: 0.88rem; }
+    .challenge {
+      margin-top: 20px;
+      padding: 18px 22px;
+      border-left: 4px solid var(--open);
+      border-radius: 0 12px 12px 0;
+      background: var(--open-soft);
+      color: #6d3024;
+      font-size: 0.88rem;
+    }
+
+    .stakeholder {
+      position: relative;
+      overflow: hidden;
+    }
+    .stakeholder::after {
+      content: attr(data-letter);
+      position: absolute;
+      right: 14px;
+      bottom: -28px;
+      color: rgba(18, 59, 74, 0.06);
+      font-size: 6rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .stakeholder ul, .plan-card ul, .decision-card ul {
+      margin: 0;
+      padding-left: 1.15em;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    li + li { margin-top: 7px; }
+
+    .plan-card {
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+    }
+    .plan-card .zone {
+      margin-bottom: 14px;
+      color: var(--open);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+    }
+    .plan-card .source-note { margin-top: auto; }
+
+    .site-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+      gap: 22px;
+      align-items: start;
+    }
+    .drawing {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .drawing img { width: 100%; height: auto; }
+    .drawing figcaption {
+      padding: 14px 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.74rem;
+    }
+    .site-notes { display: grid; gap: 14px; }
+
+    .finance-alert {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+      padding: 20px 22px;
+      border: 1px solid #efc1b5;
+      border-radius: var(--radius);
+      background: var(--open-soft);
+    }
+    .alert-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: white;
+      background: var(--open);
+      text-align: center;
+      line-height: 36px;
+      font-weight: 900;
+    }
+    .finance-alert h3 { margin-bottom: 4px; color: #6d3024; }
+    .finance-alert p { color: #7a493f; font-size: 0.88rem; }
+    .finance-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 700px; }
+    th, td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; }
+    th { color: var(--muted); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    td { font-size: 0.9rem; }
+    tr:last-child td { border-bottom: 0; }
+    .number { font-variant-numeric: tabular-nums; font-weight: 850; }
+    .pass { color: var(--verified); font-weight: 900; }
+    .fail { color: var(--open); font-weight: 900; }
+    .assumptions {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .assumption {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 253, 248, 0.72);
+    }
+    .assumption span { display: block; color: var(--muted); font-size: 0.66rem; }
+    .assumption strong { display: block; margin-top: 3px; font-size: 0.88rem; }
+
+    .evidence-list { display: grid; gap: 12px; }
+    .evidence-item {
+      display: grid;
+      grid-template-columns: 145px minmax(0, 1fr) 34px;
+      gap: 18px;
+      align-items: center;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+    .evidence-item p { color: var(--muted); font-size: 0.82rem; }
+    .evidence-link {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .decision-card {
+      border-top: 5px solid var(--open);
+      min-height: 260px;
+    }
+    .decision-no {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--open);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+    .decision-card .why {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 0.76rem;
+      font-weight: 750;
+    }
+
+    .footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 0.74rem;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; }
+
+    @media (max-width: 960px) {
+      .hero-grid, .section-head, .site-layout { grid-template-columns: 1fr; }
+      .review-card { max-width: 620px; }
+      .section-intro { margin-left: 0; }
+      .snapshot { grid-template-columns: repeat(3, 1fr); }
+      .snapshot-item:nth-child(3) { border-right: 0; }
+      .snapshot-item:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+      .logic-chain { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .logic-step, .logic-step:first-child, .logic-step:last-child { border: 1px solid var(--line); border-radius: var(--radius); }
+      .logic-step:not(:last-child)::after { display: none; }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .assumptions { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .page-shell { width: min(calc(100% - 26px), var(--content)); }
+      .topbar-inner { align-items: flex-start; flex-direction: column; gap: 6px; padding: 10px 0; }
+      .topnav { width: 100%; padding-bottom: 4px; }
+      .hero { padding-top: 38px; }
+      h1 { letter-spacing: -0.055em; }
+      .snapshot { grid-template-columns: repeat(2, 1fr); }
+      .snapshot-item, .snapshot-item:nth-child(3) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .snapshot-item:nth-child(even) { border-right: 0; }
+      .snapshot-item:nth-last-child(-n+2) { border-bottom: 0; }
+      .section { padding: 54px 0; }
+      .section-head { gap: 12px; margin-bottom: 26px; }
+      .grid-2, .grid-3, .grid-4, .logic-chain { grid-template-columns: 1fr; }
+      .logic-step { min-height: auto; }
+      .site-layout { gap: 14px; }
+      .assumptions { grid-template-columns: repeat(2, 1fr); }
+      .evidence-item { grid-template-columns: 1fr 34px; gap: 10px; }
+      .evidence-item .badge { grid-column: 1 / -1; }
+      .finance-table-wrap { overflow: visible; border: 0; background: transparent; }
+      .finance-table-wrap table { min-width: 0; }
+      .finance-table-wrap thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .finance-table-wrap tbody,
+      .finance-table-wrap tr { display: block; width: 100%; }
+      .finance-table-wrap tr {
+        margin-bottom: 12px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--surface);
+      }
+      .finance-table-wrap td,
+      .finance-table-wrap tr:last-child td {
+        display: grid;
+        grid-template-columns: minmax(92px, 0.45fr) 1fr;
+        gap: 12px;
+        width: 100%;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+      }
+      .finance-table-wrap td:last-child,
+      .finance-table-wrap tr:last-child td:last-child { border-bottom: 0; }
+      .finance-table-wrap td::before {
+        content: attr(data-label);
+        color: var(--muted);
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    @media print {
+      @page { margin: 14mm; size: A4; }
+      body { background: white; font-size: 10pt; }
+      .page-shell { width: 100%; }
+      .topbar { display: none; }
+      .hero { padding-top: 0; }
+      .section { padding: 28px 0; break-inside: auto; }
+      .card, .logic-step, .drawing, .finance-alert, .evidence-item, .decision-card { break-inside: avoid; box-shadow: none; }
+      a { color: var(--ink); text-decoration: none; }
+      .source-note a::after, .evidence-item a::after { content: " (" attr(href) ")"; overflow-wrap: anywhere; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="page-shell topbar-inner">
+      <a class="wordmark" href="#summary"><span class="wordmark-mark" aria-hidden="true">&nbsp;</span>COSMOS / WORKING DRAFT</a>
+      <nav class="topnav" aria-label="ページ内ナビゲーション">
+        <a href="#facts">前提</a>
+        <a href="#logic">論理</a>
+        <a href="#plan">計画</a>
+        <a href="#finance">収益</a>
+        <a href="#evidence">根拠</a>
+        <a href="#decisions">判断点</a>
+      </nav>
+    </div>
+  </header>
+
+  <header class="hero" id="summary">
+    <div class="page-shell">
+      <p class="eyebrow">Group review · updated 2026.09.03</p>
+      <div class="hero-grid">
+        <div>
+          <h1>CROSS BASE<br>南茨木<span>大学を越えて、まちとつくる学生寮。</span></h1>
+          <p class="hero-lead">駅近と個室の安心を土台に、大学・企業・地域を越えて小さなプロジェクトが生まれる「もう一つのキャンパス」と「まちの部室」をつくる。</p>
+          <div class="status-row" aria-label="企画の現在地">
+            <span class="badge neutral">コンセプト初稿</span>
+            <span class="badge neutral">課題用の仮想再提案</span>
+            <span class="badge open">平面計画は未検証</span>
+            <span class="badge open">正式要件では収益条件外</span>
+          </div>
+        </div>
+        <aside class="review-card" aria-label="この資料の読み方">
+          <h2>この資料の目的</h2>
+          <p>完成案を売り込むためではなく、グループで「論理に飛躍がないか」「根拠は十分か」を確かめるための共有版です。</p>
+          <div class="legend-row">
+            <span class="badge verified">確認済み</span>
+            <span class="badge inference">解釈</span>
+            <span class="badge open">仮説・未検証</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="snapshot" aria-label="計画前提の概要">
+        <div class="snapshot-item"><span class="snapshot-label">SITE</span><strong class="snapshot-value">1,000㎡</strong><span class="snapshot-note">想定敷地面積</span></div>
+        <div class="snapshot-item"><span class="snapshot-label">GFA</span><strong class="snapshot-value">3,600㎡</strong><span class="snapshot-note">課題値・容積超過</span></div>
+        <div class="snapshot-item"><span class="snapshot-label">PROGRAM</span><strong class="snapshot-value">学生寮</strong><span class="snapshot-note">大学横断型</span></div>
+        <div class="snapshot-item"><span class="snapshot-label">ACCESS</span><strong class="snapshot-value">阪急3分</strong><span class="snapshot-note">モノレール5分</span></div>
+        <div class="snapshot-item"><span class="snapshot-label">ROOMS</span><strong class="snapshot-value">132室</strong><span class="snapshot-note">暫定・未収まり</span></div>
+        <div class="snapshot-item"><span class="snapshot-label">TARGET</span><strong class="snapshot-value">15年 / 7%</strong><span class="snapshot-note">回収 / 利回り</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="facts">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><span class="section-number">01 / FACTS</span><h2>まず、何が<br>確かに言えるか</h2></div>
+          <p class="section-intro">企画の出発点を、配布資料・図面・公開情報で確認できる事実に限定する。将来予測や企画側の評価は、ここでは混ぜない。</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <span class="badge verified">確認済み</span>
+            <h3>南茨木駅へ阪急3分・モノレール5分</h3>
+            <p>阪急京都線と大阪モノレールの結節点に近く、大阪・京都・北摂へ動きやすい。単一大学の門前ではなく、複数方面への移動を前提にできる立地である。</p>
+            <span class="source-note"><strong>根拠：</strong><a href="https://unilife.co.jp/view/12855" target="_blank" rel="noopener noreferrer">同一地番にある現行物件の募集情報</a>。配布資料の一括表記「徒歩3分」より、路線別の現行公開値を優先。</span>
+          </article>
+          <article class="card">
+            <span class="badge verified">確認済み</span>
+            <h3>対象地は約1,000㎡、近隣商業地域</h3>
+            <p>建蔽率80%、容積率300%。南・東側に道路、北側に水路がある不整形な区画で、隣接マンションや周辺住環境への配慮が必要になる。延床3,600㎡は単純計算で360%となる。</p>
+            <span class="source-note"><strong>根拠：</strong>配布資料「敷地図 A3 1:200」「用地詳細 A3 1:250」。上限値と実際に収まる建築面積は別途検証。</span>
+          </article>
+          <article class="card">
+            <span class="badge verified">確認済み</span>
+            <h3>この課題は、2026年時点では仮想再提案である</h3>
+            <p>課題資料と同じ「東奈良三丁目328番1」の地番表記を持つコスモグラシア南茨木が、139室・2026年1月完成として現行募集されている。表面家賃5.75万〜6.9万円に加え、食費2.97万円、管理費月1.9万円などがかかる。</p>
+            <span class="source-note"><strong>根拠：</strong><a href="https://unilife.co.jp/view/12855" target="_blank" rel="noopener noreferrer">UniLife「コスモグラシア南茨木」募集情報</a>。分筆後の登記上の同一性は未確認。</span>
+          </article>
+          <article class="card">
+            <span class="badge verified">確認済み</span>
+            <h3>OICは6学部・7研究科、学生約1万人超</h3>
+            <p>立命館大学は2024年4月の学部・研究科移転後、大阪いばらきキャンパスを6学部・7研究科の体制と説明し、大学発行媒体では約1万人超としている。大きな需要母体候補だが、2026年度の厳密な在籍者数ではない。</p>
+            <span class="source-note"><strong>根拠：</strong><a href="https://www.ritsumei.ac.jp/news/detail/?id=3660" target="_blank" rel="noopener noreferrer">立命館大学の6学部・7研究科発表</a>、<a href="https://www.ritsumei.ac.jp/brochure/alumni/294/pageindices/index12.html" target="_blank" rel="noopener noreferrer">大学発行「りつめい」</a>。</span>
+          </article>
+          <article class="card">
+            <span class="badge verified">確認済み</span>
+            <h3>行政計画にも大学横断の接点づくりが現れる</h3>
+            <p>茨木市は、大学・学生を地域の共創主体として位置づけている。2026年度実施計画には、他大学の学生同士のつながりをつくる取組が示されている。</p>
+            <span class="source-note"><strong>根拠：</strong><a href="https://www.city.ibaraki.osaka.jp/material/files/group/13/dainikizisshikeikaku.pdf" target="_blank" rel="noopener noreferrer">茨木市「第6次総合計画 第2期実施計画」</a>。寮需要そのものを保証する資料ではない。</span>
+          </article>
+          <article class="card">
+            <span class="badge verified">限定的な調査</span>
+            <h3>学生の生活圏は大学内だけでは完結しない可能性</h3>
+            <p>2023年の茨木市調査では、回答者59人のうち活動後の主な滞在地は市内37.3%、市外62.7%。交通利便性への言及も多かった。</p>
+            <span class="source-note"><strong>根拠：</strong><a href="https://www.city.ibaraki.osaka.jp/material/files/group/13/anke_daigaku.pdf" target="_blank" rel="noopener noreferrer">茨木市「大学生の活動実態等に関する調査」</a>。人数・性別・大学構成に偏りがあり、学生全体へ一般化しない。</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="logic">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><span class="section-number">02 / LOGIC</span><h2>事実から、案へ</h2></div>
+          <p class="section-intro">この案の核は「共用部が多い学生寮」ではない。交通結節性と大学横断の不足を、運営された生活拠点でつなぐという仮説である。</p>
+        </div>
+        <div class="logic-chain" aria-label="企画の論理展開">
+          <article class="logic-step">
+            <span class="badge verified">事実</span>
+            <h3>広域に動ける</h3>
+            <p>南茨木は2路線の結節点。単一大学専用よりも、複数大学へ通う学生を受け入れる立地と考えられる。</p>
+          </article>
+          <article class="logic-step">
+            <span class="badge verified">事実</span>
+            <h3>基本設備は競合する</h3>
+            <p>食事・家具・防犯・自習室は既存住宅でも提供されるため、それだけでは選ばれる理由をつくりにくい。</p>
+          </article>
+          <article class="logic-step">
+            <span class="badge inference">解釈</span>
+            <h3>不足は「横断する関係」</h3>
+            <p>大学外で学生・企業・地域が継続的に出会い、活動へ移れる生活圏の接点に余地がある。</p>
+          </article>
+          <article class="logic-step">
+            <span class="badge open">提案</span>
+            <h3>住居＋運営を価値にする</h3>
+            <p>個室の安心を保ちつつ、半公共の1階とコーディネート機能を組み合わせる。</p>
+          </article>
+        </div>
+        <div class="challenge"><strong>論理の弱点：</strong>「大学横断の接点が必要」という行政上の課題と、「そのために家賃を払ってこの寮を選ぶ」という居住需要は同じではない。学生への需要調査と支払意思の確認が必要。</div>
+      </div>
+    </section>
+
+    <section class="section" id="value">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><span class="section-number">03 / VALUE</span><h2>誰の何を<br>良くするか</h2></div>
+          <p class="section-intro">交流そのものを目的にせず、それぞれが抱える現実的な不安や不足へ応答する。価値が両立しない場合は、まず居住者の安全と生活を優先する。</p>
+        </div>
+        <div class="grid-4">
+          <article class="card stakeholder" data-letter="S">
+            <span class="badge inference">学生</span>
+            <h3>安心して帰れ、外へつながる</h3>
+            <ul><li>駅近・個室・無理のない負担</li><li>学習・制作へ集中できる場所</li><li>所属大学外の仲間、活動、仕事との接点</li></ul>
+          </article>
+          <article class="card stakeholder" data-letter="P">
+            <span class="badge inference">親</span>
+            <h3>安全と自立を両立する</h3>
+            <ul><li>入退室・生活・災害時の安心</li><li>総生活費を予測しやすい契約</li><li>過干渉にならない生活支援</li></ul>
+          </article>
+          <article class="card stakeholder" data-letter="U">
+            <span class="badge inference">大学</span>
+            <h3>大学単独では持ちにくい基盤</h3>
+            <ul><li>孤立防止と地域連携の接点</li><li>留学生・遠方出身者の受入</li><li>大学横断・産学連携の小さな実験場</li></ul>
+          </article>
+          <article class="card stakeholder" data-letter="C">
+            <span class="badge inference">地域</span>
+            <h3>管理された若者との接点</h3>
+            <ul><li>騒音・ごみ・駐輪への明確な責任</li><li>消費・アルバイト・地域活動への参加</li><li>押し付けず予約できる交流機会</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><span class="section-number">04 / PLAN</span><h2>空間だけでなく、<br>運営まで設計する</h2></div>
+          <p class="section-intro">交流を「広い共用部があれば起きる」とは考えない。公開範囲、時間、管理責任、参加のきっかけを空間と一緒に決める。</p>
+        </div>
+        <div class="grid-4">
+          <article class="card plan-card">
+            <span class="zone">01 · GROUND FLOOR</span>
+            <h3>まちの部室</h3>
+            <ul><li>管理・防災拠点を併設</li><li>相談、展示、子ども向け講座、小規模制作</li><li>地域利用は予約・時間限定</li></ul>
+            <span class="source-note"><strong>狙い：</strong>通りに近い側へ半公共の接点をつくる。</span>
+          </article>
+          <article class="card plan-card">
+            <span class="zone">02 · RESIDENTIAL</span>
+            <h3>小さなホーム単位</h3>
+            <ul><li>個室を生活の基本にする</li><li>10〜14室ごとに学習ラウンジ</li><li>大人数の交流を強制しない</li></ul>
+            <span class="source-note"><strong>狙い：</strong>孤立と交流疲れの両方を避ける。</span>
+          </article>
+          <article class="card plan-card">
+            <span class="zone">03 · OPEN SPACE</span>
+            <h3>静と動を分ける外部</h3>
+            <ul><li>道路側は地域との接点</li><li>水路・住宅側は静かな緑地</li><li>公開・半公開・寮生専用を段階化</li></ul>
+            <span class="source-note"><strong>狙い：</strong>にぎわいを近隣負担へ変えない。</span>
+          </article>
+          <article class="card plan-card">
+            <span class="zone">04 · OPERATION</span>
+            <h3>学生コーディネーター</h3>
+            <ul><li>月1回の地域プロジェクト</li><li>夜間静穏・入退室・ごみのルール</li><li>小額助成で小さな活動を支える</li></ul>
+            <span class="source-note"><strong>狙い：</strong>イベント頼みではなく日常へ定着させる。</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="site">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><span class="section-number">05 / SITE</span><h2>敷地図から<br>言える範囲</h2></div>
+          <p class="section-intro">下図は対象地を読み取るための「用地詳細」であり、描かれている共同住宅の平面を今回の学生寮案として採用したものではない。</p>
+        </div>
+        <div class="site-layout">
+          <figure class="drawing">
+            <img src="assets/site-detail.png" alt="茨木市東奈良三丁目の用地詳細図。赤線で囲われた敷地内に、北西側の今回の区画と既存の共同住宅計画が示されている。">
+            <figcaption>出典：配布資料「用地詳細 A3 1:250」。北西側の「今回の区画」約1,000㎡が検討対象。</figcaption>
+          </figure>
+          <div class="site-notes">
+            <article class="card">
+              <span class="badge verified">図面から確認</span>
+              <h3>境界・接道・水路</h3>
+              <p>正確な配置検討は1:200敷地図の分筆境界を基準にする。建蔽率80%は上限であり、800㎡が自動的に建つという意味ではない。</p>
+            </article>
+            <article class="card">
+              <span class="badge open">仮説・未検証</span>
+              <h3>現在の戸数はまだ平面に入れていない</h3>
+              <p>5階建て・132室・目的共用部512㎡は収益比較用の数値案。延床3,600㎡は敷地1,000㎡に対して単純計算で360%となり、指定容積率300%を超える。床面積不算入の根拠か、延床・戸数の見直しが必要。</p>
+            </article>
+            <article class="card">
+              <span class="badge inference">設計判断</span>
+              <h3>にぎわいは道路側、静けさは北側</h3>
+              <p>地域利用室を道路側へ、静かな緑地を水路・住居側へ寄せる考え。騒音解析や近隣協議前の方向性である。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="finance">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><span class="section-number">06 / FINANCE</span><h2>正式要件では、<br>現状案は条件外</h2></div>
+          <p class="section-intro">配布説明資料は、土地と建物を合計した投資総額で回収年数と利回りを評価すると明記している。現状の数値案は15年・7%の両方を満たしていない。</p>
+        </div>
+        <aside class="finance-alert">
+          <div class="alert-mark" aria-hidden="true">!</div>
+          <div>
+            <h3>配布シートの式と正式要件が一致していない</h3>
+            <p>説明資料の正式要件は「土地・建物を合計した投資総額」。一方、収益シートの原価セルは建設コストのみを参照する。運営への確認は必要だが、確認が取れるまでは土地代込みを正式判定として扱う。</p>
+          </div>
+        </aside>
+        <div class="finance-table-wrap">
+          <table>
+            <thead><tr><th>評価ケース</th><th>投資額</th><th>年間利益</th><th>回収</th><th>利回り</th><th>15年 / 7%</th></tr></thead>
+            <tbody>
+              <tr><td data-label="評価ケース"><strong>正式要件</strong><br><small>建設費＋土地取得費7億円</small></td><td class="number" data-label="投資額">18億2,388万円</td><td class="number" data-label="年間利益">約8,266万円</td><td class="number" data-label="回収">約22.1年</td><td class="number" data-label="利回り">約4.53%</td><td class="fail" data-label="15年 / 7%">条件外</td></tr>
+              <tr><td data-label="評価ケース"><strong>シート計算の参考値</strong><br><small>建設費のみ・正式判定には使わない</small></td><td class="number" data-label="投資額">11億2,388万円</td><td class="number" data-label="年間利益">約8,266万円</td><td class="number" data-label="回収">約13.6年</td><td class="number" data-label="利回り">約7.35%</td><td class="number" data-label="15年 / 7%">式の不整合</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="assumptions" aria-label="暫定収益モデルの前提">
+          <div class="assumption"><span>STRUCTURE</span><strong>RC造・5階</strong></div>
+          <div class="assumption"><span>ROOM MIX</span><strong>18㎡×70 / 20㎡×50 / 24㎡×12</strong></div>
+          <div class="assumption"><span>RENT</span><strong>6.7万 / 7.2万 / 8.0万円</strong></div>
+          <div class="assumption"><span>OCCUPANCY</span><strong>満室前提・未検証</strong></div>
+          <div class="assumption"><span>OPERATION</span><strong>仮定 月150万円</strong></div>
+          <div class="assumption"><span>ANCILLARY PROFIT</span><strong>仮定 月100万円</strong></div>
+        </div>
+        <div class="challenge"><strong>数値の弱点：</strong>戸数は平面未検証で、収入は満室前提。付帯事業利益と運営費にも算定根拠がなく、修繕積立などを含む年間利益の計算明細も再確認が必要。競合との比較には、食費・管理費を含む総生活費と、本案の賃料に何が含まれるかの定義も要る。現段階の数値は事業予測ではなく、暫定入力による初期試算。</div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><span class="section-number">07 / EVIDENCE</span><h2>根拠と、<br>根拠の限界</h2></div>
+          <p class="section-intro">公開情報は2026年9月3日時点の確認。リンクは事実の出典であり、企画の成功や需要を保証するものではない。</p>
+        </div>
+        <div class="evidence-list">
+          <article class="evidence-item">
+            <span class="badge verified">課題・正本</span>
+            <div><h3>イベント配布資料・収益計算シート</h3><p>土地取得費7億円、土地・建物合計での投資評価、敷地条件、収益入力値の正本。説明資料とシート数式の不一致は運営への確認が必要。</p></div>
+            <a class="evidence-link" href="https://drive.google.com/drive/folders/1Dtl254h5K-yPGK36UcjV2meCNGDxs3Zl" target="_blank" rel="noopener noreferrer" aria-label="イベント配布資料のGoogle Driveを開く">↗</a>
+          </article>
+          <article class="evidence-item">
+            <span class="badge verified">行政・方針</span>
+            <div><h3>茨木市都市計画マスタープラン</h3><p>共創のまちづくり、公共交通と連動した拠点形成の方向を確認。学生寮の需要や収益は扱わない。</p></div>
+            <a class="evidence-link" href="https://www.city.ibaraki.osaka.jp/kikou/toshiseibi/toshiseisaku/menu/ritti/66289.html" target="_blank" rel="noopener noreferrer" aria-label="茨木市都市計画マスタープランを開く">↗</a>
+          </article>
+          <article class="evidence-item">
+            <span class="badge verified">行政・施策</span>
+            <div><h3>茨木市 第6次総合計画 第2期実施計画</h3><p>大学・学生との共創や、大学横断のつながりをつくる取組を確認。居住意向とは別に検証が必要。</p></div>
+            <a class="evidence-link" href="https://www.city.ibaraki.osaka.jp/material/files/group/13/dainikizisshikeikaku.pdf" target="_blank" rel="noopener noreferrer" aria-label="茨木市の実施計画PDFを開く">↗</a>
+          </article>
+          <article class="evidence-item">
+            <span class="badge verified">大学・立地</span>
+            <div><h3>立命館大学のOIC体制発表</h3><p>2024年4月の移転後、6学部・7研究科体制になったことを確認。2026年度の厳密な在籍者数は別途確認する。</p></div>
+            <a class="evidence-link" href="https://www.ritsumei.ac.jp/news/detail/?id=3660" target="_blank" rel="noopener noreferrer" aria-label="立命館大学OIC新展開を開く">↗</a>
+          </article>
+          <article class="evidence-item">
+            <span class="badge verified">大学・費用</span>
+            <div><h3>立命館大学 2026年度奨学金案内</h3><p>2024年度契約物件のOIC平均は家賃・共益費合計66,976円。今回の家賃設定への支払意思を直接証明するものではない。</p></div>
+            <a class="evidence-link" href="https://www.ritsumei.ac.jp/file.jsp?id=685130" target="_blank" rel="noopener noreferrer" aria-label="立命館大学2026年度奨学金案内を開く">↗</a>
+          </article>
+          <article class="evidence-item">
+            <span class="badge verified">競合・設備</span>
+            <div><h3>コスモグラシア南茨木 募集情報</h3><p>139室、2026年1月完成、設備、食事、管理、募集条件を確認。募集情報は更新されるため最終提案前に再確認する。</p></div>
+            <a class="evidence-link" href="https://unilife.co.jp/view/12855" target="_blank" rel="noopener noreferrer" aria-label="コスモグラシア南茨木の募集情報を開く">↗</a>
+          </article>
+          <article class="evidence-item">
+            <span class="badge verified">現行開発</span>
+            <div><h3>コスモスイニシア 2026年3月発表</h3><p>分譲棟と学生マンションの一体開発、阪急3分・モノレール5分、両棟の関係を確認。仮想再提案として扱う根拠。</p></div>
+            <a class="evidence-link" href="https://www.daiwahouse.co.jp/about/release/group/pdf/g_release_20260323-2.pdf" target="_blank" rel="noopener noreferrer" aria-label="コスモスイニシアの開発発表PDFを開く">↗</a>
+          </article>
+          <article class="evidence-item">
+            <span class="badge verified">調査・限定</span>
+            <div><h3>大学生の活動実態等に関する調査</h3><p>回答者59人の活動後滞在地と自由記述を確認。標本の偏りがあるため、市内大学生全体へ一般化しない。</p></div>
+            <a class="evidence-link" href="https://www.city.ibaraki.osaka.jp/material/files/group/13/anke_daigaku.pdf" target="_blank" rel="noopener noreferrer" aria-label="茨木市の大学生調査PDFを開く">↗</a>
+          </article>
+          <article class="evidence-item">
+            <span class="badge verified">地域・既存拠点</span>
+            <div><h3>東奈良コミュニティセンター</h3><p>近隣に既存の地域活動拠点があることを確認。「まちの部室」は競合ではなく役割分担を検討する。</p></div>
+            <a class="evidence-link" href="https://www.city.ibaraki.osaka.jp/kikou/shimin/chiikicommunity/menu/communitycenter/comisen_tuite/komisen/1427783855598.html" target="_blank" rel="noopener noreferrer" aria-label="東奈良コミュニティセンターのページを開く">↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="decisions">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><span class="section-number">08 / NEXT DECISIONS</span><h2>次に、何を<br>決めるか</h2></div>
+          <p class="section-intro">いま必要なのはコピーの磨き込みより、成立条件の確認。上から順に合意すると、平面と収益を無駄なく往復できる。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card decision-card">
+            <span class="decision-no">PRIORITY 01</span>
+            <h3>正式要件を満たす収益案へ組み直す</h3>
+            <ul><li>運営へ収益シートの式を確認する</li><li>土地代込みを前提に戸数・コスト・賃料を再検討する</li><li>利益計算明細に抜けがないか確認する</li></ul>
+            <p class="why">現状は約22.1年・4.53%で、正式要件の15年以内・7%以上を満たさない。</p>
+          </article>
+          <article class="card decision-card">
+            <span class="decision-no">PRIORITY 02</span>
+            <h3>学生の需要と支払意思を確かめる</h3>
+            <ul><li>大学横断交流へ本当に価値を感じるか</li><li>希望する関わり方と頻度</li><li>総生活費として許容できる範囲</li></ul>
+            <p class="why">行政課題だけでは、入居を選ぶ理由の証明にならない。</p>
+          </article>
+          <article class="card decision-card">
+            <span class="decision-no">PRIORITY 03</span>
+            <h3>敷地へ平面と運営を入れて検証する</h3>
+            <ul><li>132室と共用部が収まるか</li><li>避難・採光・設備・駐輪を確保できるか</li><li>近隣に負担を出さないゾーニングか</li></ul>
+            <p class="why">コンセプトを、面積と動線に耐える案へ変える段階。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="page-shell footer-inner">
+      <span>CROSS BASE 南茨木 · group working draft</span>
+      <span>事実 / 解釈 / 仮説を分けて更新する · 2026.09.03</span>
+    </div>
+  </footer>
+</body>
+</html>
