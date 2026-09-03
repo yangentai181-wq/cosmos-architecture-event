@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="南茨木・東奈良の条件から、近隣地域のニーズ、負担、責任分界、検証質問を整理したワークシート②−④。">
+  <meta property="og:title" content="ワークシート②−④｜今回の条件から導く近隣地域のニーズ">
+  <meta property="og:description" content="交流の前に暮らしを守る。南茨木の地域条件から、近隣住民・地域団体・事業者・行政のニーズを根拠別に整理。">
+  <title>ワークシート②−④｜今回の条件から導く近隣地域のニーズ</title>
+  <style>
+    :root {
+      --ink: #172019;
+      --paper: #f3efe5;
+      --paper-deep: #e7e0d1;
+      --forest: #345e47;
+      --forest-dark: #1f3e2d;
+      --moss: #a8bd8f;
+      --clay: #aa4635;
+      --sun: #e7bd55;
+      --sky: #8eb8bd;
+      --line: rgba(23, 32, 25, 0.22);
+      --muted: #5e675f;
+      --white: #fffdf8;
+      --verified: #285d44;
+      --inference: #87561a;
+      --unverified: #8b3c36;
+      --shadow: 0 22px 55px rgba(31, 62, 45, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, transparent 0 7%, rgba(52, 94, 71, 0.035) 7% 7.2%, transparent 7.2% 92.8%, rgba(52, 94, 71, 0.035) 92.8% 93%, transparent 93%),
+        var(--paper);
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 3px solid var(--sun);
+      outline-offset: 3px;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(23, 32, 25, 0.96);
+      color: var(--white);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-row {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--moss);
+      border-radius: 50%;
+      color: var(--moss);
+      font-family: Georgia, serif;
+      font-size: 0.86rem;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 20px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.78);
+      text-decoration: none;
+    }
+
+    nav a.current { color: var(--sun); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--forest-dark);
+      border-bottom: 12px solid var(--moss);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      right: -155px;
+      bottom: -250px;
+      border: 1px solid rgba(231, 189, 85, 0.55);
+      border-radius: 50%;
+      box-shadow: 0 0 0 62px rgba(231, 189, 85, 0.08), 0 0 0 124px rgba(231, 189, 85, 0.04);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 72px;
+      align-items: end;
+      min-height: 650px;
+      padding: 94px 0 80px;
+    }
+
+    .eyebrow,
+    .section-number,
+    .mini-label {
+      display: block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow { color: var(--sun); }
+
+    h1,
+    h2,
+    h3,
+    p { margin-top: 0; }
+
+    h1 {
+      max-width: 850px;
+      margin: 24px 0 30px;
+      font-size: clamp(3rem, 7vw, 6.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+    }
+
+    .hero-lead {
+      max-width: 770px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: clamp(1rem, 1.8vw, 1.28rem);
+      line-height: 1.9;
+    }
+
+    .hero-lead strong { color: var(--white); }
+
+    .hero-side {
+      border-top: 1px solid rgba(255, 255, 255, 0.35);
+      padding-top: 24px;
+    }
+
+    .hero-side strong {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--moss);
+      font-size: 1.1rem;
+    }
+
+    .hero-side p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.92rem;
+    }
+
+    .thesis {
+      margin: -1px 0 0;
+      background: var(--clay);
+      color: var(--white);
+    }
+
+    .thesis-inner {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 46px;
+      padding: 42px 0;
+    }
+
+    .thesis .mini-label { color: #fee6dd; }
+
+    .thesis p {
+      margin: 0;
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-size: clamp(1.35rem, 2.8vw, 2.15rem);
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .legend {
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .legend-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 0;
+    }
+
+    .legend-title {
+      margin-right: 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      padding: 4px 11px;
+      border: 1px solid currentColor;
+      border-radius: 99px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .verified { color: var(--verified); }
+    .inference { color: var(--inference); }
+    .unverified { color: var(--unverified); }
+
+    .section {
+      padding: 96px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-dark {
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .section-forest {
+      color: var(--white);
+      background: var(--forest);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.7fr);
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 52px;
+    }
+
+    .section-number { margin-bottom: 16px; color: var(--clay); }
+    .section-dark .section-number,
+    .section-forest .section-number { color: var(--sun); }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.25rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .section-intro {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .section-dark .section-intro,
+    .section-forest .section-intro { color: rgba(255, 255, 255, 0.7); }
+
+    .evidence-grid,
+    .condition-grid,
+    .stakeholder-grid,
+    .need-grid,
+    .question-grid,
+    .source-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .evidence-grid { grid-template-columns: repeat(3, 1fr); }
+    .condition-grid { grid-template-columns: repeat(2, 1fr); }
+    .stakeholder-grid { grid-template-columns: repeat(3, 1fr); }
+    .need-grid { grid-template-columns: repeat(2, 1fr); }
+    .question-grid { grid-template-columns: repeat(2, 1fr); }
+    .source-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .evidence-card,
+    .condition-card,
+    .stakeholder-card,
+    .need-card,
+    .question-card,
+    .source-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .evidence-card,
+    .condition-card,
+    .stakeholder-card,
+    .question-card,
+    .source-card { padding: 27px; }
+
+    .evidence-card h3,
+    .condition-card h3,
+    .stakeholder-card h3,
+    .need-card h3,
+    .question-card h3 {
+      margin: 14px 0 10px;
+      font-size: 1.13rem;
+      line-height: 1.45;
+    }
+
+    .evidence-card p,
+    .condition-card p,
+    .stakeholder-card p,
+    .question-card p,
+    .source-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .condition-card .fact {
+      display: block;
+      margin: 18px 0 4px;
+      color: var(--forest-dark);
+      font-family: Georgia, "Yu Mincho", serif;
+      font-size: 2.15rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .condition-card .fact small {
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .data-note {
+      margin-top: 22px;
+      padding: 20px 24px;
+      border-left: 5px solid var(--clay);
+      background: #fff8f1;
+      color: #55342e;
+      font-size: 0.9rem;
+    }
+
+    .stakeholder-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 240px;
+    }
+
+    .stakeholder-card::after {
+      content: attr(data-index);
+      position: absolute;
+      right: 16px;
+      bottom: -18px;
+      color: rgba(52, 94, 71, 0.09);
+      font-family: Georgia, serif;
+      font-size: 6rem;
+      line-height: 1;
+    }
+
+    .stakeholder-card ul,
+    .question-card ol,
+    .question-card ul {
+      margin: 14px 0 0;
+      padding-left: 1.25rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .need-card {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .priority-evidence {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .priority-evidence p { margin: 0; font-size: 0.88rem; }
+    .priority-evidence .badge { flex: none; }
+
+    .priority {
+      display: grid;
+      place-items: center;
+      min-height: 100%;
+      padding: 20px 12px;
+      background: var(--sun);
+      color: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .need-card[data-priority="P1"] .priority { background: var(--moss); }
+    .need-card[data-priority="P2"] .priority { background: var(--sky); }
+    .need-card[data-priority="P3"] .priority { background: var(--clay); color: var(--white); }
+
+    .need-copy { padding: 26px; }
+    .need-copy h3 { margin-top: 0; color: var(--white); }
+    .need-copy p { margin: 0; color: rgba(255, 255, 255, 0.72); font-size: 0.9rem; }
+
+    .callout {
+      margin-top: 34px;
+      padding: 28px 32px;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-size: clamp(1.15rem, 2.1vw, 1.65rem);
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      max-width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th,
+    td {
+      padding: 17px 18px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th:last-child,
+    td:last-child { border-right: 0; }
+
+    tbody tr:last-child td { border-bottom: 0; }
+
+    th {
+      color: var(--white);
+      background: var(--forest-dark);
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+    }
+
+    td strong { color: var(--forest-dark); }
+
+    .matrix-row-high td:first-child { border-left: 6px solid var(--clay); }
+    .matrix-row-mid td:first-child { border-left: 6px solid var(--sun); }
+    .matrix-row-later td:first-child { border-left: 6px solid var(--sky); }
+
+    .section-dark .table-wrap { box-shadow: none; }
+
+    .metric-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .metric {
+      min-height: 132px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--sun);
+      font-size: 1.2rem;
+    }
+
+    .metric span { color: rgba(255, 255, 255, 0.7); font-size: 0.82rem; }
+
+    .worksheet-box {
+      padding: clamp(30px, 6vw, 64px);
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .worksheet-box .mini-label { margin-bottom: 24px; color: var(--clay); }
+
+    .worksheet-box blockquote {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      font-weight: 700;
+      line-height: 1.9;
+    }
+
+    .short-copy {
+      margin: 34px 0 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--forest-dark);
+      font-weight: 800;
+    }
+
+    .gate-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 28px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .gate {
+      padding: 25px;
+      background: var(--forest-dark);
+    }
+
+    .gate strong { display: block; margin-bottom: 8px; color: var(--sun); }
+    .gate p { margin: 0; color: rgba(255, 255, 255, 0.72); font-size: 0.86rem; }
+
+    .source-card a {
+      color: var(--forest-dark);
+      font-weight: 800;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .source-card .mini-label { margin-bottom: 10px; color: var(--clay); }
+
+    footer {
+      padding: 34px 0;
+      color: rgba(255, 255, 255, 0.62);
+      background: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-head { grid-template-columns: 1fr; gap: 34px; }
+      .hero-grid { min-height: auto; padding: 80px 0 64px; }
+      .hero-side { max-width: 620px; }
+      .evidence-grid,
+      .stakeholder-grid { grid-template-columns: repeat(2, 1fr); }
+      .metric-list,
+      .gate-grid { grid-template-columns: repeat(2, 1fr); }
+      .thesis-inner { grid-template-columns: 1fr; gap: 15px; }
+    }
+
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 28px, 1180px); }
+      .nav-row { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      nav ul { justify-content: flex-start; gap: 7px 14px; }
+      .section { padding: 72px 0; }
+      .condition-grid,
+      .stakeholder-grid,
+      .evidence-grid,
+      .need-grid,
+      .question-grid,
+      .source-grid,
+      .metric-list,
+      .gate-grid { grid-template-columns: 1fr; }
+      .need-card { grid-template-columns: 72px 1fr; }
+      .priority-evidence { align-items: flex-start; flex-direction: column; }
+      .footer-row { flex-direction: column; }
+    }
+
+    @media print {
+      :root {
+        --ink: #111;
+        --forest: #333;
+        --forest-dark: #111;
+        --paper: #fff;
+        --white: #fff;
+        --line: #999;
+        --muted: #333;
+      }
+
+      body { background: #fff; font-size: 9pt; }
+      .site-header { position: static; background: #111; }
+      .hero { background: #111; border-bottom-width: 5px; }
+      .hero::after { display: none; }
+      .hero-grid { min-height: auto; padding: 35px 0; }
+      .section { padding: 28px 0; break-inside: avoid; }
+      .section-head { margin-bottom: 22px; }
+      .evidence-card,
+      .condition-card,
+      .stakeholder-card,
+      .need-card,
+      .question-card,
+      .source-card,
+      .worksheet-box { box-shadow: none; break-inside: avoid; }
+      .need-card { background: #222; }
+      .table-wrap { overflow: visible; box-shadow: none; }
+      table { min-width: 0; font-size: 7.5pt; }
+      th,
+      td { padding: 8px; }
+      .gate p { color: #111; }
+      .gate { background: #fff; border: 1px solid #777; }
+      .gate strong { color: #111; }
+      footer { background: #111; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-row">
+      <a class="brand" href="../../index.html"><span class="brand-mark">C/A</span><span>COSMOS ARCHITECTURE</span></a>
+      <nav aria-label="ワークシート間の移動">
+        <ul>
+          <li><a href="../">②−① 大学生</a></li>
+          <li><a href="../parents/">②−② 保護者</a></li>
+          <li><a href="../university/">②−③ 大学・運営</a></li>
+          <li><a class="current" href="./">②−④ 近隣地域<span class="sr-only">（現在のページ）</span></a></li>
+          <li><a href="../../proposal.html">現状案・SWOT ↗</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="shell hero-grid">
+        <div>
+          <span class="eyebrow">WORKSHEET ②−④ · NEIGHBORHOOD NEEDS</span>
+          <h1>交流の前に、<br>暮らしを守る。</h1>
+          <p class="hero-lead">今回の条件から導ける、計画者が第一に守るべき条件は、イベントの多さではありません。<strong>静穏・プライバシー・ごみ・駐輪・動線を管理し、既存の地域活動を増やすのではなく、その担い手負担を学生の力で補うこと</strong>です。</p>
+        </div>
+        <aside class="hero-side">
+          <strong>近隣住民への直接調査は、まだない。</strong>
+          <p>このページは、東奈良の地域資料、既存施設、敷地周辺、実現後の事例から導いた検証前の整理です。「地域が望んでいる」と断定せず、誰に何を聞けば確定できるかまで示します。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="thesis" aria-label="結論">
+      <div class="shell thesis-inner">
+        <span class="mini-label">CORE FINDING</span>
+        <p>地域貢献は、地域へ仕事を増やすことではない。日常負担を増やさず、今ある活動を続けやすくし、必要な時だけ支え合える関係をつくること。</p>
+      </div>
+    </section>
+
+    <aside class="legend" aria-label="根拠レベル">
+      <div class="shell legend-inner">
+        <span class="legend-title">EVIDENCE LEVEL</span>
+        <span class="badge verified">確認済み</span>
+        <span class="badge inference">根拠のある推論</span>
+        <span class="badge unverified">未検証仮説</span>
+      </div>
+    </aside>
+
+    <section class="section" id="evidence-rules">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">00 / HOW TO READ</span><h2>地域の声を<br>つくらない</h2></div>
+          <p class="section-intro">行政方針や既存事例は「連携できる可能性」を示しますが、この計画への賛成や参加意思は示しません。地域ニーズは、事実・推論・仮説の順に扱います。</p>
+        </div>
+        <div class="evidence-grid">
+          <article class="evidence-card" data-evidence="verified">
+            <span class="badge verified">確認済み</span>
+            <h3>公表資料で確認できた条件</h3>
+            <p>隣接住宅、既存施設、地域活動、自治体施策、現在の建物・イベントなど。対象時点と調査対象を併記します。</p>
+          </article>
+          <article class="evidence-card" data-evidence="inference">
+            <span class="badge inference">根拠のある推論</span>
+            <h3>立地と運営から生じる必要</h3>
+            <p>静穏、視線、来客、ごみ、駐輪、搬入、苦情対応など。住民がそう回答したのではなく、計画者が先回りして守る条件です。</p>
+          </article>
+          <article class="evidence-card" data-evidence="unverified">
+            <span class="badge unverified">未検証仮説</span>
+            <h3>本人へ確かめるまで決めない</h3>
+            <p>国際交流への関心、食堂利用、地域調達、許容時間、参加頻度、反対理由。直接聴取と小規模実証が必要です。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="current-conditions">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">01 / CURRENT CONDITIONS</span><h2>南茨木・東奈良を<br>事実から読む</h2></div>
+          <p class="section-intro">配布課題当時の仮想計画と、2026年に実現した139室の学生住宅・59戸の分譲住宅を分けます。実現後の成果は事後検証であり、元の計画時点の根拠には戻しません。</p>
+        </div>
+        <div class="condition-grid">
+          <article class="condition-card" data-evidence="verified">
+            <span class="badge verified">確認済み</span>
+            <span class="fact">139室 + 59戸</span>
+            <h3>現在は二つの住宅が隣接している</h3>
+            <p>課題対象地には学生住宅が実現し、隣接する分譲マンションも入居済みです。歴史的再提案では、この現況を将来予測ではなく事後比較へ置きます。</p>
+          </article>
+          <article class="condition-card" data-evidence="verified">
+            <span class="badge verified">確認済み</span>
+            <span class="fact">n=24 <small>地域組織役員</small></span>
+            <h3>東奈良の古い小規模調査がある</h3>
+            <p>2019年の市内地域組織役員調査を東奈良校区で見ると、回答は24人。地域行事、つながり、文化等への愛着は見える一方、一般住民の代表調査でも、今回案への参加意思でもありません。</p>
+          </article>
+          <article class="condition-card" data-evidence="verified">
+            <span class="badge verified">確認済み</span>
+            <span class="fact">既存2施設</span>
+            <h3>地域交流の場所はすでにある</h3>
+            <p>東奈良コミュニティセンターには100人規模の多目的室等があり、南茨木多世代交流センターも高齢者・子ども世代の交流を目的に運営されています。「交流場所がない」とは言えません。</p>
+          </article>
+          <article class="condition-card" data-evidence="verified">
+            <span class="badge verified">確認済み</span>
+            <span class="fact">防災で接続</span>
+            <h3>実現後に合同防災が試された</h3>
+            <p>2026年6月、学生住宅と分譲住宅の入居者向け合同防災イベントが開かれ、8月に全入居者へマニュアルが配布されました。実行例ではあるものの、参加人数・非参加者評価・継続意向は当該事業者発表には記載されていません。</p>
+          </article>
+          <article class="condition-card" data-evidence="inference">
+            <span class="badge inference">根拠のある推論</span>
+            <span class="fact">高利便・高摩擦</span>
+            <h3>駅近は地域負担も集中させる</h3>
+            <p>二路線、病院、住宅、幹線道路等が近い立地では、人を呼ぶ強みと、夜間騒音、視線、駐輪、搬入、歩車交錯の負担が同時に強くなります。</p>
+          </article>
+          <article class="condition-card" data-evidence="unverified">
+            <span class="badge unverified">未検証仮説</span>
+            <span class="fact">直接聴取 0件</span>
+            <h3>「地域が交流を望む」は未確認</h3>
+            <p>隣接住民、管理組合、自治会、地域施設、学校、病院、商店への本計画についての聴取は未実施です。ここを飛ばして建物の公開範囲を決めません。</p>
+          </article>
+        </div>
+        <p class="data-note">東奈良校区の2019年資料は、自治会長・地域協議会役員・コミュニティセンター役員を対象とした市全体調査の速報です。東奈良の回答24人を、住民全体の比率や現在の需要に外挿しません。</p>
+      </div>
+    </section>
+
+    <section class="section" id="stakeholders">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">02 / WHO IS THE COMMUNITY</span><h2>「地域住民」を<br>一つにしない</h2></div>
+          <p class="section-intro">恩恵と負担は同じ人に発生しません。参加者の満足だけでなく、隣接して暮らす人、参加しない人、既存活動を担う人の条件を分けます。</p>
+        </div>
+        <div class="stakeholder-grid">
+          <article class="stakeholder-card" data-stakeholder="adjacent-residents" data-index="01">
+            <span class="mini-label">ADJACENT RESIDENTS</span>
+            <h3>隣接・周辺住民</h3>
+            <p>参加便益より先に、日常生活への影響を受ける主体です。</p>
+            <ul><li>夜間の静穏・照明・視線</li><li>来客、ごみ、駐輪、搬入の管理</li><li>一本化された苦情窓口</li></ul>
+          </article>
+          <article class="stakeholder-card" data-stakeholder="community-organizations" data-index="02">
+            <span class="mini-label">LOCAL ORGANIZATIONS</span>
+            <h3>自治会・地域活動団体</h3>
+            <p>新しい企画より、既存活動を続ける人手と引継ぎが課題になり得ます。</p>
+            <ul><li>設営・広報・翻訳・デジタル補助</li><li>役員への負担集中を増やさない</li><li>既存行事との役割分担</li></ul>
+          </article>
+          <article class="stakeholder-card" data-stakeholder="children-caregivers" data-index="03">
+            <span class="mini-label">CHILDREN &amp; CAREGIVERS</span>
+            <h3>子ども・保護者・学校</h3>
+            <p>国際理解の機会と同時に、未成年者保護が必要です。</p>
+            <ul><li>学校・責任ある団体の監督</li><li>保護者同意と撮影ルール</li><li>学生だけに児童を任せない</li></ul>
+          </article>
+          <article class="stakeholder-card" data-stakeholder="older-disabled" data-index="04">
+            <span class="mini-label">OLDER &amp; DISABLED PEOPLE</span>
+            <h3>高齢者・障害のある人</h3>
+            <p>交流参加だけでなく、情報取得と移動のしやすさが条件です。</p>
+            <ul><li>バリアフリーと休憩</li><li>紙・電話を残す申込方法</li><li>多世代交流センターとの連携</li></ul>
+          </article>
+          <article class="stakeholder-card" data-stakeholder="local-businesses" data-index="05">
+            <span class="mini-label">LOCAL BUSINESSES</span>
+            <h3>商店・雇用先・納入事業者</h3>
+            <p>学生消費が増えるとは限りません。具体的な取引条件で確認します。</p>
+            <ul><li>食材・印刷・清掃等の適正な発注</li><li>搬入時間・臭気・ごみの予測可能性</li><li>アルバイトを教育名目で安くしない</li></ul>
+          </article>
+          <article class="stakeholder-card" data-stakeholder="city-emergency" data-index="06">
+            <span class="mini-label">CITY &amp; EMERGENCY</span>
+            <h3>茨木市・消防・地域施設</h3>
+            <p>公的情報と既存施策を持つ接続先であり、民間寮の運営責任者ではありません。</p>
+            <ul><li>避難・防災情報の整合</li><li>多文化共生施策との非重複</li><li>救急・送迎・歩行動線の確保</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-forest" id="community-needs">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">03 / PRIORITIZED NEEDS</span><h2>地域ニーズを<br>優先度で並べる</h2></div>
+          <p class="section-intro">P0は「地域貢献」以前に守る条件です。P1以降は、直接聴取と小規模実証で需要・担い手・費用を確認してから広げます。</p>
+        </div>
+        <div class="need-grid">
+          <div class="priority-evidence" data-priority="P0" data-evidence="inference"><span class="badge inference">根拠のある推論</span><p><strong>P0は計画上の保護条件。</strong>住民が回答した要望ではなく、立地と住宅運営から計画者が先回りして守る条件です。</p></div>
+          <article class="need-card" data-priority="P0"><div class="priority">P0</div><div class="need-copy"><h3>平穏な日常を壊さない</h3><p>夜間の音、照明、視線、臭い、ごみ、放置自転車、短時間駐車、宅配・食材搬入を、人数・時間・動線・責任者で管理する。</p></div></article>
+          <article class="need-card" data-priority="P0"><div class="priority">P0</div><div class="need-copy"><h3>苦情を迷子にしない</h3><p>受付窓口、夜間初動者、回答期限、改善責任者、再発確認を一本化し、大学・自治会・学生へ処理を押しつけない。</p></div></article>
+          <article class="need-card" data-priority="P0"><div class="priority">P0</div><div class="need-copy"><h3>公開と住居を分ける</h3><p>外部入口、居住者入口、階段・エレベーター、受付、トイレ、終了時刻を分け、非参加の住民と寮生が平穏に生活できる。</p></div></article>
+          <article class="need-card" data-priority="P0"><div class="priority">P0</div><div class="need-copy"><h3>災害時の役割を誇張しない</h3><p>公的避難情報と照合し、在宅避難、備蓄、安否確認、多言語化の担当を決める。寮を無断で避難所や救助拠点と呼ばない。</p></div></article>
+          <div class="priority-evidence" data-priority="P1" data-evidence="inference" data-current-demand="unverified"><span class="badge inference">資料に基づく推論</span><p><strong>P1は2019年の役員調査と現行市計画に裏づけられた方向。</strong>ただし、現在の地域団体が今回の支援を求めるかは未検証です。</p></div>
+          <article class="need-card" data-priority="P1"><div class="priority">P1</div><div class="need-copy"><h3>既存活動の負担を軽くする</h3><p>新規イベントを増やす前に、既存の防災・祭り・清掃・見守り等で不足する設営、広報、翻訳、申込、記録を補う。</p></div></article>
+          <article class="need-card" data-priority="P1"><div class="priority">P1</div><div class="need-copy"><h3>既存施設と競わない</h3><p>コミュニティセンター、多世代交流センター、市の国際交流事業へ、会場・参加者・人手を提供する側から始める。</p></div></article>
+          <article class="need-card" data-priority="P1"><div class="priority">P1</div><div class="need-copy"><h3>参加しない権利を守る</h3><p>住民・学生とも参加は任意。自治会加入、通訳、夜間対応、子どもの見守りを、国籍や居住を理由に義務化しない。</p></div></article>
+          <div class="priority-evidence" data-priority="P2" data-evidence="unverified"><span class="badge unverified">実証前の仮説</span><p><strong>P2は需要と実行条件を直接確認してから採否を決める案。</strong>学校、事業者、住民との聴取なしに効果を断定しません。</p></div>
+          <article class="need-card" data-priority="P2"><div class="priority">P2</div><div class="need-copy"><h3>相互に役立つ小さな接点</h3><p>地域の土地・災害・生活知と、学生の多言語・デジタル・大学知を交換する。防災、学校活動、食の順で小さく試す。</p></div></article>
+          <article class="need-card" data-priority="P2"><div class="priority">P2</div><div class="need-copy"><h3>地域経済への効果を測る</h3><p>学生が増えれば商店が潤うとは置かず、地域調達額、契約件数、支払条件、館外利用の変化を確認する。</p></div></article>
+          <div class="priority-evidence" data-priority="P3" data-evidence="unverified"><span class="badge unverified">実証前の仮説</span><p><strong>P3は安全・衛生・需要が確認できた後の選択肢。</strong>一般開放を地域貢献の前提にしません。</p></div>
+          <article class="need-card" data-priority="P3"><div class="priority">P3</div><div class="need-copy"><h3>食堂開放・大型企画は最後</h3><p>食品衛生、アレルギー、臭い、害虫、ごみ、搬入、騒音、会計を検証し、居住者内→招待制→予約制外部実証の順で進める。</p></div></article>
+        </div>
+        <p class="callout">「国際交流」を目的に人を集めるのではなく、防災・子どもの学び・既存活動の負担軽減を一緒に行った結果として、交流が生まれる設計にする。</p>
+      </div>
+    </section>
+
+    <section class="section" id="benefit-burden">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">04 / BENEFIT &amp; BURDEN</span><h2>便益と反対理由を<br>同じ表で見る</h2></div>
+          <p class="section-intro">一つの活動が、参加者には便益、非参加者には負担になります。良い面だけで採用せず、負担を誰が減らすかまで決めます。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>活動・期待便益</th><th>同時に生じる負担・反対理由</th><th>採用条件</th></tr></thead>
+            <tbody>
+              <tr class="matrix-row-high"><td><strong>若い担い手が地域活動を補助</strong></td><td>学生が毎年入れ替わり、地域側の説明・引継ぎが増える。無償労働にもなり得る。</td><td>仕事を小分けし、担当・報酬・引継ぎ資料・終了条件を決める。</td></tr>
+              <tr class="matrix-row-high"><td><strong>多言語防災・共助</strong></td><td>外国人・若者を救助要員とみなし、学生自身が支援対象であることを忘れる。</td><td>公的情報を正本にし、専門判断を負わせず、住民と学生が相互に学ぶ。</td></tr>
+              <tr class="matrix-row-mid"><td><strong>子どもの国際理解</strong></td><td>未成年者の安全、撮影、個人情報、国籍のステレオタイプ化。</td><td>学校・責任団体が監督し、保護者同意、複数大人、記録管理を行う。</td></tr>
+              <tr class="matrix-row-mid"><td><strong>食を介した交流</strong></td><td>臭い、ごみ、害虫、搬入、アレルギー、食品事故、夜間の話し声。</td><td>運営主体と許可・届出を確認し、昼間・少人数・予約制から始める。</td></tr>
+              <tr class="matrix-row-mid"><td><strong>地域消費・雇用</strong></td><td>食事付き寮が館内消費を囲い込み、周辺支出が増えない可能性。</td><td>具体的な発注先と条件を決め、実際の地域調達額と館外利用を測る。</td></tr>
+              <tr class="matrix-row-later"><td><strong>公開空間の賑わい</strong></td><td>外来者、騒音、防犯、清掃、居住者が休めない問題。</td><td>公開範囲を小さくし、入口・時間・管理・閉鎖方法を独立させる。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="responsibility">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">05 / RESPONSIBILITY</span><h2>善意ではなく<br>責任でつなぐ</h2></div>
+          <p class="section-intro">「地域で協力する」は担当不在の言い換えになりがちです。苦情、安全、食品、未成年者、個人情報、費用を主体別に固定します。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>主体</th><th>持つ責任</th><th>持たせない責任</th></tr></thead>
+            <tbody>
+              <tr><td><strong>寮所有者・運営者</strong></td><td>騒音、照明、来客、入退室、ごみ、駐輪、搬入、保険、苦情、事故記録、改善報告。</td><td>日常管理を自治会・大学・学生へ丸投げしない。</td></tr>
+              <tr><td><strong>地域コーディネーター</strong></td><td>住民・施設との調整、予約、参加しない人への配慮、振返り、次回判断。</td><td>建物管理、警備、食品衛生の最終責任。</td></tr>
+              <tr><td><strong>食堂・イベント主催者</strong></td><td>許可・届出、衛生、アレルギー、定員、終了時刻、撮影同意、未成年者対応、片付け。</td><td>寮の居住階・入居者情報への自由なアクセス。</td></tr>
+              <tr><td><strong>自治会・地域住民</strong></td><td>地域知の提供、希望者による企画参加、評価・反対意見の表明。</td><td>無償スタッフ、寮の苦情処理、災害時の建物管理。</td></tr>
+              <tr><td><strong>学校・大学</strong></td><td>教育プログラム、学生支援、学校内の未成年者保護、担当範囲の合意。</td><td>民間寮の日常管理、地域への送客、事故時の自動的な全責任。</td></tr>
+              <tr><td><strong>学生ホスト</strong></td><td>任意または有償の受付、言語補助、共同活動。勤務時間と研修を設定。</td><td>通訳の強制、警備、医療判断、単独の夜間対応、無給の常態化。</td></tr>
+              <tr><td><strong>茨木市・消防等</strong></td><td>公的情報、制度、既存施策、許認可・避難等の確認先。</td><td>民間寮の運営責任、協力・補助金・指定避難所の自動保証。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-forest" id="metrics">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">06 / MEASUREMENT</span><h2>参加人数より先に<br>生活負担を測る</h2></div>
+          <p class="section-intro">参加者だけにアンケートを取ると、開放による負担が消えます。非参加住民・非参加寮生、地域側の準備時間、未解決事案を含めます。</p>
+        </div>
+        <div class="metric-list">
+          <div class="metric"><strong>0件</strong><span>重大事故、食品事故、個人情報事故、居住者専用部への無断侵入</span></div>
+          <div class="metric"><strong>0件</strong><span>期限を超えて未処理の近隣苦情。件数そのものは隠さず、受付から解決まで測る</span></div>
+          <div class="metric"><strong>時間</strong><span>苦情の初回応答・現地初動・解決・再発確認にかかった時間</span></div>
+          <div class="metric"><strong>負担</strong><span>地域、学生、運営者それぞれの準備・当日・片付け・引継ぎ時間</span></div>
+        </div>
+        <div class="table-wrap" data-kpi-policy="operational">
+          <table>
+            <thead><tr><th data-kpi-field="definition">定義・分母</th><th data-kpi-field="owner">責任者</th><th data-kpi-field="source">データ源</th><th data-kpi-field="baseline-target">基準値・目標</th><th data-kpi-field="cadence">確認頻度</th><th data-kpi-field="stop-resume">中止・再開</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>重大事故＝死傷・救急搬送、食中毒疑い、居住者専用部侵入、個人情報漏えい、警察・消防対応。件数は実数と、外部開放日数・外部参加100人当たりを併記する。</td>
+                <td>寮運営責任者が記録し、地域コーディネーター等の運営から距離を置く確認者が点検する。</td>
+                <td>苦情台帳、入退館記録、事故報告、駐輪・ごみ巡回、参加記録、稼働・発注記録。</td>
+                <td>外部実証前4週間を平常時の基準値とする。重大事故0件、期限超過の未処理苦情0件。その他は初回実証後に数値目標を設定する。</td>
+                <td>緊急事案は即時。未解決苦情は毎週、全指標は各回終了後2営業日以内と月次で確認する。</td>
+                <td>重大事故、専用部侵入、危険への暫定措置不能で即時中止。原因・補償・再発防止を運営責任者と確認者が承認後、小規模に戻して再開する。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="data-note">苦情は、危険・侵入・食品事故疑いなら直ちに通報・当日中に暫定措置、通常案件は1営業日以内に初回応答し、3営業日以内に解決見込みと案件別期限を通知します。「期限超過」は、その通知期限を過ぎた案件です。実在する運営主体と確認者が決まるまでは、この数値は計画案であり運用実績ではありません。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>領域</th><th>記録する指標</th><th>読み違えを防ぐ条件</th></tr></thead>
+            <tbody>
+              <tr><td><strong>生活環境</strong></td><td>夜間騒音、放置自転車、迷惑駐車、ごみ分別、臭気、搬入超過、非参加者からの生活妨害申告。</td><td>イベント日だけでなく平常日も基準として測る。</td></tr>
+              <tr><td><strong>苦情対応</strong></td><td>受付件数、内容、初回応答、現地初動、解決日数、再発、未解決。</td><td>苦情件数ゼロを「満足」とせず、窓口が知られているかも確認。</td></tr>
+              <tr><td><strong>継続関係</strong></td><td>同じ地域団体からの再依頼、協力者の継続、次の共同活動への移行、撤退理由。</td><td>初回参加者数やSNS閲覧数だけで評価しない。</td></tr>
+              <tr><td><strong>労働と費用</strong></td><td>学生・住民・運営者の稼働時間、有償・無償、参加者1人当たり総費用、外部支出。</td><td>善意・通訳・地域調整をゼロ円にしない。</td></tr>
+              <tr><td><strong>地域経済</strong></td><td>地域事業者への発注額・契約件数・支払日数、館外利用、近隣店舗の実感。</td><td>学生人口の増加を売上増加へ自動変換しない。</td></tr>
+              <tr><td><strong>防災</strong></td><td>行政確認済み情報、マニュアル更新、訓練参加、非参加者への共有、役割誤認の修正件数。</td><td>訓練参加を災害対応能力そのものとみなさない。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="worksheet">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">07 / WORKSHEET COPY</span><h2>②−④へ<br>記入する文章</h2></div>
+          <p class="section-intro">一般論ではなく、南茨木・東奈良の既存活動、隣接住宅、既存施設、現在の未確認事項を一続きで記入します。</p>
+        </div>
+        <div class="worksheet-box">
+          <span class="mini-label">DETAILED VERSION</span>
+          <blockquote>この計画で計画者が第一に守るべき条件は、学生寮による騒音・視線・ごみ・駐輪・来客・搬入などの生活負担を確実に管理し、参加しない人も平穏に暮らせることだと考える。そのうえで、地域に新しいイベントを一方的に増やすのではなく、既存の防災、祭り、清掃、見守り等で不足する設営・広報・翻訳・デジタル・記録の負担を、学生が任意または有償で補う案を検証する。交流は防災、多文化共生、子どもの学びなど地域側の目的から小規模に始め、既存施設と連携する。外部入口と居住部、苦情・食品・未成年者・個人情報の責任を分け、直接聴取と実証で反対理由、許容時間、継続意向を確かめてから広げる。</blockquote>
+          <p class="short-copy">短縮版：この計画では、交流イベントの数より先に、静穏・安全・ごみ・駐輪・動線・苦情対応を守る。既存活動の担い手負担を学生が無理なく補えるかを確かめ、交流は参加を選べる小規模な防災・学びから始める。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="validation">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">08 / VALIDATION</span><h2>誰に何を聞けば<br>確定できるか</h2></div>
+          <p class="section-intro">説明会で賛同者だけを集めず、最も近い住民、参加しない人、既存活動の担当者、運営主体を別々に聴きます。</p>
+        </div>
+        <div class="question-grid">
+          <article class="question-card">
+            <span class="mini-label">ADJACENT RESIDENTS</span><h3>隣接・周辺住民へ</h3>
+            <ol><li>最も心配なのは、音、視線、ごみ、駐輪、来客、搬入のどれか。</li><li>外部利用を許容できる曜日・時間・人数・頻度は。</li><li>参加したくない時に守ってほしい条件は。</li><li>苦情受付は電話・Web・管理人のどれが使いやすいか。</li></ol>
+          </article>
+          <article class="question-card">
+            <span class="mini-label">LOCAL ORGANIZATIONS</span><h3>自治会・地域施設へ</h3>
+            <ol><li>不足しているのは参加者、設営、広報、会計、翻訳、デジタルのどれか。</li><li>既存施設で足りない時間帯・用途・設備はあるか。</li><li>学生が毎年交代しても受入れ可能な仕事単位は。</li><li>新設より連携・会場提供が有効な活動は何か。</li></ol>
+          </article>
+          <article class="question-card">
+            <span class="mini-label">SCHOOLS &amp; BUSINESSES</span><h3>学校・事業者へ</h3>
+            <ol><li>学校監督下で試せる国際理解・防災活動はあるか。</li><li>未成年者・撮影・個人情報を誰が管理するか。</li><li>地域調達できる品目、最低ロット、価格、搬入条件は。</li><li>顧客、雇用、仕入、場所のうち実際に求める接点は何か。</li></ol>
+          </article>
+          <article class="question-card">
+            <span class="mini-label">OPERATOR &amp; CITY</span><h3>運営者・行政へ</h3>
+            <ol><li>夜間・休日の初動者と解決権限者を誰にするか。</li><li>災害時に寮へ期待できる役割・してはいけない役割は。</li><li>既存の多文化・地域・防災施策とどこで接続するか。</li><li>地域開放を行わなくても住宅事業が成立するか。</li></ol>
+          </article>
+        </div>
+        <div class="gate-grid" aria-label="次へ進むための判断条件">
+          <div class="gate"><strong>GATE 1</strong><p>直接聴取なしでは、「地域が望む」と発表しない。</p></div>
+          <div class="gate"><strong>GATE 2</strong><p>責任者・外部動線・終了時刻が決まるまで一般開放しない。</p></div>
+          <div class="gate"><strong>GATE 3</strong><p>重大事故または未処理苦情があれば、頻度・人数・公開範囲を戻す。</p></div>
+          <div class="gate"><strong>GATE 4</strong><p>既存施設と重複するなら、新設せず連携・派遣・会場提供へ変える。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">09 / SOURCES</span><h2>根拠と限界を<br>セットで残す</h2></div>
+          <p class="section-intro">公式資料と現況資料を優先しました。行政方針・他事例・事業者発表は、本計画への住民合意や需要を直接証明しません。</p>
+        </div>
+        <div class="source-grid">
+          <article class="source-card"><span class="mini-label">LOCAL VOICES · 2019</span><p><a href="https://www.city.ibaraki.osaka.jp/material/files/group/23/higashinara_WS01.pdf" target="_blank" rel="noopener noreferrer">茨木市・東奈良校区 地域活動ワークショップ資料</a><br>既存活動と担い手課題を確認。基礎アンケートは地域組織役員対象、東奈良24人で、現在の一般住民調査ではない。</p></article>
+          <article class="source-card"><span class="mini-label">EXISTING PLACE</span><p><a href="https://www.city.ibaraki.osaka.jp/kikou/shimin/chiikicommunity/menu/communitycenter/comisen_tuite/komisen/1427783855598.html" target="_blank" rel="noopener noreferrer">東奈良コミュニティセンター</a><br>南茨木駅から約400m、会議室・和室・実習室・100人収容の多目的室を確認。利用実績や空き時間は未確認。</p></article>
+          <article class="source-card"><span class="mini-label">EXISTING PLACE</span><p><a href="https://www.city.ibaraki.osaka.jp/shisetsu/hokenhukushi/rojin_minamiibaraki_s.html" target="_blank" rel="noopener noreferrer">南茨木多世代交流センター</a><br>高齢者の健康・相談と子ども世代との交流の既存拠点。寮との連携意思は未確認。</p></article>
+          <article class="source-card"><span class="mini-label">CITY POLICY</span><p><a href="https://www.city.ibaraki.osaka.jp/kikou/toshiseibi/toshiseisaku/menu/ritti/66289.html" target="_blank" rel="noopener noreferrer">茨木市都市計画マスタープラン</a><br>市民と共に創る方針を確認。南茨木の民間寮に公開空間を求める資料ではない。</p></article>
+          <article class="source-card"><span class="mini-label">CURRENT ACTION PLAN</span><p><a href="https://www.city.ibaraki.osaka.jp/material/files/group/13/dainikizisshikeikaku.pdf" target="_blank" rel="noopener noreferrer">第6次茨木市総合計画・第2期実施計画</a><br>地域活動の担い手・負担、地域と学生の連携、多文化・防災等の現行施策を確認。民間寮との協力合意ではない。</p></article>
+          <article class="source-card"><span class="mini-label">MULTICULTURAL SUPPORT</span><p><a href="https://www.city.ibaraki.osaka.jp/kikou/shimin/sojiji/news/66366.html" target="_blank" rel="noopener noreferrer">茨木市 多文化共生支援事業</a><br>生活者としての外国人、日本語学習、地域理解、居場所、支援者育成の既存事業を確認。重複ではなく接続先として扱う。</p></article>
+          <article class="source-card"><span class="mini-label">MULTILINGUAL LIFE</span><p><a href="https://www.city.ibaraki.osaka.jp/kikou/shimin/jinken/menu/Foreigners/index.html" target="_blank" rel="noopener noreferrer">茨木市 外国籍住民向け生活・防災情報</a><br>生活、防災、大雨、日本語学習等の公的情報。寮が独自翻訳する前の正本。</p></article>
+          <article class="source-card"><span class="mini-label">BICYCLE</span><p><a href="https://www.city.ibaraki.osaka.jp/office/hobun/reiki_int/reiki_honbun/k213RG00000328.html" target="_blank" rel="noopener noreferrer">茨木市 自転車等の放置防止に関する条例</a><br>駐輪需要を生じさせる施設側の責務を確認。計画の必要台数・配置は別途算定する。</p></article>
+          <article class="source-card"><span class="mini-label">WASTE</span><p><a href="https://www.city.ibaraki.osaka.jp/kurashi_tetsuzuki/gomi_shinyo/katei_gomi/53757.html" target="_blank" rel="noopener noreferrer">茨木市 家庭ごみの分け方・出し方</a><br>多言語資料を含む生活ルールの入口。事業系ごみや食堂ごみは運営形態に応じて別確認する。</p></article>
+          <article class="source-card"><span class="mini-label">WATER HAZARD</span><p><a href="https://www.city.ibaraki.osaka.jp/kikou/kensetsu/gesuidoshisetsu/menu/66663.html" target="_blank" rel="noopener noreferrer">茨木市 雨水出水浸水想定区域</a><br>内水・排水検討の公的入口。対象筆の浸水深、設備高さ、避難方法は未確定。</p></article>
+          <article class="source-card"><span class="mini-label">NOISE CONTEXT</span><p><a href="https://www.pref.osaka.lg.jp/documents/20050/r6_kankyou_monitoring_syousai.pdf" target="_blank" rel="noopener noreferrer">大阪府 2024年度環境モニタリング詳細</a><br>近隣道路の測定値は敷地境界値ではないため、24時間の現地測定を置き換えない。</p></article>
+          <article class="source-card"><span class="mini-label">POST-OCCUPANCY CASE</span><p><a href="https://www.cigr.co.jp/newsrelease/2026/08/initia_minamiibaraki_bousai/" target="_blank" rel="noopener noreferrer">隣接2物件の合同防災イベント</a><br>2026年6月実施・全戸マニュアル配布の事業者発表。参加人数、非参加者評価、継続成果は当該発表に記載なし。</p></article>
+          <article class="source-card"><span class="mini-label">EXISTING LARGE EVENT</span><p><a href="https://www.city.ibaraki.osaka.jp/kikou/kikaku/kikaku/event/64368.html" target="_blank" rel="noopener noreferrer">いばらき×立命館DAY 2026</a><br>市と大学の大規模地域イベントが既にあることを確認。寮は新設前に参加・出展の可能性を検討する。</p></article>
+          <article class="source-card"><span class="mini-label">FOOD SAFETY</span><p><a href="https://www.pref.osaka.lg.jp/o100110/shokuhin/kyoka/todoke.html" target="_blank" rel="noopener noreferrer">大阪府 食品営業届出制度</a><br>食の一般開放前に営業形態・食数・責任者・衛生管理を所管へ確認する入口。</p></article>
+          <article class="source-card"><span class="mini-label">CURRENT PROPERTY</span><p><a href="https://unilife.co.jp/view/12855/" target="_blank" rel="noopener noreferrer">コスモグラシア南茨木 募集情報</a><br>139室の現況確認。募集表示は地域評価や地域貢献の成果を示さない。</p></article>
+          <article class="source-card"><span class="mini-label">LOCAL ANALYSIS</span><p><a href="../../docs/site-surroundings-current-analysis.html">対象地・周辺環境の現況調査</a><br>住宅、病院、騒音、内水、視線、駐輪・搬入等を整理。敷地実測や住民聴取の完了を示す資料ではない。</p></article>
+          <article class="source-card"><span class="mini-label">PROJECT BASE</span><p><a href="../../proposal.html">現状案・SWOT分析</a><br>元の地域ニーズ候補と計画条件を確認。一般論だった項目は、本ページで事実・推論・仮説へ分解した。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-row"><span>WORKSHEET ②−④ · TEAM REVIEW</span><span>南茨木 / 東奈良 · 2026-09-04</span></div>
+  </footer>
+</body>
+</html>
