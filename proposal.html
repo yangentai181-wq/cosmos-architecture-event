@@ -323,6 +323,59 @@
       font-size: 0.88rem;
     }
 
+    .swot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .swot-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--navy);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .swot-card.weaknesses, .swot-card.threats { border-top-color: var(--open); }
+    .swot-card.opportunities { border-top-color: var(--verified); }
+    .swot-label {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .swot-card ul, .strategy-card ul {
+      margin: 0;
+      padding-left: 1.15em;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .swot-card li strong { color: var(--ink); }
+    .strategy-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 34px 0 16px;
+    }
+    .strategy-head h3 { margin-bottom: 0; font-size: 1.35rem; }
+    .strategy-head p { color: var(--muted); font-size: 0.78rem; }
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .strategy-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 253, 248, 0.72);
+    }
+    .strategy-card h4 { color: var(--open); font-size: 0.92rem; }
+
     .stakeholder {
       position: relative;
       overflow: hidden;
@@ -512,7 +565,8 @@
       .snapshot-item:nth-last-child(-n+2) { border-bottom: 0; }
       .section { padding: 54px 0; }
       .section-head { gap: 12px; margin-bottom: 26px; }
-      .grid-2, .grid-3, .grid-4, .logic-chain { grid-template-columns: 1fr; }
+      .grid-2, .grid-3, .grid-4, .logic-chain, .swot-grid, .strategy-grid { grid-template-columns: 1fr; }
+      .strategy-head { align-items: flex-start; flex-direction: column; gap: 4px; }
       .logic-step { min-height: auto; }
       .site-layout { gap: 14px; }
       .assumptions { grid-template-columns: repeat(2, 1fr); }
@@ -585,6 +639,7 @@
       <nav class="topnav" aria-label="ページ内ナビゲーション">
         <a href="#facts">前提</a>
         <a href="#logic">論理</a>
+        <a href="#swot">SWOT</a>
         <a href="#plan">計画</a>
         <a href="#finance">収益</a>
         <a href="#evidence">根拠</a>
@@ -709,10 +764,86 @@
       </div>
     </section>
 
+    <section class="section" id="swot">
+      <div class="page-shell">
+        <div class="section-head">
+          <div><span class="section-number">03 / SWOT</span><h2>強みと弱みを、<br>判断へ変える</h2></div>
+          <p class="section-intro">SWOTは、内部の強み・弱みと外部の機会・脅威を並べる分析。ここでは結論を正当化せず、現状案を次に進める条件と、止める条件を見える形にする。</p>
+        </div>
+        <div class="challenge"><strong>判断のスナップショット：</strong>社会課題との整合と交通利便性は強い。一方、土地代込みの収益、容積、需要の3点が未成立のため、現状のまま建設案を進める判断はできない。</div>
+        <div class="swot-grid">
+          <article class="swot-card strengths">
+            <span class="swot-label">S · Strengths / 強み</span>
+            <h3>コンセプトを支える内部資源</h3>
+            <ul>
+              <li><strong>2路線の駅近：</strong>阪急3分・モノレール5分という確認済みのアクセス。</li>
+              <li><strong>設備以外の差別化：</strong>住居に運営を組み合わせ、大学・地域を越える活動を商品価値にする構想。</li>
+              <li><strong>交流の段階設計：</strong>個室、小さなホーム、半公共空間を分け、参加を強制しない。</li>
+              <li><strong>弱点を開示：</strong>不採算、容積超過、需要未検証を明記しており、検討資料として修正しやすい。</li>
+            </ul>
+          </article>
+          <article class="swot-card weaknesses">
+            <span class="swot-label">W · Weaknesses / 弱み</span>
+            <h3>案の中にある未成立条件</h3>
+            <ul>
+              <li><strong>正式収益条件を未達：</strong>土地込みで回収約22.1年・利回り約4.53%。</li>
+              <li><strong>建築成立性が未確認：</strong>延床3,600㎡は単純容積360%で、指定300%を超える。</li>
+              <li><strong>需要を未検証：</strong>交流への関心、入居意向、価格ごとの支払意思を測れていない。</li>
+              <li><strong>利益前提が弱い：</strong>満室、運営費月150万円、付帯利益月100万円に算定根拠がない。</li>
+            </ul>
+          </article>
+          <article class="swot-card opportunities">
+            <span class="swot-label">O · Opportunities / 機会</span>
+            <h3>外部環境にある追い風</h3>
+            <ul>
+              <li><strong>行政課題との一致：</strong>茨木市が大学間の学生交流とコーディネーター育成を施策に置く。</li>
+              <li><strong>大きな接点母集団：</strong>OICは6学部・7研究科、学生・院生約1万人超。</li>
+              <li><strong>既存拠点と連携可能：</strong>地域施設や大学の事業を使い、新築前に運営仮説を試せる。</li>
+              <li><strong>設備競争の先：</strong>基本設備が似る市場では、活動実績や参加選択性を差別化しやすい。</li>
+            </ul>
+          </article>
+          <article class="swot-card threats">
+            <span class="swot-label">T · Threats / 脅威</span>
+            <h3>外部から成立を崩す要因</h3>
+            <ul>
+              <li><strong>139室の現行競合：</strong>課題と同じ土地表記を用いた募集資料がある学生会館が2026年に供給済み。</li>
+              <li><strong>新築なしでも解ける：</strong>交流課題は、市・大学の事業や既存施設でも対応できる。</li>
+              <li><strong>総生活費の競争：</strong>提案賃料の一部はOIC周辺の家賃・共益費平均を上回り、含有費用も未定義。</li>
+              <li><strong>地域開放との衝突：</strong>防犯、静穏、個人情報、近隣合意を運営で解けないと価値が逆転する。</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="strategy-head">
+          <h3>SWOTから戦略へ変換</h3>
+          <p>組み合わせごとに、次の一手を一つの方向へ絞る。</p>
+        </div>
+        <div class="strategy-grid">
+          <article class="strategy-card">
+            <h4>SO戦略 · 強み × 機会</h4>
+            <ul><li>駅近と行政施策を生かし、大学・市と小規模な大学横断プロジェクトを先行実施する。</li><li>設備ではなく参加率・継続率・入居意向を成果として示す。</li></ul>
+          </article>
+          <article class="strategy-card">
+            <h4>WO戦略 · 弱み × 機会</h4>
+            <ul><li>価格提示付き調査と仮申込から、室数・賃料・共用面積を逆算する。</li><li>容積300%以内を起点に、土地込み15年・7%を満たす案へ組み直す。</li></ul>
+          </article>
+          <article class="strategy-card">
+            <h4>ST戦略 · 強み × 脅威</h4>
+            <ul><li>既存139室物件と設備で競わず、活動実績・任意参加・静かな生活保証を契約と運営ルールにする。</li><li>食費・管理費・光熱費を含む月額総負担で比較する。</li></ul>
+          </article>
+          <article class="strategy-card">
+            <h4>WT戦略 · 弱み × 脅威</h4>
+            <ul><li>既存施設で運営実証し、需要と採算が確認できるまで大きな交流床を固定しない。</li><li>収益・容積・価格付き需要の一つでも未達なら、新築せず既存住宅と公共施設をつなぐ案へ切り替える。</li></ul>
+          </article>
+        </div>
+        <span class="source-note"><strong>判定根拠：</strong><a href="#facts">確認済み前提</a>、<a href="#finance">正式収益判定</a>、<a href="#evidence">公開情報と限界</a>。SWOT自体は成功の証明ではなく、2026年9月3日時点の判断整理。</span>
+      </div>
+    </section>
+
     <section class="section" id="value">
       <div class="page-shell">
         <div class="section-head">
-          <div><span class="section-number">03 / VALUE</span><h2>誰の何を<br>良くするか</h2></div>
+          <div><span class="section-number">04 / VALUE</span><h2>誰の何を<br>良くするか</h2></div>
           <p class="section-intro">交流そのものを目的にせず、それぞれが抱える現実的な不安や不足へ応答する。価値が両立しない場合は、まず居住者の安全と生活を優先する。</p>
         </div>
         <div class="grid-4">
@@ -743,7 +874,7 @@
     <section class="section" id="plan">
       <div class="page-shell">
         <div class="section-head">
-          <div><span class="section-number">04 / PLAN</span><h2>空間だけでなく、<br>運営まで設計する</h2></div>
+          <div><span class="section-number">05 / PLAN</span><h2>空間だけでなく、<br>運営まで設計する</h2></div>
           <p class="section-intro">交流を「広い共用部があれば起きる」とは考えない。公開範囲、時間、管理責任、参加のきっかけを空間と一緒に決める。</p>
         </div>
         <div class="grid-4">
@@ -778,7 +909,7 @@
     <section class="section" id="site">
       <div class="page-shell">
         <div class="section-head">
-          <div><span class="section-number">05 / SITE</span><h2>敷地図から<br>言える範囲</h2></div>
+          <div><span class="section-number">06 / SITE</span><h2>敷地図から<br>言える範囲</h2></div>
           <p class="section-intro">下図は対象地を読み取るための「用地詳細」であり、描かれている共同住宅の平面を今回の学生寮案として採用したものではない。</p>
         </div>
         <div class="site-layout">
@@ -810,7 +941,7 @@
     <section class="section" id="finance">
       <div class="page-shell">
         <div class="section-head">
-          <div><span class="section-number">06 / FINANCE</span><h2>正式要件では、<br>現状案は条件外</h2></div>
+          <div><span class="section-number">07 / FINANCE</span><h2>正式要件では、<br>現状案は条件外</h2></div>
           <p class="section-intro">配布説明資料は、土地と建物を合計した投資総額で回収年数と利回りを評価すると明記している。現状の数値案は15年・7%の両方を満たしていない。</p>
         </div>
         <aside class="finance-alert">
@@ -844,7 +975,7 @@
     <section class="section" id="evidence">
       <div class="page-shell">
         <div class="section-head">
-          <div><span class="section-number">07 / EVIDENCE</span><h2>根拠と、<br>根拠の限界</h2></div>
+          <div><span class="section-number">08 / EVIDENCE</span><h2>根拠と、<br>根拠の限界</h2></div>
           <p class="section-intro">公開情報は2026年9月3日時点の確認。リンクは事実の出典であり、企画の成功や需要を保証するものではない。</p>
         </div>
         <div class="evidence-list">
@@ -900,7 +1031,7 @@
     <section class="section" id="decisions">
       <div class="page-shell">
         <div class="section-head">
-          <div><span class="section-number">08 / NEXT DECISIONS</span><h2>次に、何を<br>決めるか</h2></div>
+          <div><span class="section-number">09 / NEXT DECISIONS</span><h2>次に、何を<br>決めるか</h2></div>
           <p class="section-intro">いま必要なのはコピーの磨き込みより、成立条件の確認。上から順に合意すると、平面と収益を無駄なく往復できる。</p>
         </div>
         <div class="grid-3">
