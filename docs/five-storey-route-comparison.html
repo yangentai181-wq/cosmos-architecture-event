@@ -1,0 +1,223 @@
+<section id="cfx-route-compare" aria-labelledby="cfx-title">
+  <style>
+    #cfx-route-compare {
+      display: grid;
+      gap: 1.25rem;
+      color: var(--foreground);
+      font-size: var(--font-size-base);
+    }
+    #cfx-route-compare * { box-sizing: border-box; }
+    #cfx-route-compare h2,
+    #cfx-route-compare h3,
+    #cfx-route-compare p { margin: 0; }
+    #cfx-route-compare .cfx-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .75rem;
+    }
+    #cfx-route-compare .cfx-state { color: var(--muted-foreground); }
+    #cfx-route-compare .cfx-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    #cfx-route-compare .cfx-route {
+      display: grid;
+      gap: .8rem;
+      min-width: 0;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 88%, transparent);
+    }
+    #cfx-route-compare .cfx-route-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: .5rem;
+    }
+    #cfx-route-compare .cfx-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .45rem;
+    }
+    #cfx-route-compare .cfx-metric {
+      min-width: 0;
+      padding: .55rem;
+      background: var(--muted);
+    }
+    #cfx-route-compare .cfx-metric span,
+    #cfx-route-compare .cfx-metric strong { display: block; }
+    #cfx-route-compare .cfx-metric span { color: var(--muted-foreground); }
+    #cfx-route-compare .cfx-metric strong { overflow-wrap: anywhere; }
+    #cfx-route-compare .cfx-stack {
+      display: grid;
+      gap: .22rem;
+      padding: .7rem;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--background) 88%, transparent);
+    }
+    #cfx-route-compare .cfx-floor {
+      display: grid;
+      place-items: center;
+      min-height: 2.55rem;
+      padding: .35rem;
+      color: var(--foreground);
+      background: color-mix(in srgb, var(--viz-series-3) 22%, transparent);
+    }
+    #cfx-route-compare .cfx-ground {
+      display: grid;
+      min-height: 3.25rem;
+    }
+    #cfx-route-compare .cfx-dorm-ground { grid-template-columns: 2fr 1.7fr 6.3fr; }
+    #cfx-route-compare .cfx-apartment-ground { grid-template-columns: 1.9fr 1.5fr 6.6fr; }
+    #cfx-route-compare .cfx-segment {
+      display: grid;
+      place-items: center;
+      min-width: 0;
+      padding: .35rem .2rem;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+    #cfx-route-compare .cfx-public {
+      background: color-mix(in srgb, var(--viz-series-1) 28%, transparent);
+    }
+    #cfx-route-compare .cfx-buffer {
+      background: color-mix(in srgb, var(--viz-series-2) 28%, transparent);
+    }
+    #cfx-route-compare .cfx-private {
+      background: color-mix(in srgb, var(--viz-series-3) 28%, transparent);
+    }
+    #cfx-route-compare .cfx-site {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: .25rem;
+      min-height: 3.6rem;
+    }
+    #cfx-route-compare .cfx-building,
+    #cfx-route-compare .cfx-open {
+      display: grid;
+      place-items: center;
+      padding: .4rem;
+      text-align: center;
+    }
+    #cfx-route-compare .cfx-building { background: var(--muted); }
+    #cfx-route-compare .cfx-open {
+      background: color-mix(in srgb, var(--viz-series-4) 22%, transparent);
+    }
+    #cfx-route-compare .cfx-apartment-site { grid-template-columns: minmax(0, 7.4fr) minmax(0, 2.6fr); }
+    #cfx-route-compare .cfx-capacity {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .5rem 1rem;
+      align-items: center;
+      padding-top: .7rem;
+      border-top: 1px solid var(--border);
+    }
+    #cfx-route-compare .cfx-capacity strong { text-align: right; }
+    #cfx-route-compare .cfx-negative { color: var(--destructive); }
+    #cfx-route-compare .cfx-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem 1rem;
+      color: var(--muted-foreground);
+    }
+    #cfx-route-compare .cfx-key { display: inline-flex; align-items: center; gap: .35rem; }
+    #cfx-route-compare .cfx-swatch { width: .8rem; height: .8rem; }
+    #cfx-route-compare .cfx-key:nth-child(1) .cfx-swatch { background: var(--viz-series-1); }
+    #cfx-route-compare .cfx-key:nth-child(2) .cfx-swatch { background: var(--viz-series-2); }
+    #cfx-route-compare .cfx-key:nth-child(3) .cfx-swatch { background: var(--viz-series-3); }
+    #cfx-route-compare .cfx-key:nth-child(4) .cfx-swatch { background: var(--viz-series-4); }
+    #cfx-route-compare .cfx-foot { color: var(--muted-foreground); }
+    @media (max-width: 720px) {
+      #cfx-route-compare .cfx-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 420px) {
+      #cfx-route-compare .cfx-metrics { grid-template-columns: 1fr; }
+      #cfx-route-compare .cfx-dorm-ground,
+      #cfx-route-compare .cfx-apartment-ground { grid-template-columns: 1fr; }
+      #cfx-route-compare .cfx-segment { min-height: 2.5rem; }
+    }
+  </style>
+
+  <div class="cfx-head">
+    <h2 id="cfx-title">5階案｜用途で変わる床・外構・収支</h2>
+    <p class="cfx-state">行政確認前の比較仮説</p>
+  </div>
+
+  <div class="cfx-legend" aria-label="色分け">
+    <span class="cfx-key"><span class="cfx-swatch"></span>公開</span>
+    <span class="cfx-key"><span class="cfx-swatch"></span>緩衝・管理</span>
+    <span class="cfx-key"><span class="cfx-swatch"></span>居住者専用</span>
+    <span class="cfx-key"><span class="cfx-swatch"></span>地上の残余</span>
+  </div>
+
+  <div class="cfx-grid">
+    <article class="cfx-route" aria-labelledby="cfx-dorm-title">
+      <div class="cfx-route-head">
+        <h3 id="cfx-dorm-title">寄宿舎ルート</h3>
+        <span>共用生活を優先</span>
+      </div>
+      <div class="cfx-metrics">
+        <div class="cfx-metric"><span>総延床</span><strong>3,000㎡</strong></div>
+        <div class="cfx-metric"><span>比較室数</span><strong>91室</strong></div>
+        <div class="cfx-metric"><span>土地込利回り</span><strong>2.84%</strong></div>
+      </div>
+      <div class="cfx-stack" aria-label="寄宿舎ルートの5階積層概念">
+        <div class="cfx-floor">5F　個室＋小ユニット</div>
+        <div class="cfx-floor">4F　個室＋小ユニット</div>
+        <div class="cfx-floor">3F　個室＋小ユニット</div>
+        <div class="cfx-floor">2F　個室＋小ユニット</div>
+        <div class="cfx-ground cfx-dorm-ground">
+          <span class="cfx-segment cfx-public">公開</span>
+          <span class="cfx-segment cfx-buffer">管理</span>
+          <span class="cfx-segment cfx-private">居住支援</span>
+        </div>
+      </div>
+      <div class="cfx-site" aria-label="敷地1000平方メートルに対する建築面積と残余">
+        <span class="cfx-building">建築面積 600㎡</span>
+        <span class="cfx-open">残余 400㎡</span>
+      </div>
+      <div class="cfx-capacity">
+        <span>車・自転車の区画だけ</span><strong>約300㎡</strong>
+        <span>前庭・車路等に残る上限</span><strong>約100㎡</strong>
+        <span>7%に必要な月額/室</span><strong>約17.5万円</strong>
+      </div>
+    </article>
+
+    <article class="cfx-route" aria-labelledby="cfx-apartment-title">
+      <div class="cfx-route-head">
+        <h3 id="cfx-apartment-title">共同住宅ルート</h3>
+        <span>独立住戸を優先</span>
+      </div>
+      <div class="cfx-metrics">
+        <div class="cfx-metric"><span>総延床</span><strong>3,540㎡</strong></div>
+        <div class="cfx-metric"><span>比較戸数</span><strong>99戸</strong></div>
+        <div class="cfx-metric"><span>土地込利回り</span><strong>2.95%</strong></div>
+      </div>
+      <div class="cfx-stack" aria-label="共同住宅ルートの5階積層概念">
+        <div class="cfx-floor">5F　独立住戸＋共用LDK</div>
+        <div class="cfx-floor">4F　独立住戸＋共用LDK</div>
+        <div class="cfx-floor">3F　独立住戸＋共用LDK</div>
+        <div class="cfx-floor">2F　独立住戸＋共用LDK</div>
+        <div class="cfx-ground cfx-apartment-ground">
+          <span class="cfx-segment cfx-public">公開</span>
+          <span class="cfx-segment cfx-buffer">管理</span>
+          <span class="cfx-segment cfx-private">居住支援</span>
+        </div>
+      </div>
+      <div class="cfx-site cfx-apartment-site" aria-label="敷地1000平方メートルに対する建築面積と残余">
+        <span class="cfx-building">建築面積 740㎡</span>
+        <span class="cfx-open">残余 260㎡</span>
+      </div>
+      <div class="cfx-capacity">
+        <span>車・自転車の区画だけ</span><strong>約319㎡</strong>
+        <span>前庭・車路等に残る上限</span><strong class="cfx-negative">約−59㎡</strong>
+        <span>7%に必要な月額/戸</span><strong>約17.3万円</strong>
+      </div>
+    </article>
+  </div>
+
+  <p class="cfx-foot">敷地全体へ容積率300%を適用できる仮定。車路・消防・ごみ・植栽・地域利用分は未加算。用途地域境界、用途、容積不算入、端数処理は茨木市への確認前。</p>
+</section>

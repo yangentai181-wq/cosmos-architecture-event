@@ -271,8 +271,8 @@
 
 ### 配布資料
 
-- [Step1-b 開発関連情報シート](https://docs.google.com/presentation/d/1Kx_7bcefBPE_plk1ypSPkehMnyDV8Yt1eqUmVZmbq4E)
-- [Step1-c コンセプト策定ワークシート](https://docs.google.com/presentation/d/1Qk10Znac_u2vDwRUcI3NV3ol8lbqbGFXTF-ay4umaAQ)
+- 非公開共有Slides「Step1-b 開発関連情報シート」
+- 非公開共有Slides「Step1-c コンセプト策定ワークシート」
 - Google Drive内「敷地図 A3 1:200」「用地詳細 A3 1:250」
 
 ### 交通・大学

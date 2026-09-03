@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="南茨木で計画中の国内留学型学生寮について、通い・下宿・保護者の選択を価格付きで確かめるローカル需要テスト。">
+  <title>お互いが、留学先｜需要テスト</title>
+  <style>
+    :root {
+      --ink: #142d37;
+      --muted: #627176;
+      --paper: #f3eee3;
+      --surface: #fffdf8;
+      --line: #c9c0b1;
+      --teal: #226475;
+      --teal-soft: #deecee;
+      --gold: #d8ae54;
+      --orange: #974a2d;
+      --orange-soft: #f3e1d7;
+      --green: #2b705d;
+      --max: 1080px;
+      --shadow: 0 18px 50px rgba(20,45,55,.09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; line-height: 1.72; }
+    a { color: inherit; text-underline-offset: .2em; }
+    button, input, select, textarea { font: inherit; }
+    .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .topbar { color: #fff; background: var(--ink); }
+    .topbar .shell { min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 16px; font-size: .82rem; }
+    .hero { padding: 78px 0 64px; color: #fff; background: radial-gradient(circle at 82% 18%, rgba(216,174,84,.25), transparent 25rem), linear-gradient(135deg, #173a47, #112a34); border-bottom: 8px solid var(--gold); }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: end; }
+    .eyebrow, .section-number { font-size: .73rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow { color: #e6cb8d; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin: 14px 0 22px; font-size: clamp(2.6rem, 6.4vw, 5.4rem); line-height: 1.02; letter-spacing: -.05em; }
+    .hero p { color: rgba(255,255,255,.84); font-size: 1.07rem; }
+    .hero-note { padding: 24px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); }
+    .hero-note strong { display: block; margin: 8px 0; color: #e6cb8d; font-size: 1.35rem; }
+    .section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .section:nth-of-type(even) { background: rgba(255,253,248,.55); }
+    .section-head { display: grid; grid-template-columns: .75fr 1.25fr; gap: 40px; align-items: end; margin-bottom: 30px; }
+    .section-number { color: var(--orange); }
+    h2 { margin: 7px 0 0; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.08; letter-spacing: -.035em; }
+    .lead { margin-bottom: 0; color: var(--muted); }
+    .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .card { padding: 25px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .offer { border-top: 5px solid var(--teal); }
+    .offer:nth-child(2) { border-top-color: var(--gold); }
+    .offer:nth-child(3) { border-top-color: var(--orange); }
+    .offer strong { display: block; margin: 9px 0; color: var(--teal); font-size: 1.35rem; }
+    .survey { padding: clamp(24px, 4vw, 42px); background: var(--surface); border: 2px solid var(--ink); box-shadow: var(--shadow); }
+    fieldset { margin: 0 0 24px; padding: 0; border: 0; }
+    legend { margin-bottom: 12px; font-weight: 900; }
+    .choice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+    .choice { display: flex; gap: 10px; align-items: flex-start; padding: 13px 14px; background: #f7f4ec; border: 1px solid var(--line); cursor: pointer; }
+    .choice:has(input:checked) { background: var(--teal-soft); border-color: var(--teal); }
+    .choice input { margin-top: .35em; accent-color: var(--teal); }
+    select, textarea { width: 100%; padding: 12px; color: var(--ink); background: #fff; border: 1px solid #9da8aa; }
+    textarea { min-height: 100px; resize: vertical; }
+    button { padding: 13px 20px; color: #fff; background: var(--teal); border: 0; font-weight: 900; cursor: pointer; }
+    button:hover { background: #174d5a; }
+    .result { min-height: 58px; margin-top: 18px; padding: 15px 18px; background: var(--teal-soft); border-left: 5px solid var(--teal); }
+    .test-note { margin-bottom: 24px; padding: 15px 18px; background: var(--orange-soft); border-left: 5px solid var(--orange); }
+    .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .metric { box-shadow: none; }
+    .metric strong { display: block; color: var(--teal); font-size: 1.35rem; }
+    .privacy { padding: 24px; color: #fff; background: var(--ink); }
+    .source { color: var(--muted); font-size: .78rem; }
+    .footer { padding: 34px 0; color: rgba(255,255,255,.78); background: var(--ink); font-size: .8rem; }
+    @media (max-width: 820px) {
+      .hero-grid, .section-head, .offer-grid, .metric-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .shell { width: min(calc(100% - 24px), var(--max)); }
+      .topbar .shell { align-items: flex-start; flex-direction: column; padding-block: 13px; }
+      .hero { padding: 48px 0 42px; }
+      .section { padding: 52px 0; }
+      .choice-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .topbar, button, .result { display: none; }
+      body { background: #fff; font-size: 10pt; }
+      .hero { padding: 24px 0; color: #000; background: #fff; border-bottom: 2px solid #000; }
+      .hero p, .eyebrow { color: #000; }
+      .section { padding: 28px 0; break-inside: avoid; }
+      .card, .survey { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell">
+      <strong>お互いが、留学先。</strong>
+      <nav aria-label="関連資料"><a href="../validation/">内部検証モデル</a><a href="../needs/">ニーズ分析</a><a href="../proposal.html">提案本編</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <span class="eyebrow">Minami-Ibaraki Living Lab</span>
+          <h1>海外へ行く前に、<br>日常を越境する。</h1>
+          <p>南茨木で計画中の、留学生と国内学生が生活を通して学ぶ住まい。興味ではなく、時間・価格・部屋条件を示した時に選ばれるかを確かめるための試作画面です。</p>
+        </div>
+        <aside class="hero-note"><span class="eyebrow">計画段階</span><strong>まだ入居募集ではありません</strong><p>以下は需要調査用の選択肢です。契約、料金、開業を約束するものではありません。</p></aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head"><div><span class="section-number">00 / CHOOSE</span><h2>三つの<br>参加方法</h2></div><p class="lead">通い、短期滞在、下宿を混ぜずに測ります。表示価格は支払意思を測る実験条件です。</p></div>
+        <div class="offer-grid">
+          <article class="card offer"><span class="section-number">COMMUTER</span><strong>通い型</strong><p>平日夜・週末に英語と多文化活動へ参加。1回ごとの支払意思と2回目参加を測る。</p></article>
+          <article class="card offer"><span class="section-number">SHORT STAY</span><strong>1〜2週間</strong><p>休暇中に生活を含めて試す。下宿を決める前の体験と短期需要を測る。</p></article>
+          <article class="card offer"><span class="section-number">RESIDENT</span><strong>下宿型</strong><p>学期・年単位で生活。住居の基本条件と交流価値を分けて選んでもらう。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="commuter">
+      <div class="shell">
+        <div class="section-head"><div><span class="section-number">01 / COMMUTER</span><h2>通い型の<br>選択</h2></div><p class="lead">私立文系の自宅生を中心に、具体的な日時と金額で初回・反復需要を確認します。</p></div>
+        <form class="survey" data-local-only data-segment="commuter">
+          <p class="test-note">想定: 南茨木駅から徒歩圏、平日19:00〜21:00または土曜。1回2時間。</p>
+          <fieldset><legend>1回あたり、実際に払える上限は？</legend><div class="choice-grid">
+            <label class="choice"><input type="radio" name="commuter_price" value="0" required>無料なら参加</label>
+            <label class="choice"><input type="radio" name="commuter_price" value="1000">1,000円</label>
+            <label class="choice"><input type="radio" name="commuter_price" value="2500">2,500円</label>
+            <label class="choice"><input type="radio" name="commuter_price" value="5000">5,000円</label>
+          </div></fieldset>
+          <fieldset><legend>参加できる頻度は？</legend><div class="choice-grid">
+            <label class="choice"><input type="radio" name="commuter_frequency" value="weekly" required>週1回</label>
+            <label class="choice"><input type="radio" name="commuter_frequency" value="twice_month">月2回</label>
+            <label class="choice"><input type="radio" name="commuter_frequency" value="monthly">月1回</label>
+            <label class="choice"><input type="radio" name="commuter_frequency" value="single">1回だけ</label>
+          </div></fieldset>
+          <fieldset><legend>最も参加したい内容は？</legend><select name="commuter_program" required><option value="">選択してください</option><option value="language">英語・日本語の会話</option><option value="food">各国の料理</option><option value="career">留学・キャリア準備</option><option value="community">地域活動・防災</option></select></fieldset>
+          <button type="button" data-event="commuter_survey_complete">回答内容を確認</button>
+          <p class="result" aria-live="polite">まだ回答されていません。</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="resident">
+      <div class="shell">
+        <div class="section-head"><div><span class="section-number">02 / RESIDENT</span><h2>下宿型の<br>選択</h2></div><p class="lead">「国際交流に興味があるか」ではなく、同じ価格条件でどの住まいを選ぶかを確認します。</p></div>
+        <form class="survey" data-local-only data-segment="resident">
+          <p class="test-note">月額総費用は、家賃・管理費・光熱・ネット・食費を含む上限として回答してください。</p>
+          <fieldset><legend>月額総費用の上限は？</legend><div class="choice-grid">
+            <label class="choice"><input type="radio" name="resident_budget" value="70000" required>7万円まで（年84万円）</label>
+            <label class="choice"><input type="radio" name="resident_budget" value="90000">9万円まで（年108万円）</label>
+            <label class="choice"><input type="radio" name="resident_budget" value="110000">11万円まで（年132万円）</label>
+            <label class="choice"><input type="radio" name="resident_budget" value="130000">13万円まで（年156万円）</label>
+            <label class="choice"><input type="radio" name="resident_budget" value="150000">15万円まで（年180万円）</label>
+            <label class="choice"><input type="radio" name="resident_budget" value="170000">17万円まで（年204万円）</label>
+            <label class="choice"><input type="radio" name="resident_budget" value="over190000">19万円超も検討（年228万円超）</label>
+          </div></fieldset>
+          <fieldset><legend>初年度一時費用の上限は？</legend><p class="test-note">入館金・保証・保険・契約事務・引越し等を含む、月額以外の初年度負担です。</p><div class="choice-grid">
+            <label class="choice"><input type="radio" name="resident_initial_cost" value="100000" required>10万円まで</label>
+            <label class="choice"><input type="radio" name="resident_initial_cost" value="200000">20万円まで</label>
+            <label class="choice"><input type="radio" name="resident_initial_cost" value="300000">30万円まで</label>
+            <label class="choice"><input type="radio" name="resident_initial_cost" value="over500000">50万円超も検討</label>
+          </div></fieldset>
+          <fieldset><legend>同じ立地なら、どの部屋を選ぶ？</legend><div class="choice-grid">
+            <label class="choice"><input type="radio" name="resident_room" value="private_unit" required>個室＋6〜8人の共用リビング</label>
+            <label class="choice"><input type="radio" name="resident_room" value="shared_discount">2人寝室＋月1万円割引</label>
+            <label class="choice"><input type="radio" name="resident_room" value="private_1k">完全な個室1K</label>
+            <label class="choice"><input type="radio" name="resident_room" value="none">どれも選ばない</label>
+          </div></fieldset>
+          <fieldset><legend>次に進むとしたら？</legend><div class="choice-grid">
+            <label class="choice"><input type="radio" name="resident_commitment" value="info" required>詳しい情報だけ受け取る</label>
+            <label class="choice"><input type="radio" name="resident_commitment" value="paid_trial">有料体験に参加する</label>
+            <label class="choice"><input type="radio" name="resident_commitment" value="deposit">条件が合えば返金可能な予約金を払う</label>
+            <label class="choice"><input type="radio" name="resident_commitment" value="no">現時点では進まない</label>
+          </div></fieldset>
+          <button type="button" data-event="resident_survey_complete">回答内容を確認</button>
+          <p class="result" aria-live="polite">まだ回答されていません。</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="parent">
+      <div class="shell">
+        <div class="section-head"><div><span class="section-number">03 / PARENT</span><h2>保護者の<br>選択</h2></div><p class="lead">学生本人と費用負担者の判断は分けて測ります。安全・食事・総費用を同時に提示します。</p></div>
+        <form class="survey" data-local-only data-segment="parent">
+          <fieldset><legend>最も重視する条件は？</legend><select name="parent_priority" required><option value="">選択してください</option><option value="total_cost">年間総費用</option><option value="safety">24時間の安全・相談体制</option><option value="food">食事と健康</option><option value="privacy">個室性</option><option value="growth">語学・異文化経験</option></select></fieldset>
+          <fieldset><legend>月額総費用の上限は？</legend><div class="choice-grid">
+            <label class="choice"><input type="radio" name="parent_budget" value="70000" required>7万円まで（年84万円）</label>
+            <label class="choice"><input type="radio" name="parent_budget" value="90000">9万円まで（年108万円）</label>
+            <label class="choice"><input type="radio" name="parent_budget" value="110000">11万円まで（年132万円）</label>
+            <label class="choice"><input type="radio" name="parent_budget" value="130000">13万円まで（年156万円）</label>
+            <label class="choice"><input type="radio" name="parent_budget" value="150000">15万円まで（年180万円）</label>
+            <label class="choice"><input type="radio" name="parent_budget" value="170000">17万円まで（年204万円）</label>
+            <label class="choice"><input type="radio" name="parent_budget" value="over190000">19万円超も検討（年228万円超）</label>
+          </div></fieldset>
+          <fieldset><legend>初年度一時費用の上限は？</legend><p class="test-note">入館金・保証・保険・契約事務・引越し等を含む、月額以外の初年度負担です。</p><div class="choice-grid">
+            <label class="choice"><input type="radio" name="parent_initial_cost" value="100000" required>10万円まで</label>
+            <label class="choice"><input type="radio" name="parent_initial_cost" value="200000">20万円まで</label>
+            <label class="choice"><input type="radio" name="parent_initial_cost" value="300000">30万円まで</label>
+            <label class="choice"><input type="radio" name="parent_initial_cost" value="over500000">50万円超も検討</label>
+          </div></fieldset>
+          <fieldset><legend>予約判断に必要なものは？</legend><div class="choice-grid">
+            <label class="choice"><input type="checkbox" name="parent_proof" value="cost">年間費用の明細</label>
+            <label class="choice"><input type="checkbox" name="parent_proof" value="security">管理・緊急対応の説明</label>
+            <label class="choice"><input type="checkbox" name="parent_proof" value="tour">現地見学・体験宿泊</label>
+            <label class="choice"><input type="checkbox" name="parent_proof" value="university">大学との連携確認</label>
+          </div></fieldset>
+          <button type="button" data-event="parent_survey_complete">回答内容を確認</button>
+          <p class="result" aria-live="polite">まだ回答されていません。</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="measurement">
+      <div class="shell">
+        <div class="section-head"><div><span class="section-number">04 / MEASUREMENT</span><h2>見るべき<br>数字</h2></div><p class="lead">閲覧数ではなく、価格を見た後の行動を段階で記録します。公開時に分析基盤へ接続するイベント名を先に固定します。</p></div>
+        <div class="metric-grid">
+          <article class="card metric"><strong>初回有料参加</strong><p><code>paid_trial_start</code>。無料申込と分ける。</p></article>
+          <article class="card metric"><strong>2回目参加</strong><p><code>repeat_paid_visit</code>。通い型の継続需要。</p></article>
+          <article class="card metric"><strong>予約金意思</strong><p><code>refundable_deposit_intent</code>。下宿型の強い意向。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <div class="shell">
+        <div class="privacy"><h2>このローカル版は回答を送信・保存しません</h2><p>氏名、メール、電話番号、住所は収集しません。公開調査では、利用目的、保存期間、問い合わせ先を明示し、個人情報を取る場合は別の同意画面を設けます。</p></div>
+        <p class="source">参考: <a href="https://www.jasso.go.jp/statistics/gakusei_chosa/__icsFiles/afieldfile/2024/11/12/houkoku22_all.pdf">JASSO学生生活調査</a>、<a href="https://unilife.co.jp/view/12855">南茨木の学生会館募集情報</a>。本画面の料金は調査用で、営業条件ではありません。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="shell">需要検証プロトタイプ｜公開・募集・個人情報収集は未実施</div></footer>
+  <script>
+    document.querySelectorAll("form[data-local-only]").forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+      form.querySelector("button[data-event]").addEventListener("click", () => {
+        if (!form.reportValidity()) return;
+        const data = new FormData(form);
+        const choices = [...data.entries()].map(([key, value]) => `${key}: ${value}`);
+        form.querySelector(".result").textContent = `ローカル確認: ${choices.join(" / ")}。回答は送信・保存されていません。`;
+        document.dispatchEvent(new CustomEvent("demand-test", {
+          detail: { segment: form.dataset.segment, event: "survey_complete" },
+        }));
+      });
+    });
+  </script>
+</body>
+</html>

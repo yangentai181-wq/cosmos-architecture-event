@@ -1,0 +1,221 @@
+<section id="cosmos-zoning-comparison" aria-labelledby="cosmos-zoning-title">
+  <style>
+    #cosmos-zoning-comparison {
+      box-sizing: border-box;
+      color: var(--foreground);
+      font-size: var(--font-size-base);
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      width: 100%;
+    }
+    #cosmos-zoning-comparison .cz-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+    #cosmos-zoning-comparison h2,
+    #cosmos-zoning-comparison p,
+    #cosmos-zoning-comparison figure {
+      margin: 0;
+    }
+    #cosmos-zoning-comparison .cz-note {
+      color: var(--muted-foreground);
+    }
+    #cosmos-zoning-comparison .cz-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+    #cosmos-zoning-comparison .cz-key {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    #cosmos-zoning-comparison .cz-swatch {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 0.2rem;
+    }
+    #cosmos-zoning-comparison .cz-public { background: var(--viz-series-1); }
+    #cosmos-zoning-comparison .cz-buffer { background: var(--viz-series-2); }
+    #cosmos-zoning-comparison .cz-private { background: var(--viz-series-3); }
+    #cosmos-zoning-comparison .cz-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 100%;
+      min-width: 0;
+      width: 100%;
+    }
+    #cosmos-zoning-comparison figure {
+      min-width: 0;
+    }
+    #cosmos-zoning-comparison figcaption {
+      min-height: 3.5rem;
+      margin-bottom: 0.35rem;
+    }
+    #cosmos-zoning-comparison figcaption strong,
+    #cosmos-zoning-comparison figcaption span {
+      display: block;
+    }
+    #cosmos-zoning-comparison figcaption span {
+      color: var(--muted-foreground);
+    }
+    #cosmos-zoning-comparison svg {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.45rem;
+    }
+    #cosmos-zoning-comparison .cz-site {
+      fill: var(--background);
+      stroke: var(--border);
+      stroke-width: 2;
+    }
+    #cosmos-zoning-comparison .cz-zone-public {
+      fill: var(--viz-series-1);
+      fill-opacity: 0.28;
+      stroke: var(--viz-series-1);
+      stroke-width: 2;
+    }
+    #cosmos-zoning-comparison .cz-zone-buffer {
+      fill: var(--viz-series-2);
+      fill-opacity: 0.26;
+      stroke: var(--viz-series-2);
+      stroke-width: 2;
+    }
+    #cosmos-zoning-comparison .cz-zone-private {
+      fill: var(--viz-series-3);
+      fill-opacity: 0.24;
+      stroke: var(--viz-series-3);
+      stroke-width: 2;
+    }
+    #cosmos-zoning-comparison .cz-route-public {
+      fill: none;
+      stroke: var(--viz-series-1);
+      stroke-width: 4;
+    }
+    #cosmos-zoning-comparison .cz-route-private {
+      fill: none;
+      stroke: var(--viz-series-3);
+      stroke-width: 4;
+    }
+    #cosmos-zoning-comparison .cz-risk {
+      fill: none;
+      stroke: var(--destructive);
+      stroke-width: 3;
+      stroke-dasharray: 7 5;
+    }
+    #cosmos-zoning-comparison svg text {
+      fill: var(--foreground);
+      font-size: 12px;
+    }
+    #cosmos-zoning-comparison svg .cz-secondary {
+      fill: var(--muted-foreground);
+      font-size: 11px;
+    }
+    #cosmos-zoning-comparison .cz-tradeoff {
+      margin-top: 0.4rem;
+      color: var(--muted-foreground);
+    }
+    #cosmos-zoning-comparison .cz-rec {
+      color: var(--foreground);
+      font-weight: 500;
+    }
+    @media (max-width: 760px) {
+      #cosmos-zoning-comparison .cz-grid {
+        grid-template-columns: 1fr;
+      }
+      #cosmos-zoning-comparison figure,
+      #cosmos-zoning-comparison svg {
+        max-width: 100%;
+        width: 100%;
+      }
+      #cosmos-zoning-comparison figcaption {
+        min-height: 0;
+      }
+    }
+  </style>
+
+  <div class="cz-head">
+    <h2 id="cosmos-zoning-title">公開・緩衝・居住ゾーンの比較</h2>
+    <p class="cz-note">敷地形状・入口位置・面積は未確定の概念図</p>
+  </div>
+
+  <div class="cz-legend" aria-label="ゾーン凡例">
+    <span class="cz-key"><span class="cz-swatch cz-public" aria-hidden="true"></span>公開</span>
+    <span class="cz-key"><span class="cz-swatch cz-buffer" aria-hidden="true"></span>緩衝・管理</span>
+    <span class="cz-key"><span class="cz-swatch cz-private" aria-hidden="true"></span>居住者専用</span>
+  </div>
+
+  <div class="cz-grid">
+    <figure>
+      <figcaption>
+        <strong>A｜街路沿いの公開帯</strong>
+        <span>活動を街へ連続して見せる</span>
+      </figcaption>
+      <svg viewBox="0 0 300 250" role="img" aria-label="街路沿いへ公開ゾーンを帯状に置き、その奥に緩衝ゾーンと居住ゾーンを並べる案">
+        <path class="cz-site" d="M28 24 L262 18 L282 214 L45 232 Z" />
+        <path class="cz-zone-private" d="M38 34 L252 29 L262 139 L53 153 Z" />
+        <path class="cz-zone-buffer" d="M53 153 L262 139 L270 174 L49 190 Z" />
+        <path class="cz-zone-public" d="M49 190 L270 174 L277 209 L47 226 Z" />
+        <path class="cz-route-public" d="M188 245 L189 207" />
+        <path class="cz-route-private" d="M25 213 L72 176 L76 91" />
+        <text x="112" y="92">居住</text>
+        <text x="121" y="168">管理・防音</text>
+        <text x="122" y="207">公開活動</text>
+        <text class="cz-secondary" x="104" y="244">街・駅からの接近</text>
+      </svg>
+      <p class="cz-tradeoff">街への顔は強いが、公開床が長くなり、面積と運営負担が増えやすい。</p>
+    </figure>
+
+    <figure>
+      <figcaption>
+        <strong>B｜角の交流核</strong>
+        <span class="cz-rec">暫定推奨：小さく開き、動線を分ける</span>
+      </figcaption>
+      <svg viewBox="0 0 300 250" role="img" aria-label="街側の角に小さな公開ゾーンを置き、管理ゾーンを挟んで居住ゾーンを奥にまとめる案">
+        <path class="cz-site" d="M28 24 L262 18 L282 214 L45 232 Z" />
+        <path class="cz-zone-private" d="M38 34 L252 29 L266 165 L142 174 L92 210 L47 222 Z" />
+        <path class="cz-zone-buffer" d="M170 150 L266 142 L276 204 L206 210 L145 177 Z" />
+        <path class="cz-zone-public" d="M206 174 L276 166 L280 210 L210 218 Z" />
+        <path class="cz-route-public" d="M253 245 L248 210" />
+        <path class="cz-route-private" d="M25 213 L77 176 L79 84" />
+        <text x="102" y="94">居住</text>
+        <text x="171" y="166">管理</text>
+        <text x="220" y="199">公開</text>
+        <text class="cz-secondary" x="190" y="244">街・駅からの接近</text>
+        <text class="cz-secondary" x="16" y="202">帰宅動線</text>
+      </svg>
+      <p class="cz-tradeoff">公開範囲を絞って実証しやすく、非参加の居住者も別動線で帰宅できる。</p>
+    </figure>
+
+    <figure>
+      <figcaption>
+        <strong>C｜中庭まで開く</strong>
+        <span>交流を建物内部へ引き込む</span>
+      </figcaption>
+      <svg viewBox="0 0 300 250" role="img" aria-label="中央の公開中庭へ街からの動線を引き込み、居住ゾーンがその周囲を囲む案">
+        <path class="cz-site" d="M28 24 L262 18 L282 214 L45 232 Z" />
+        <path class="cz-zone-private" d="M38 34 L252 29 L269 203 L47 222 Z" />
+        <path class="cz-zone-buffer" d="M122 77 L207 72 L219 171 L130 178 Z" />
+        <path class="cz-zone-public" d="M141 94 L192 91 L201 153 L147 158 Z" />
+        <path class="cz-route-public" d="M197 245 L177 155" />
+        <path class="cz-route-private" d="M25 213 L76 176 L78 83" />
+        <path class="cz-risk" d="M211 229 L187 173 L177 155" />
+        <text x="65" y="87">居住</text>
+        <text x="151" y="129">公開中庭</text>
+        <text class="cz-secondary" x="182" y="218">公開動線が奥へ入る</text>
+      </svg>
+      <p class="cz-tradeoff">交流の象徴性は高いが、防犯・騒音・夜間閉鎖・避難の調整が最も難しい。</p>
+    </figure>
+  </div>
+</section>

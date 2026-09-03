@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">7個室と共有リビングを持つ3ユニットの上階比較図</title>
+  <desc id="desc">共有シートを継承し、上階可用510平方メートルに、7個室、共有リビング 24.5㎡、キッチン水回りを持つ約158.07平方メートルのユニットを3つ置き、配置余裕35.8平方メートルを残す比較用概念図。</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #142633; }
+      .title { font-size: 30px; font-weight: 900; }
+      .label { font-size: 18px; font-weight: 850; }
+      .small { font-size: 14px; fill: #596970; }
+      .tiny { font-size: 12px; fill: #596970; }
+      .room { fill: #dce9e9; stroke: #176b61; stroke-width: 2; }
+      .living { fill: #f8e2dc; stroke: #ba4934; stroke-width: 2.5; }
+      .service { fill: #f4ead2; stroke: #8a6218; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="700" rx="28" fill="#fffdf8"/>
+  <text x="48" y="58" class="title">7個室＋共有リビング｜上階3ユニットの比較枝</text>
+  <text x="48" y="88" class="small">共有シート継承値の検証用。壁厚、柱、設備シャフト、窓、避難、防火区画を確定する平面図ではない。</text>
+
+  <g transform="translate(48 128)">
+    <rect x="0" y="0" width="890" height="468" rx="18" fill="#f7f4ec" stroke="#142633" stroke-width="4"/>
+    <text x="24" y="36" class="label">上階可用510㎡（600㎡ − 廊下等90㎡）</text>
+
+    <g transform="translate(24 64)">
+      <rect x="0" y="0" width="260" height="360" rx="12" fill="#fff" stroke="#142633" stroke-width="2"/>
+      <text x="16" y="28" class="label">UNIT A｜約158.07㎡</text>
+      <rect x="16" y="48" width="66" height="66" class="room"/><rect x="97" y="48" width="66" height="66" class="room"/><rect x="178" y="48" width="66" height="66" class="room"/>
+      <rect x="16" y="129" width="66" height="66" class="room"/><rect x="178" y="129" width="66" height="66" class="room"/>
+      <rect x="16" y="210" width="66" height="66" class="room"/><rect x="178" y="210" width="66" height="66" class="room"/>
+      <rect x="97" y="129" width="66" height="147" class="living"/>
+      <text x="130" y="185" class="tiny" text-anchor="middle">共有リビング</text><text x="130" y="204" class="label" text-anchor="middle">24.5㎡</text>
+      <rect x="16" y="292" width="228" height="50" class="service"/>
+      <text x="130" y="314" class="tiny" text-anchor="middle">共用キッチン・水回り・玄関等</text><text x="130" y="333" class="tiny" text-anchor="middle">39.84㎡ 仮置き</text>
+      <text x="130" y="118" class="tiny" text-anchor="middle">個室7室 × 13.39㎡</text>
+    </g>
+
+    <g transform="translate(308 64)">
+      <rect x="0" y="0" width="260" height="360" rx="12" fill="#fff" stroke="#142633" stroke-width="2"/>
+      <text x="16" y="28" class="label">UNIT B｜約158.07㎡</text>
+      <rect x="16" y="48" width="66" height="66" class="room"/><rect x="97" y="48" width="66" height="66" class="room"/><rect x="178" y="48" width="66" height="66" class="room"/>
+      <rect x="16" y="129" width="66" height="66" class="room"/><rect x="178" y="129" width="66" height="66" class="room"/>
+      <rect x="16" y="210" width="66" height="66" class="room"/><rect x="178" y="210" width="66" height="66" class="room"/>
+      <rect x="97" y="129" width="66" height="147" class="living"/>
+      <text x="130" y="185" class="tiny" text-anchor="middle">共有リビング</text><text x="130" y="204" class="label" text-anchor="middle">24.5㎡</text>
+      <rect x="16" y="292" width="228" height="50" class="service"/>
+      <text x="130" y="314" class="tiny" text-anchor="middle">共用キッチン・水回り・玄関等</text><text x="130" y="333" class="tiny" text-anchor="middle">39.84㎡ 仮置き</text>
+      <text x="130" y="118" class="tiny" text-anchor="middle">個室7室 × 13.39㎡</text>
+    </g>
+
+    <g transform="translate(592 64)">
+      <rect x="0" y="0" width="260" height="360" rx="12" fill="#fff" stroke="#142633" stroke-width="2"/>
+      <text x="16" y="28" class="label">UNIT C｜約158.07㎡</text>
+      <rect x="16" y="48" width="66" height="66" class="room"/><rect x="97" y="48" width="66" height="66" class="room"/><rect x="178" y="48" width="66" height="66" class="room"/>
+      <rect x="16" y="129" width="66" height="66" class="room"/><rect x="178" y="129" width="66" height="66" class="room"/>
+      <rect x="16" y="210" width="66" height="66" class="room"/><rect x="178" y="210" width="66" height="66" class="room"/>
+      <rect x="97" y="129" width="66" height="147" class="living"/>
+      <text x="130" y="185" class="tiny" text-anchor="middle">共有リビング</text><text x="130" y="204" class="label" text-anchor="middle">24.5㎡</text>
+      <rect x="16" y="292" width="228" height="50" class="service"/>
+      <text x="130" y="314" class="tiny" text-anchor="middle">共用キッチン・水回り・玄関等</text><text x="130" y="333" class="tiny" text-anchor="middle">39.84㎡ 仮置き</text>
+      <text x="130" y="118" class="tiny" text-anchor="middle">個室7室 × 13.39㎡</text>
+    </g>
+
+    <rect x="24" y="436" width="828" height="18" rx="9" fill="#cfd5d7"/>
+    <text x="445" y="451" class="tiny" text-anchor="middle">共用廊下・階段等は可用510㎡の外側として仮置き</text>
+  </g>
+
+  <g transform="translate(970 140)">
+    <text x="0" y="0" class="label">面積チェック</text>
+    <text x="0" y="38" class="small">1ユニット</text><text x="180" y="38" class="label" text-anchor="end">158.07㎡</text>
+    <text x="0" y="73" class="small">× 3ユニット</text><text x="180" y="73" class="label" text-anchor="end">474.2㎡</text>
+    <line x1="0" y1="94" x2="180" y2="94" stroke="#142633" stroke-width="2"/>
+    <text x="0" y="130" class="small">配置余裕</text><text x="180" y="130" class="label" text-anchor="end">35.8㎡</text>
+
+    <text x="0" y="194" class="label">積層結果</text>
+    <text x="0" y="232" class="small">3ユニット × 4層</text>
+    <text x="0" y="270" font-size="28" font-weight="900">84個室</text>
+    <text x="0" y="302" class="tiny">1階は公開・管理・居住支援</text>
+
+    <text x="0" y="370" class="label">判定</text>
+    <text x="0" y="407" class="small">法規比較の一枝</text>
+    <text x="0" y="435" class="small">採用案ではない</text>
+    <text x="0" y="472" class="tiny">13.39㎡は有効面積でなく、</text>
+    <text x="0" y="494" class="tiny">共用設備39.84㎡も要検証。</text>
+  </g>
+
+  <g transform="translate(48 636)">
+    <rect x="0" y="-18" width="20" height="20" class="room"/><text x="30" y="-3" class="small">個室</text>
+    <rect x="120" y="-18" width="20" height="20" class="living"/><text x="150" y="-3" class="small">共有リビング</text>
+    <rect x="302" y="-18" width="20" height="20" class="service"/><text x="332" y="-3" class="small">キッチン・水回り等</text>
+    <text x="600" y="-3" class="tiny">7個室＋共有リビングの関係を示すだけで、住戸認定や採光・避難の成立を示さない。</text>
+  </g>
+</svg>

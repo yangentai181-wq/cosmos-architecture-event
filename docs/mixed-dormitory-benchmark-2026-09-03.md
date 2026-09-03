@@ -56,7 +56,7 @@
 
 ## 4. 南茨木案への示唆
 
-1. **競合は「南茨木のコスモグラシア」だけではなく「立命館OICのIハウス／グローバルハウス」である。** 徒歩圏に368室（168＋201室）の混住型国際寮が既にあり、価格は6.42万〜7.42万円。ここに同じ機能で並ぶと勝てない。
+1. **競合は「南茨木のコスモグラシア」だけではなく「立命館OICのIハウス／グローバルハウス」である。** 徒歩圏に369室（168＋201室）の混住型国際寮が既にあり、価格は6.42万〜7.42万円。ここに同じ機能で並ぶと勝てない。
 2. **狙うべき空白は3つ考えられる。**
    - 大学寮の入寮期間制限（原則1年、留学生最長2年）から**漏れる2年目以降の学生と、大学寮に落ちた学生**。
    - **他大学の学生**（大学寮は当該大学生限定。南茨木は大学横断で受けられる）。
@@ -78,7 +78,7 @@
 - [大阪大学グローバルビレッジ津雲台 学寮について](https://globalvillage.icho.osaka-u.ac.jp/tsukumodai/dorm.html)
 - [パナソニック ホームズ プレスリリース（津雲台）](https://homes.panasonic.com/company/news/release/2020/101401.html)
 - [関西大学 南千里国際プラザ留学生寮](https://www.kansai-u.ac.jp/Kokusai/Dormitory/facility/dormitory03.php)
-- [立命館大学 OICインターナショナルハウス](https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm/)
+- [立命館大学 OICインターナショナルハウス](https://en.ritsumei.ac.jp/lifecareer/dorm/oic/)
 - [立命館大学 OICグローバルハウス](https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm2/)
 - [明治大学グローバル・ヴィレッジ](https://www.meiji.ac.jp/campus/apartment/mgv.html)
 - [関西学院大学 国際教育寮](https://dormy-ac.com/page/kangaku/international-dormitory/)

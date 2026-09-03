@@ -37,6 +37,11 @@ DEFAULT_CSV_PATH = Path("artifacts/residential-unit-optimization-pareto.csv")
 DEFAULT_MARKDOWN_PATH = Path(
     "docs/residential-unit-optimization-results-2026-09-03.md"
 )
+SENSITIVITY_MARGIN_RATES = (
+    Decimal("0.05"),
+    Decimal("0.075"),
+    Decimal("0.10"),
+)
 
 CSV_FIELDS = (
     "pareto_rank",
@@ -56,6 +61,9 @@ CSV_FIELDS = (
     "laundry_per_unit",
     "kitchen_area_per_unit",
     "unit_total_area",
+    "planning_margin_rate",
+    "upper_floor_planning_margin_area",
+    "upper_floor_post_margin_slack",
     "rooms_per_floor",
     "total_rooms",
     "total_residents",
@@ -117,6 +125,13 @@ def _candidate_row(rank: int, candidate: Candidate) -> dict[str, str | int]:
         "laundry_per_unit": fixtures.laundry,
         "kitchen_area_per_unit": _raw(candidate.unit_area.kitchen_area),
         "unit_total_area": _raw(candidate.unit_area.total_area),
+        "planning_margin_rate": _raw(candidate.planning_margin_rate),
+        "upper_floor_planning_margin_area": _raw(
+            candidate.upper_floor_planning_margin_area
+        ),
+        "upper_floor_post_margin_slack": _raw(
+            candidate.upper_floor_post_margin_slack
+        ),
         "rooms_per_floor": candidate.rooms_per_floor,
         "total_rooms": candidate.total_rooms,
         "total_residents": candidate.total_residents,
@@ -190,8 +205,8 @@ def _representative_table(analysis: SearchAnalysis) -> str:
 
 def _unit_detail_table(analysis: SearchAnalysis) -> str:
     rows = [
-        "| 案 | トイレ | シャワー | 洗面 | 洗濯 | ミニキッチン㎡ | ユニット必要㎡ | 外周余裕m |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| 案 | トイレ | シャワー | 洗面 | 洗濯 | ミニキッチン㎡ | ユニット算定㎡ | 計画余白㎡/階 | 余白後残り㎡/階 | 外周余裕m |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for key, label in REPRESENTATIVE_LABELS.items():
         candidate = analysis.representatives.get(key)
@@ -200,7 +215,8 @@ def _unit_detail_table(analysis: SearchAnalysis) -> str:
         fixtures = candidate.unit_area.fixtures
         rows.append(
             "| {label} | {toilets} | {showers} | {basins} | {laundry} | "
-            "{kitchen} | {unit_area} | {facade_margin} |".format(
+            "{kitchen} | {unit_area} | {planning_margin} | {post_margin_slack} | "
+            "{facade_margin} |".format(
                 label=label,
                 toilets=fixtures.toilets,
                 showers=fixtures.showers,
@@ -208,15 +224,92 @@ def _unit_detail_table(analysis: SearchAnalysis) -> str:
                 laundry=fixtures.laundry,
                 kitchen=_display(candidate.unit_area.kitchen_area, 1),
                 unit_area=_display(candidate.unit_area.total_area, 2),
+                planning_margin=_display(
+                    candidate.upper_floor_planning_margin_area,
+                    2,
+                ),
+                post_margin_slack=_display(
+                    candidate.upper_floor_post_margin_slack,
+                    2,
+                ),
                 facade_margin=_display(candidate.facade_margin, 2),
             )
         )
     return "\n".join(rows)
 
 
+def _candidate_summary(candidate: Candidate | None) -> str:
+    if candidate is None:
+        return "該当なし"
+    return (
+        f"{candidate.total_floors}階・上階{_display(candidate.upper_floor_area, 0)}㎡・"
+        f"ペア室{_display(candidate.pair_room_area, 1)}㎡・"
+        f"{candidate.pairs_per_unit}ペア×{candidate.units_per_floor}ユニット"
+    )
+
+
+def _sensitivity_table(
+    analyses: dict[Decimal, SearchAnalysis],
+) -> str:
+    rows = [
+        "| 計画余白 | 成立候補 | 推奨バランス案 | 同利回り | 収支最大案 | 同利回り |",
+        "| ---: | ---: | --- | ---: | --- | ---: |",
+    ]
+    for rate in SENSITIVITY_MARGIN_RATES:
+        analysis = analyses[rate]
+        balanced = analysis.representatives.get("balanced")
+        finance_max = analysis.representatives.get("finance_max")
+        rows.append(
+            "| {rate}% | {count:,} | {balanced} | {balanced_yield} | "
+            "{finance_max} | {finance_yield} |".format(
+                rate=_display(rate * Decimal("100"), 1),
+                count=analysis.candidate_count,
+                balanced=_candidate_summary(balanced),
+                balanced_yield=(
+                    f"{_display(balanced.finance.yield_percent, 2)}%"
+                    if balanced is not None
+                    else "—"
+                ),
+                finance_max=_candidate_summary(finance_max),
+                finance_yield=(
+                    f"{_display(finance_max.finance.yield_percent, 2)}%"
+                    if finance_max is not None
+                    else "—"
+                ),
+            )
+        )
+    return "\n".join(rows)
+
+
+def _main_conclusion(
+    analysis: SearchAnalysis,
+    planning_margin_rate: Decimal,
+) -> str:
+    balanced = analysis.representatives.get("balanced")
+    finance_max = analysis.representatives.get("finance_max")
+    if balanced is None or finance_max is None:
+        return "既定条件では比較に必要な代表案が揃わなかった。"
+    return (
+        "既定の計画余白"
+        f"{_display(planning_margin_rate * Decimal('100'), 1)}%では、主案を"
+        f"**{_candidate_summary(balanced)}**（{balanced.total_rooms}室・"
+        f"{balanced.total_residents}人、年間利益"
+        f"{_display(balanced.finance.annual_profit, 1)}万円、利回り"
+        f"{_display(balanced.finance.yield_percent, 2)}%、回収"
+        f"{_display(balanced.finance.payback_years, 2)}年）とする。"
+        "既存収支表の目標を優先する比較案は"
+        f"**{_candidate_summary(finance_max)}**（{finance_max.total_rooms}室・"
+        f"{finance_max.total_residents}人、年間利益"
+        f"{_display(finance_max.finance.annual_profit, 1)}万円、利回り"
+        f"{_display(finance_max.finance.yield_percent, 2)}%、回収"
+        f"{_display(finance_max.finance.payback_years, 2)}年）である。"
+    )
+
+
 def _render_markdown(
     analysis: SearchAnalysis,
     search_space: SearchSpace,
+    sensitivity_analyses: dict[Decimal, SearchAnalysis],
 ) -> str:
     finance_assumptions = FinanceAssumptions(total_gfa=search_space.total_gfa)
     baseline = calculate_finance(
@@ -228,12 +321,17 @@ def _render_markdown(
     )
     return f"""# 住居ユニット収支最適化 結果
 
+> **更新注記（2026年9月4日）:** これは高層・2人室を探索した旧比較モデルであり、現在の設計方針ではない。現行は個室84室を固定して5・6・7階を比較し、行政回答前は階数・室数を確定しない。以下の「主案」は当時のモデル内順位であり、現在の提案主案ではない。最新判断は `docs/spatial-massing-deep-dive-2026-09-04.md` と `docs/morning-decision-pack-2026-09-04.md` を優先する。
+
 - **仕様日:** 2026-09-03
 - **計算範囲:** 総延床3,600㎡、1階住居なし、2階以上同面積・同構成、5〜15階
+- **既定の計画余白:** {_display(search_space.planning_margin_rate * Decimal("100"), 1)}%
 - **成立候補:** {analysis.candidate_count:,}件
 - **パレート解:** {len(analysis.pareto_candidates):,}件
 
 ## 結論の読み方
+
+{_main_conclusion(analysis, search_space.planning_margin_rate)}
 
 「収支最大案」は既存収支表の利回りだけを最大化した算術上の案で、推薦そのものではない。「推奨バランス案」は、ペア室12㎡以上、会話・休息用リビング1人1㎡以上、1階目的共用部1人1㎡以上を追加した中で利回りが最大の案である。
 
@@ -246,6 +344,14 @@ def _render_markdown(
 {_unit_detail_table(analysis)}
 
 1ペア室は、日本人学生1名と留学生1名の同性2人が同室で暮らす最小単位である。片方が退去しても、残る学生は同じペア室に住み続けられる。各ユニットは男女別に割り当て、トイレ・独立シャワー・洗面・洗濯をユニット内で完結させる。ミニキッチンは食事用ではなく、飲み物・夜食用である。食事は1階食堂で取り、2階以上のリビングにはダイニング面積を含めていない。
+
+## 計画余白の感度分析
+
+ユニット算定面積に対して、壁厚、柱型、設備シャフト、納まり調整を吸収するための計画余白を上乗せして配置可否を判定した。これは収支表の面積区分や建設費単価を変えるものではない。
+
+{_sensitivity_table(sensitivity_analyses)}
+
+5%は攻めた初期仮定、7.5%は中間、10%は平面図前の既定値である。余白率を変えて代表案が動くため、旧モデルで上階297㎡にユニット算定面積が0.002㎡だけ残っていた案は採用しない。
 
 ## 現行収支表の再現
 
@@ -265,6 +371,7 @@ def _render_markdown(
 - リビング: 8〜32㎡、1㎡刻み、かつ1人0.75〜2.0㎡。食堂は兼ねない。
 - 設備数: トイレ・シャワー・洗面は各 `ceil(居住者/4)`、洗濯は `ceil(居住者/5)`。
 - 廊下等: 各階15%。総延床が固定なので合計540㎡。
+- 計画余白: この出力ではユニット算定面積の{_display(search_space.planning_margin_rate * Decimal("100"), 1)}%を配置条件に加算。5%、7.5%、10%を感度比較。
 - 上階面積: 1㎡刻み。1階の残余面積とともに800㎡以下、上階は1階以下。
 - 外周代理: 2:1矩形の外周70%を使え、1室2.7mの間口を要するものとして全室分を確認。
 - 収支: RC、専有Rank C、目的共用Rank A、廊下Rank C、外構Rank C、家賃10万円/ペア室・月、管理費10%、運営費300万円/月、付帯事業0円。
@@ -275,7 +382,7 @@ def _render_markdown(
 
 ## 重要な未検証事項
 
-- **平面図未検証:** 外周長の代理条件に合格しても、すべてのペア室の窓、男女動線、階段、エレベーター、設備シャフト、避難経路が実際に納まるとは断定できない。
+- **平面図未検証:** {_display(search_space.planning_margin_rate * Decimal("100"), 1)}%の計画余白と外周長の代理条件に合格しても、すべてのペア室の窓、男女動線、階段、エレベーター、設備シャフト、避難経路が実際に納まるとは断定できない。
 - 既存収支表には階数による構造・昇降機・防災コストの割増がない。高層案ほど有利に見える偏りがあり得る。
 - 総延床3,600㎡と容積率300%の整合には、容積不算入部分を含む用途別面積検証が必要。
 - 1階目的共用部は食堂だけでなくイベント・管理等も含む。厨房、席数、食事時間帯は別途検証が必要。
@@ -294,6 +401,7 @@ def _render_markdown(
 - 詳細仕様: `docs/superpowers/specs/2026-09-03-residential-unit-optimizer-design.md`
 - 収支正本索引: `docs/source-intake.md`
 - 近似事例: [長野県立大学 象山寮](https://www.u-nagano.ac.jp/campuslife/dormitory/facility/)
+- 面積効率の参考: [Georgia State Financing and Investment Commission Predesign Guidelines](https://opb.georgia.gov/document/publication/162041300predesignguidelinesapril2001pdf/download)、[LCCC Residence Hall Level II Report](https://www.lccc.wy.edu/Documents/About/accreditation/2018/5-1/5I2_JT_Residence%20Hall%20Level%20II%20Report.pdf)
 - 法令確認先: [建築基準法](https://laws.e-gov.go.jp/law/325AC0000000201)、[建築基準法施行令](https://laws.e-gov.go.jp/law/325CO0000000338)、[大阪府建築基準法施行条例](https://www.pref.osaka.lg.jp/houbun/reiki/reiki_honbun/k201RG00000834.html)、[茨木市建築基準法施行細則](https://www.city.ibaraki.osaka.jp/office/hobun/reiki_int/reiki_honbun/k213RG00000395.html)
 
 Google Sheet、既存HTML、外部サービスへの書き戻しは行っていない。
@@ -315,10 +423,26 @@ def generate_outputs(
     )
     if analysis.candidate_count == 0:
         raise RuntimeError("no feasible candidates found")
+    sensitivity_analyses: dict[Decimal, SearchAnalysis] = {}
+    for margin_rate in SENSITIVITY_MARGIN_RATES:
+        if margin_rate == search_space.planning_margin_rate:
+            sensitivity_analyses[margin_rate] = analysis
+            continue
+        scenario_search_space = replace(
+            search_space,
+            planning_margin_rate=margin_rate,
+        )
+        sensitivity_analyses[margin_rate] = analyze_candidates(
+            iter_candidates(
+                scenario_search_space,
+                FinanceAssumptions(total_gfa=scenario_search_space.total_gfa),
+                UnitAssumptions(),
+            )
+        )
     _write_csv(csv_path, analysis.pareto_candidates)
     markdown_path.parent.mkdir(parents=True, exist_ok=True)
     markdown_path.write_text(
-        _render_markdown(analysis, search_space),
+        _render_markdown(analysis, search_space, sensitivity_analyses),
         encoding="utf-8",
     )
     return analysis
@@ -368,6 +492,12 @@ def _parser() -> argparse.ArgumentParser:
         type=Decimal,
         default=defaults.pair_room_area_step,
     )
+    parser.add_argument(
+        "--planning-margin-rate",
+        type=Decimal,
+        default=defaults.planning_margin_rate,
+        help="Required placement margin as a decimal rate (default: 0.10).",
+    )
     return parser
 
 
@@ -384,6 +514,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         minimum_pair_room_area=arguments.min_pair_area,
         maximum_pair_room_area=arguments.max_pair_area,
         pair_room_area_step=arguments.pair_area_step,
+        planning_margin_rate=arguments.planning_margin_rate,
     )
     analysis = generate_outputs(
         search_space=search_space,
@@ -392,6 +523,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     print(f"feasible candidates: {analysis.candidate_count:,}")
     print(f"pareto candidates: {len(analysis.pareto_candidates):,}")
+    print(
+        "planning margin: "
+        f"{_display(search_space.planning_margin_rate * Decimal('100'), 1)}%"
+    )
     print(f"csv: {arguments.output_csv}")
     print(f"markdown: {arguments.output_markdown}")
     return 0

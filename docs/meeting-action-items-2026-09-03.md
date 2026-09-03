@@ -19,7 +19,7 @@
 | モノレール延伸で敷地近くが発展 | 延伸は門真市から瓜生堂まで。南茨木付近に新駅はない | 東大阪・奈良方面への将来の接続改善という間接効果に限定 |
 | 対象地へ新築する現在の計画 | 対象地には2026年1月、139室の学生住宅が竣工済み | 歴史的な設計演習として扱い、実現物件は事後ベンチマークに限定 |
 
-訂正根拠: [配布資料の読込記録](./source-intake.md)、[土地周辺の現状分析](./site-surroundings-current-analysis.md)、[立命館OIC I-House](https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm/)、[OIC G-House](https://en.ritsumei.ac.jp/gla/campus/)、[コスモグラシア南茨木](https://unilife.co.jp/view/12855)、[イニシア南茨木の竣工発表](https://www.cigr.co.jp/newsrelease/2026/03/initia_minamiibaraki/)
+訂正根拠: [配布資料の読込記録](./source-intake.md)、[土地周辺の現状分析](./site-surroundings-current-analysis.md)、[立命館OIC I-House](https://en.ritsumei.ac.jp/lifecareer/dorm/oic/)、[OIC G-House](https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm2/)、[コスモグラシア南茨木](https://unilife.co.jp/view/12855)、[イニシア南茨木の竣工発表](https://www.cigr.co.jp/newsrelease/2026/03/initia_minamiibaraki/)
 
 ## 統合結論
 
@@ -111,7 +111,7 @@ JASSO（日本学生支援機構）の令和5年度調査は、私費外国人�
 | 東京大学 豊島国際学生宿舎 | 日本人・留学生の混住、個室、自治組織 | 自治と個室の両立 | 低い宿舎費は大学資産ゆえ民間事業と単純比較不可 |
 | チェルシーハウス国分寺 | 20以上の学校から約40人、学生自治、相部屋と個室、相部屋の総額5.1万円 | 大学横断と自主管理 | 留学生混住の代表統計ではなく、単一の自己選択型事例 |
 
-出典: [OIC I-House](https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm/)、[OIC G-House](https://en.ritsumei.ac.jp/gla/campus/)、[AP House](https://www.apu.ac.jp/studentsupport/aphouse/house125/house_survey/)、[大阪大学Global Village津雲台](https://globalvillage.icho.osaka-u.ac.jp/tsukumodai/dorm.html)、[早稲田WISH](https://www.waseda.jp/inst/rlc/student_dormitory/wish/concept/)、[京都精華大学修交館](https://www.kyoto-seika.ac.jp/campuslife/dormitory/shukokan.html)、[東京大学豊島国際学生宿舎](https://www.u-tokyo.ac.jp/ja/students/welfare/h04_03.html)、[チェルシーハウス国分寺](https://chelseahouse.org/)
+出典: [OIC I-House](https://en.ritsumei.ac.jp/lifecareer/dorm/oic/)、[OIC G-House](https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm2/)、[AP House](https://www.apu.ac.jp/studentsupport/aphouse/house125/house_survey/)、[大阪大学Global Village津雲台](https://globalvillage.icho.osaka-u.ac.jp/tsukumodai/dorm.html)、[早稲田WISH](https://www.waseda.jp/inst/rlc/student_dormitory/wish/concept/)、[京都精華大学修交館](https://www.kyoto-seika.ac.jp/campuslife/dormitory/shukokan.html)、[東京大学豊島国際学生宿舎](https://www.u-tokyo.ac.jp/ja/students/welfare/h04_03.html)、[チェルシーハウス国分寺](https://chelseahouse.org/)
 
 ### 「ニーズが高い」と断定せず、混住寮の仮説を支える根拠 TOP3
 
@@ -200,7 +200,7 @@ JASSO令和6年度学生生活調査の大学昼間部では、年間生活費�
 
 | 順位 | 対象 | 理由 | 要確認 |
 | ---: | --- | --- | --- |
-| 1 | 立命館大学 OIC | 徒歩圏、1万人超、国際系学習環境 | 既存約368室の寮の応募倍率、1年後の転居先 |
+| 1 | 立命館大学 OIC | 徒歩圏、1万人超、国際系学習環境 | 既存369室の寮の応募倍率、1年後の転居先 |
 | 2 | 大阪大学 吹田・豊中 | 吹田へモノレール約10～12分、豊中へ直通約18～20分。全学の学生・留学生母数が大きい | キャンパス別学生数、学内寮のキャンパス別需給 |
 | 3 | 追手門学院大学 茨木総持寺・茨木安威 | 同じ茨木市で約20分、全学約1万人 | キャンパス別学生数、バス・徒歩を含む実通学、住居供給 |
 | 4 | 関西大学 千里山 | 約20分、全学学生母数が大きい | 複数大学寮があり不足仮説は弱い |
@@ -261,7 +261,7 @@ SWOTは、現在のプラスをStrength、現在のマイナスをWeakness、将
 | O | 既存混住寮の運営知が蓄積 | 高 | RA/RM、小ユニット、成果測定を転用できる |
 | O | モノレール南伸で東大阪・奈良方面への結節が増える見込み | 中 | 2033年度目標の間接効果 |
 | O | 隣接マンション入居で新しい家族層が増える可能性 | 中 | 交流需要は住民調査が必要 |
-| T | OICにI-House・G-Houseの約368室がある | 高 | 直接比較が必要 |
+| T | OICにI-House・G-Houseの369室がある | 高 | 直接比較が必要 |
 | T | 対象地に139室の学生住宅が実現済み | 高 | 歴史課題では事後ベンチマーク。現在の新築用地ではない |
 | T | 少子化、留学生政策・為替・国際情勢の変化 | 中 | 単一大学・単一国籍依存を避ける |
 | T | 地域活動の参加低下、運営人材の交代 | 高 | 学生の善意だけでは継続しない |

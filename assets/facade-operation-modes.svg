@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">公開交流棟と居住棟の四つの運用状態</title>
+  <desc id="desc">平常日、イベント中、終了後、夜間帰宅について、低い公開交流棟、緩衝管理核、後退した五階居住棟、前庭、公開入口、居住者入口、照明の状態を比較する。</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #142633; }
+      .mode { font-size: 22px; font-weight: 900; }
+      .small { font-size: 14px; fill: #53636b; }
+      .tiny { font-size: 12px; fill: #53636b; }
+      .outline { stroke: #142633; stroke-width: 3; }
+      .ground { stroke: #142633; stroke-width: 4; }
+      .route-public { fill: none; stroke: #ba4934; stroke-width: 6; stroke-linecap: round; }
+      .route-private { fill: none; stroke: #176b61; stroke-width: 6; stroke-linecap: round; }
+    </style>
+    <pattern id="residential" width="22" height="22" patternUnits="userSpaceOnUse">
+      <rect width="22" height="22" fill="#dce9e9"/>
+      <path d="M0 22 22 0" stroke="#123b4a" stroke-opacity=".08"/>
+    </pattern>
+    <pattern id="closed" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#e7e4dc"/>
+      <path d="M0 12 12 0M6 18 18 6" stroke="#7a7770" stroke-width="2" opacity=".35"/>
+    </pattern>
+    <marker id="publicArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#ba4934"/>
+    </marker>
+    <marker id="privateArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#176b61"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="720" rx="28" fill="#fffdf8"/>
+  <text x="54" y="58" font-size="30" font-weight="900">建築の開放性は時間で切り替える</text>
+  <text x="54" y="87" class="small">公開交流棟だけを閉鎖でき、居住者はイベントを通らず帰宅できることを外観・サイン・照明で示す</text>
+
+  <g transform="translate(48 118)">
+    <rect width="532" height="236" rx="18" fill="#f8f5ed" stroke="#d5cec0" stroke-width="2"/>
+    <text x="24" y="35" class="mode">平常日</text>
+    <text x="126" y="35" class="small">予約・居住者利用を基本</text>
+    <line x1="24" y1="190" x2="510" y2="190" class="ground"/>
+    <rect x="294" y="62" width="190" height="128" rx="3" fill="url(#residential)" class="outline"/>
+    <path d="M52 126h272v64H52z" fill="#f8e2dc" class="outline"/>
+    <path d="M36 122h304l-24-17H58z" fill="#ba4934"/>
+    <rect x="324" y="112" width="42" height="78" fill="#f4ead2" class="outline"/>
+    <rect x="78" y="141" width="94" height="49" fill="#fff" stroke="#ba4934" stroke-width="2"/>
+    <text x="87" y="163" class="tiny">予約・公開範囲</text>
+    <text x="87" y="179" class="tiny">をサイン表示</text>
+    <path d="M28 210h116v-16" class="route-public" marker-end="url(#publicArrow)"/>
+    <path d="M492 210h-98v-16" class="route-private" marker-end="url(#privateArrow)"/>
+    <text x="178" y="219" class="small">必要範囲だけ開く</text>
+  </g>
+
+  <g transform="translate(620 118)">
+    <rect width="532" height="236" rx="18" fill="#fff4ef" stroke="#e8b7a9" stroke-width="2"/>
+    <text x="24" y="35" class="mode">イベント中</text>
+    <text x="154" y="35" class="small">受付から交流棟まで開く</text>
+    <line x1="24" y1="190" x2="510" y2="190" class="ground"/>
+    <rect x="294" y="62" width="190" height="128" rx="3" fill="url(#residential)" class="outline"/>
+    <path d="M52 126h272v64H52z" fill="#f2b9a9" class="outline"/>
+    <path d="M36 122h304l-24-17H58z" fill="#ba4934"/>
+    <rect x="324" y="112" width="42" height="78" fill="#f4ead2" class="outline"/>
+    <circle cx="88" cy="174" r="10" fill="#ba4934"/><circle cx="122" cy="174" r="10" fill="#ba4934"/><circle cx="156" cy="174" r="10" fill="#ba4934"/>
+    <path d="M20 210h132v-16" class="route-public" marker-end="url(#publicArrow)"/>
+    <path d="M500 210h-106v-16" class="route-private" marker-end="url(#privateArrow)"/>
+    <text x="176" y="219" class="small">受付列と帰宅動線を分離</text>
+  </g>
+
+  <g transform="translate(48 386)">
+    <rect width="532" height="236" rx="18" fill="#f4f2ed" stroke="#d5cec0" stroke-width="2"/>
+    <text x="24" y="35" class="mode">終了後</text>
+    <text x="126" y="35" class="small">清掃・人数確認後に公開部を施錠</text>
+    <line x1="24" y1="190" x2="510" y2="190" class="ground"/>
+    <rect x="294" y="62" width="190" height="128" rx="3" fill="url(#residential)" class="outline"/>
+    <path d="M52 126h272v64H52z" fill="url(#closed)" class="outline"/>
+    <path d="M36 122h304l-24-17H58z" fill="#7a7770"/>
+    <rect x="324" y="112" width="42" height="78" fill="#f4ead2" class="outline"/>
+    <rect x="103" y="147" width="96" height="28" rx="4" fill="#fff" stroke="#7a7770" stroke-width="2"/>
+    <text x="123" y="166" class="tiny">本日は終了</text>
+    <path d="M500 210h-106v-16" class="route-private" marker-end="url(#privateArrow)"/>
+    <text x="176" y="219" class="small">家具を収納し、滞留を残さない</text>
+  </g>
+
+  <g transform="translate(620 386)">
+    <rect width="532" height="236" rx="18" fill="#e9eff0" stroke="#b7c5c8" stroke-width="2"/>
+    <text x="24" y="35" class="mode">夜間帰宅</text>
+    <text x="154" y="35" class="small">居住者入口の安全を必要範囲で点灯</text>
+    <line x1="24" y1="190" x2="510" y2="190" class="ground"/>
+    <rect x="294" y="62" width="190" height="128" rx="3" fill="#244650" class="outline"/>
+    <rect x="316" y="86" width="40" height="15" fill="#f5d987" opacity=".55"/><rect x="376" y="86" width="40" height="15" fill="#1a333b"/>
+    <rect x="436" y="86" width="25" height="15" fill="#1a333b"/>
+    <path d="M52 126h272v64H52z" fill="#38444a" class="outline"/>
+    <path d="M36 122h304l-24-17H58z" fill="#55636a"/>
+    <rect x="324" y="112" width="42" height="78" fill="#d8e8d8" stroke="#176b61" stroke-width="3"/>
+    <circle cx="345" cy="171" r="17" fill="#f5d987" opacity=".65"/>
+    <path d="M500 210h-106v-16" class="route-private" marker-end="url(#privateArrow)"/>
+    <text x="144" y="219" class="small">公開部は消灯し、生活を街へ見せない</text>
+  </g>
+
+  <g transform="translate(54 674)">
+    <circle cx="8" cy="0" r="7" fill="#ba4934"/><text x="24" y="6" class="small">外部利用者</text>
+    <circle cx="154" cy="0" r="7" fill="#176b61"/><text x="170" y="6" class="small">居住者</text>
+    <text x="304" y="6" class="small">時刻・照度・透明率・建具仕様は、運営見積と近隣確認後に決める</text>
+  </g>
+</svg>
