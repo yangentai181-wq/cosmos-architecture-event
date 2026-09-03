@@ -81,6 +81,7 @@ class SearchSpace:
     maximum_footprint: Decimal = Decimal("800")
     upper_floor_area_step: Decimal = Decimal("1")
     corridor_rate: Decimal = Decimal("0.15")
+    planning_margin_rate: Decimal = Decimal("0.10")
     facade_aspect_ratio: Decimal = Decimal("2")
     facade_usable_ratio: Decimal = Decimal("0.70")
     minimum_room_frontage: Decimal = Decimal("2.7")
@@ -89,6 +90,10 @@ class SearchSpace:
     minimum_pair_room_area: Decimal = Decimal("10.5")
     maximum_pair_room_area: Decimal = Decimal("15.0")
     pair_room_area_step: Decimal = Decimal("0.5")
+
+    def __post_init__(self) -> None:
+        if not Decimal("0") <= self.planning_margin_rate <= Decimal("1"):
+            raise ValueError("planning_margin_rate must be between 0 and 1")
 
 
 @dataclass(frozen=True)
@@ -113,6 +118,9 @@ class Candidate:
     first_floor_purpose_area_per_resident: Decimal
     upper_floor_unit_area_used: Decimal
     upper_floor_unallocated_common_area: Decimal
+    planning_margin_rate: Decimal
+    upper_floor_planning_margin_area: Decimal
+    upper_floor_post_margin_slack: Decimal
     available_facade_length: Decimal
     required_facade_length: Decimal
     facade_margin: Decimal
@@ -322,7 +330,13 @@ def build_candidate(
     usable_rate = Decimal("1") - search_space.corridor_rate
     upper_floor_usable_area = upper_floor_area * usable_rate
     upper_floor_unit_area_used = unit_area.total_area * Decimal(units_per_floor)
-    if upper_floor_unit_area_used > upper_floor_usable_area:
+    upper_floor_planning_margin_area = (
+        upper_floor_unit_area_used * search_space.planning_margin_rate
+    )
+    upper_floor_required_area = (
+        upper_floor_unit_area_used + upper_floor_planning_margin_area
+    )
+    if upper_floor_required_area > upper_floor_usable_area:
         return None
 
     rooms_per_floor = pairs_per_unit * units_per_floor
@@ -353,6 +367,9 @@ def build_candidate(
     upper_floor_unallocated_common_area = (
         upper_floor_usable_area - upper_floor_unit_area_used
     )
+    upper_floor_post_margin_slack = (
+        upper_floor_usable_area - upper_floor_required_area
+    )
     finance = calculate_finance(
         private_area=private_area,
         purpose_area=purpose_area,
@@ -381,6 +398,9 @@ def build_candidate(
         first_floor_purpose_area_per_resident=first_floor_purpose_area_per_resident,
         upper_floor_unit_area_used=upper_floor_unit_area_used,
         upper_floor_unallocated_common_area=upper_floor_unallocated_common_area,
+        planning_margin_rate=search_space.planning_margin_rate,
+        upper_floor_planning_margin_area=upper_floor_planning_margin_area,
+        upper_floor_post_margin_slack=upper_floor_post_margin_slack,
         available_facade_length=facade_length,
         required_facade_length=required_facade_length,
         facade_margin=facade_length - required_facade_length,
@@ -437,7 +457,8 @@ def iter_candidates(
                         )
                         max_units_by_area = _maximum_whole_units(
                             upper_floor_usable_area,
-                            unit_area.total_area,
+                            unit_area.total_area
+                            * (Decimal("1") + search_space.planning_margin_rate),
                         )
                         maximum_units = min(
                             max_units_by_area,
