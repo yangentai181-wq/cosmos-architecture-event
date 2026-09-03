@@ -1,0 +1,1428 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="南茨木の国際学生寮計画について、今回の敷地・費用・保護者調査・既存寮運営から保護者のニーズを導いたチーム検討資料。">
+  <meta property="og:title" content="ワークシート②−②｜今回の条件から導く保護者のニーズ">
+  <meta property="og:description" content="総費用、緊急時の責任分担、本人同意を守る見守りを、事実・推論・未検証仮説に分けて整理。">
+  <meta property="og:type" content="article">
+  <title>ワークシート②−②｜今回の条件から導く保護者のニーズ</title>
+  <style>
+    :root {
+      --paper: #f4f1e8;
+      --paper-2: #e9e3d7;
+      --surface: #fffdf8;
+      --ink: #142833;
+      --muted: #5c686d;
+      --line: #c9c1b3;
+      --blue: #255e70;
+      --blue-soft: #dce9eb;
+      --plum: #6d4158;
+      --plum-soft: #eadde4;
+      --green: #2f6c5b;
+      --green-soft: #dfece6;
+      --yellow: #654907;
+      --yellow-soft: #f3ead1;
+      --red: #913c39;
+      --red-soft: #f2dfdc;
+      --gold: #d7b466;
+      --dark-accent: #e3ca92;
+      --max: 1160px;
+      --shadow: 0 18px 55px rgba(20, 40, 51, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(20, 40, 51, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 40, 51, 0.025) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.22em;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      color: var(--blue);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .topbar-inner {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+
+    .topbar strong {
+      letter-spacing: 0.12em;
+    }
+
+    .topbar-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 18px;
+    }
+
+    .topbar a {
+      color: #fff;
+      opacity: 0.84;
+    }
+
+    .hero {
+      padding: 74px 0 58px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(215, 180, 102, 0.25), transparent 24rem),
+        linear-gradient(135deg, #17313d 0%, #102630 58%, #372d38 100%);
+      border-bottom: 8px solid var(--gold);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+      gap: 54px;
+      align-items: end;
+    }
+
+    .kicker,
+    .section-number,
+    .eyebrow,
+    .priority,
+    .mini-label {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+    }
+
+    .kicker {
+      margin-bottom: 18px;
+      color: var(--dark-accent);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 24px;
+      font-size: clamp(2.55rem, 6.5vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 18px;
+      color: var(--dark-accent);
+      font-size: clamp(1rem, 1.9vw, 1.35rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.55;
+    }
+
+    .hero-lead {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(1rem, 1.5vw, 1.16rem);
+    }
+
+    .hero-finding {
+      padding: 26px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-finding .eyebrow {
+      color: var(--dark-accent);
+    }
+
+    .hero-finding p {
+      margin: 12px 0 0;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .hero-context {
+      margin: 30px 0 0;
+      padding-top: 20px;
+      color: rgba(255, 255, 255, 0.72);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.84rem;
+    }
+
+    .legend {
+      padding: 18px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legend-inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    .legend-title {
+      margin-right: 8px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .badge,
+    .confidence {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      font-size: 0.73rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .badge::before,
+    .confidence::before {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    .verified {
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .inference {
+      color: var(--yellow);
+      background: var(--yellow-soft);
+    }
+
+    .open {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .category {
+      color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .section {
+      padding: 84px 0;
+      border-bottom: 1px solid rgba(95, 108, 112, 0.25);
+    }
+
+    .section:nth-of-type(even) {
+      background: rgba(255, 253, 248, 0.58);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .section-number {
+      margin-bottom: 10px;
+      color: var(--plum);
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+      font-size: 1.22rem;
+      line-height: 1.45;
+    }
+
+    .section-intro {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .card {
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .role-grid,
+    .stat-grid,
+    .need-grid,
+    .segment-grid,
+    .validation-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .role-grid,
+    .segment-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .stat-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .role-card {
+      position: relative;
+      padding-top: 58px;
+    }
+
+    .role-card::before {
+      position: absolute;
+      top: 22px;
+      left: 26px;
+      color: var(--plum);
+      font-size: 0.69rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      content: attr(data-role);
+    }
+
+    .role-card p,
+    .need-card p,
+    .segment-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .role-note {
+      margin-top: 22px;
+      padding: 20px 24px;
+      color: #fff;
+      background: var(--ink);
+      border-left: 6px solid var(--gold);
+    }
+
+    .correction-panel {
+      display: grid;
+      grid-template-columns: minmax(250px, 0.65fr) minmax(0, 1.35fr);
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .correction-label {
+      display: grid;
+      place-items: center;
+      min-height: 230px;
+      padding: 34px;
+      color: #fff;
+      text-align: center;
+      background: var(--plum);
+    }
+
+    .correction-label strong {
+      display: block;
+      font-size: clamp(2.7rem, 6vw, 5.4rem);
+      line-height: 1;
+    }
+
+    .correction-label .mini-label {
+      color: var(--dark-accent);
+    }
+
+    .correction-copy {
+      padding: 34px;
+    }
+
+    .correction-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .source-shift {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-top: 22px;
+    }
+
+    .source-shift > div {
+      padding: 16px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .source-shift b {
+      color: var(--red);
+    }
+
+    .shift-arrow {
+      color: var(--plum);
+      font-size: 1.7rem;
+      font-weight: 900;
+    }
+
+    .stat-card {
+      position: relative;
+      min-height: 220px;
+      padding-top: 70px;
+    }
+
+    .stat-card .mini-label {
+      position: absolute;
+      top: 24px;
+      left: 26px;
+      color: var(--plum);
+    }
+
+    .stat-card strong {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--blue);
+      font-size: clamp(1.65rem, 3.1vw, 2.55rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    .stat-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .cost-detail,
+    .responsibility-detail {
+      margin-top: 20px;
+      padding: 24px 26px;
+      background: var(--ink);
+      color: #fff;
+      border-left: 6px solid var(--gold);
+    }
+
+    .cost-detail strong,
+    .responsibility-detail strong {
+      color: var(--dark-accent);
+    }
+
+    .cost-detail p:last-child,
+    .responsibility-detail p:last-child {
+      margin-bottom: 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 880px;
+    }
+
+    th,
+    td {
+      padding: 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: #fff;
+      background: var(--ink);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    td {
+      font-size: 0.9rem;
+    }
+
+    td:first-child {
+      width: 21%;
+      font-weight: 800;
+    }
+
+    td:nth-child(2) {
+      width: 25%;
+      color: var(--muted);
+    }
+
+    td:nth-child(4) {
+      width: 16%;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .need-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .need-card {
+      position: relative;
+      min-height: 235px;
+      padding: 68px 28px 28px;
+    }
+
+    .need-card::before {
+      position: absolute;
+      top: 22px;
+      left: 28px;
+      color: var(--plum);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      content: attr(data-rank);
+    }
+
+    .need-card.core {
+      border-top: 5px solid var(--plum);
+    }
+
+    .need-card.supporting {
+      border-top: 5px solid var(--blue);
+    }
+
+    .need-card.value {
+      border-top: 5px solid var(--gold);
+    }
+
+    .need-card .priority {
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .tradeoff-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .tradeoff-row {
+      display: grid;
+      grid-template-columns: minmax(190px, 0.7fr) 56px minmax(190px, 0.7fr) minmax(280px, 1.1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .tradeoff-side,
+    .tradeoff-rule {
+      padding: 18px 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .tradeoff-side strong,
+    .tradeoff-rule strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tradeoff-side small,
+    .tradeoff-rule small {
+      color: var(--muted);
+    }
+
+    .tradeoff-vs {
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--plum);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .tradeoff-rule {
+      border-left: 5px solid var(--gold);
+    }
+
+    .segment-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .segment-card ul,
+    .validation-card ul,
+    .source-notes {
+      margin: 16px 0 0;
+      padding-left: 1.2rem;
+    }
+
+    .segment-card li,
+    .validation-card li,
+    .source-notes li {
+      margin-bottom: 7px;
+    }
+
+    .worksheet-panel {
+      padding: clamp(28px, 5vw, 58px);
+      color: #fff;
+      background:
+        linear-gradient(145deg, rgba(109, 65, 88, 0.92), rgba(20, 40, 51, 0.98));
+      border: 1px solid var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .worksheet-label {
+      display: inline-block;
+      margin-bottom: 22px;
+      color: var(--dark-accent);
+      font-size: 0.77rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+    }
+
+    .worksheet-copy {
+      margin-bottom: 30px;
+      font-size: clamp(1.1rem, 2vw, 1.42rem);
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .worksheet-foot {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+    }
+
+    .worksheet-foot strong,
+    .worksheet-foot span {
+      display: block;
+    }
+
+    .worksheet-foot strong {
+      color: var(--dark-accent);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    .worksheet-foot span {
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.84rem;
+    }
+
+    .validation-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .validation-card {
+      min-height: 260px;
+    }
+
+    .question-list {
+      margin: 16px 0 0;
+      padding-left: 1.3rem;
+    }
+
+    .question-list li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    .decision-gate {
+      color: #fff;
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .decision-gate .mini-label {
+      color: var(--dark-accent);
+    }
+
+    .source-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .source-item {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .source-index {
+      color: var(--plum);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .source-item strong,
+    .source-item small {
+      display: block;
+    }
+
+    .source-item small {
+      margin-top: 5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .source-limit {
+      margin-top: 24px;
+      padding: 20px 24px;
+      background: var(--red-soft);
+      border: 1px solid #d8aaa5;
+    }
+
+    .source-limit p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer {
+      padding: 30px 0;
+      color: rgba(255, 255, 255, 0.76);
+      background: var(--ink);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 880px) {
+      .hero-grid,
+      .section-head,
+      .correction-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .role-grid,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .correction-label {
+        min-height: 150px;
+      }
+
+      .tradeoff-row {
+        grid-template-columns: 1fr;
+      }
+
+      .tradeoff-vs {
+        min-height: 38px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+        gap: 8px;
+      }
+
+      .topbar-nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 56px 0 42px;
+      }
+
+      .hero-grid {
+        gap: 28px;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .section-head {
+        gap: 18px;
+      }
+
+      .role-grid,
+      .need-grid,
+      .segment-grid,
+      .validation-grid,
+      .worksheet-foot,
+      .source-shift {
+        grid-template-columns: 1fr;
+      }
+
+      .shift-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .need-card {
+        padding: 66px 22px 24px;
+      }
+
+      .need-card::before {
+        left: 22px;
+      }
+
+      .table-wrap {
+        overflow: visible;
+        border: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+
+      table,
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      table {
+        min-width: 0;
+      }
+
+      thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      tr {
+        margin-bottom: 14px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+      }
+
+      td,
+      td:first-child,
+      td:nth-child(2),
+      td:nth-child(4) {
+        position: relative;
+        width: auto;
+        padding: 12px 15px 12px 42%;
+        border-bottom: 1px solid var(--line);
+      }
+
+      td::before {
+        position: absolute;
+        left: 15px;
+        width: calc(42% - 24px);
+        color: var(--muted);
+        font-size: 0.7rem;
+        font-weight: 800;
+        content: attr(data-label);
+      }
+
+      td:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      :root {
+        --paper: #fff;
+        --surface: #fff;
+        --shadow: none;
+        --dark-accent: #111;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      body {
+        background: #fff;
+        font-size: 9.5pt;
+      }
+
+      .topbar {
+        display: none;
+      }
+
+      .hero,
+      .footer,
+      .cost-detail,
+      .responsibility-detail,
+      .worksheet-panel,
+      .decision-gate,
+      th,
+      .correction-label,
+      .tradeoff-vs {
+        color: #111;
+        background: #fff;
+        border-color: #111;
+      }
+
+      .hero {
+        padding: 32px 0;
+        border-bottom: 3px solid #111;
+      }
+
+      .hero-lead,
+      .hero-finding p,
+      .hero-context,
+      .worksheet-foot span {
+        color: #222;
+      }
+
+      .section {
+        padding: 34px 0;
+      }
+
+      .card,
+      .table-wrap,
+      .worksheet-panel,
+      .correction-panel {
+        box-shadow: none;
+      }
+
+      .card,
+      .tradeoff-row,
+      .source-item,
+      .worksheet-panel {
+        break-inside: avoid;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <strong>COSMOS ARCHITECTURE EVENT</strong>
+      <nav class="topbar-nav" aria-label="関連ページ">
+        <a href="../">②−① 大学生のニーズ</a>
+        <a href="../../proposal.html">現状案・SWOT分析へ戻る ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="shell">
+        <span class="kicker">WORKSHEET 02—02 · PARENT / GUARDIAN NEEDS</span>
+        <div class="hero-grid">
+          <div>
+            <h1>保護者のニーズ<span>今回の南茨木・費用・既存寮運営から、入居を支援できる条件を導く。</span></h1>
+            <p class="hero-lead">保護者が求めるのは、子どもの生活を常時把握することではない。支払う総額が読め、病気・事故・災害時の責任分担が明確で、成人した学生の自立とプライバシーを壊さずに必要時だけ支援へつながることである。</p>
+          </div>
+          <aside class="hero-finding">
+            <span class="eyebrow">結論</span>
+            <p><strong>予測できない損失と対応空白を減らす。</strong><br>安心は設備の数ではなく、費用と責任の境界が説明できる状態から生まれる。</p>
+          </aside>
+        </div>
+        <p class="hero-context"><strong>前提：</strong>これは配布課題が設定された時点へ戻って検討する<strong>歴史的な仮想再提案</strong>です。2026年現在、対象地にはコスモグラシア南茨木が完成しており、料金と運営内容は事後ベンチマークとして扱います。</p>
+      </div>
+    </section>
+
+    <aside class="legend" aria-label="根拠の強さ">
+      <div class="shell legend-inner">
+        <span class="legend-title">EVIDENCE LEVEL</span>
+        <span class="badge verified">確認済み</span>
+        <span class="badge inference">根拠のある推論</span>
+        <span class="badge open">未検証仮説</span>
+      </div>
+    </aside>
+
+    <section class="section" id="role-split">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">00 / WHO DECIDES</span><h2>「親」を<br>一人の役にしない</h2></div>
+          <p class="section-intro">大学生の多くは成年であり、居住者本人、費用を負担する人、保証責任を負う人、緊急連絡を受ける人は別々になり得る。誰のニーズかを分けないと、見守りが監視へ変わる。</p>
+        </div>
+        <div class="role-grid">
+          <article class="card role-card" data-role="RESIDENT">
+            <h3>居住者本人</h3>
+            <p>契約を理解し、生活し、支援を使う当事者。18歳で成年となり、契約などを自分の意思で決められる。日常情報の共有範囲も本人の意思が基準になる。</p>
+          </article>
+          <article class="card role-card" data-role="PAYER / GUARANTOR">
+            <h3>費用負担者・保証人</h3>
+            <p>月額だけでなく、入居、更新、事故、退去時まで支払えるかを判断する。保証人には緊急時の対応が求められる場合もあり、責任の範囲を契約前に知る必要がある。</p>
+          </article>
+          <article class="card role-card" data-role="SUPPORTER">
+            <h3>保護者・緊急連絡先</h3>
+            <p>健康、食事、人間関係を心配しつつ、本人の自立を支える。連絡不能、受診、事故、災害など、通常生活から緊急対応へ切り替える条件を確認したい。</p>
+          </article>
+        </div>
+        <p class="role-note"><strong>整理の起点：</strong>保護者・保証人・費用負担者は同じとは限らない。契約書、連絡先、情報共有の同意を役割ごとに分ける。</p>
+      </div>
+    </section>
+
+    <section class="section" id="source-correction">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">01 / SOURCE CORRECTION</span><h2>配布資料を<br>正しい主体へ戻す</h2></div>
+          <p class="section-intro">スライド38〜40は「学生の声」と表示されているが、注記は2023年4〜5月に入学した新入生の保護者19,664人の回答。学生本人の声ではなく、保護者の費用負担と不安を読む資料である。</p>
+        </div>
+        <div class="correction-panel">
+          <div class="correction-label"><div><span class="mini-label">SLIDES 38—40</span><strong>親</strong>の回答</div></div>
+          <div class="correction-copy">
+            <span class="badge verified">資料注記で確認</span>
+            <h3>見出しではなく、回答者で分類する</h3>
+            <p>配布資料の地域別初期費用、生活費、準備・工夫は、学生の希望を示すデータではない。保護者が「どこで費用が発生し、どう準備したか」を示す証拠として②−②へ移す。</p>
+            <div class="source-shift" aria-label="資料の読み替え">
+              <div><b>誤った使用</b><br>学生は安い住まいを求める</div>
+              <span class="shift-arrow" aria-hidden="true">→</span>
+              <div><strong>正しい使用</strong><br>保護者は入学前後の総負担を予測したい</div>
+            </div>
+            <p><small>ページでは調査図版を転載せず、最新の2026年度公式集計へ更新して必要な数値だけを要約する。</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="conditions">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">02 / CURRENT CONDITIONS</span><h2>全国調査を<br>南茨木の条件へ通す</h2></div>
+          <p class="section-intro">全国・地域の保護者調査は背景、南茨木の料金と敷地は計画条件、OIC既存寮は運営比較。三つを混ぜずに並べる。</p>
+        </div>
+        <div class="stat-grid">
+          <article class="card stat-card">
+            <span class="mini-label">2026 · PARENT SURVEY</span>
+            <strong>55,076人</strong>
+            <p>177大学の新入生保護者。下宿生では、食事・日常生活75.7%、事故・病気・けが67.5%、人間関係61.4%、経済面49.1%が心配と回答。南茨木限定ではない。</p>
+          </article>
+          <article class="card stat-card">
+            <span class="mini-label">OSAKA / HYOGO / WAKAYAMA</span>
+            <strong>家賃 61,730円</strong>
+            <p>2026年の地域別下宿生平均。入居費245,050円、引越費43,190円、新生活用品332,740円。費目ごとに0円・無回答を除く平均で、単純合算はできない。</p>
+          </article>
+          <article class="card stat-card">
+            <span class="mini-label">SOUTH IBARAKI · BUILT BENCHMARK</span>
+            <strong>月10万円超</strong>
+            <p>コスモグラシア南茨木は家賃57,500〜69,000円、食費29,700円、管理費222,000円／年または19,000円／月、入館金120,000円／1年。</p>
+          </article>
+          <article class="card stat-card">
+            <span class="mini-label">SOUTH IBARAKI · SITE</span>
+            <strong>利便とリスクが同居</strong>
+            <p>阪急・モノレール、OIC、買物、病院に近い一方、大阪中央環状線、鉄道・モノレール、隣接住宅、水路との関係がある。夜間動線、騒音、交通、避難経路を現地で確かめる必要があり、敷地境界の騒音・浸水条件は未確定。</p>
+          </article>
+        </div>
+        <div class="cost-detail">
+          <p><strong>同一物件でも支払方法で見え方が変わる：</strong>主要3費目は管理費の年払い換算で月<strong>10万5,700〜11万7,200円</strong>、月払い条件では<strong>10万6,200〜11万7,700円</strong>。1年契約の入館金まで含む初年度の主要費用は<strong>138万8,400〜153万2,400円</strong>となる。</p>
+          <p>この初年度額にも、専有部の光熱費、保証委託料、補償、再契約、退去時費用等は含まれない。したがって保護者には「月額」ではなく、支払時期と最悪時の追加負担を含む年間表が必要になる。</p>
+        </div>
+        <div class="responsibility-detail">
+          <p><strong>運営体制にも境界がある：</strong>OIC Iハウスは管理人日勤、オートロック、各ユニット原則1名のRMを置く。一方、急病時の受診は原則本人・保証人対応で、<strong>医療機関への同伴はRMの業務外</strong>。管理人や寮生が救急車に同乗した際の費用も本人負担とされる。</p>
+          <p>今回案には「24時間緊急窓口」という案があるが、担当者・時間・対応範囲・費用が未設計で、<strong>24時間対応は未確認</strong>。設備名ではなく、受付から引継ぎまでの責任表に変える必要がある。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence-chain">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">03 / REASONING</span><h2>事実から<br>ニーズへつなぐ</h2></div>
+          <p class="section-intro">調査で確認できるのは「全国の保護者が何を心配したか」。南茨木で選ばれる条件への変換は、根拠を持つ推論であり、確認済み需要ではない。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>今回の事実</th><th>保護者にとっての意味</th><th>導かれるニーズ</th><th>ニーズの確度</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="今回の事実">下宿生保護者の不安は食事・健康・人間関係が上位</td>
+                <td data-label="保護者にとっての意味">家賃を払えるだけでは、離れて暮らす不安は解消しない。</td>
+                <td data-label="導かれるニーズ">食事、体調不良、孤立、対人トラブルの兆候を本人が相談先へつなげられること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">入居・引越・生活用品で大きな初期負担</td>
+                <td data-label="保護者にとっての意味">表面家賃が同じでも、契約時の現金負担と必要品で差が出る。</td>
+                <td data-label="導かれるニーズ">初年度・平年・退去年の総額、支払月、返金、上限未確定費用を一枚で比較できること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">同一地の学生住宅は支払方法で月額換算が変わる</td>
+                <td data-label="保護者にとっての意味">年払い・月払い、食事、入館金を揃えない比較は誤判断を生む。</td>
+                <td data-label="導かれるニーズ">費用の安さより、全費目と条件が同じ基準で開示され、予算超過を予測できること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">OIC寮はRM・管理人を置くが、急病対応には限界がある</td>
+                <td data-label="保護者にとっての意味">「管理あり」でも、夜間受診や同伴を誰が担うかは別問題。</td>
+                <td data-label="導かれるニーズ">防犯設備ではなく責任表で、異常の受付者、初動、引継先、保護者連絡、費用負担が分かること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">駅・大学・病院への近さと、幹線道路・鉄道・水路が併存</td>
+                <td data-label="保護者にとっての意味">昼の便利さだけでは、夜間帰宅、交通事故、睡眠、豪雨時の安心を判断できない。</td>
+                <td data-label="導かれるニーズ">昼夜の実動線、室内騒音、避難先、連絡手順を実測・訓練結果で確認できること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">18歳で成年。個人データの第三者提供は原則本人同意</td>
+                <td data-label="保護者にとっての意味">費用を払うことと、日常の行動・健康情報を受け取る権利は同じではない。</td>
+                <td data-label="導かれるニーズ">日常監視をしない。本人の同意を基準に、平常時と緊急時の連絡条件を先に合意すること。</td>
+                <td data-label="ニーズの確度"><span class="confidence inference">根拠のある推論</span></td>
+              </tr>
+              <tr>
+                <td data-label="今回の事実">保護者調査は国際交流への支払意思を測っていない</td>
+                <td data-label="保護者にとっての意味">成長への期待があっても、追加費用や共同生活リスクの許容とは別。</td>
+                <td data-label="導かれるニーズ">交流は安全・費用・健康の後。任意参加、個室退避、相談・部屋変更まで含めて選べること。</td>
+                <td data-label="ニーズの確度"><span class="confidence open">未検証仮説</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prioritized-needs">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">04 / NEEDS</span><h2>優先順位つき<br>保護者のニーズ</h2></div>
+          <p class="section-intro">P0は契約前に欠けると選択できない条件。P1は入居後の継続条件。P2は本コンセプト固有の付加価値。</p>
+        </div>
+        <div class="need-grid">
+          <article class="card need-card core" data-rank="P0 · COST">
+            <span class="priority">選択条件 01</span>
+            <h3>初年度から退去まで、家計の上限を読める</h3>
+            <p>家賃、管理、食、光熱、ネット、家具、保証、保険、入館、更新、退去、通学を同じ年間基準で確認し、値上げ・解約・返金の条件まで把握したい。</p>
+          </article>
+          <article class="card need-card core" data-rank="P0 · RESPONSE">
+            <span class="priority">選択条件 02</span>
+            <h3>緊急時の対応空白をなくしたい</h3>
+            <p>夜間、発熱、事故、災害、連絡不能、対人トラブルごとに、誰が受け、何をし、どこから大学・医療・保証人・保護者へ渡すかを確認したい。</p>
+          </article>
+          <article class="card need-card core" data-rank="P0 · DAILY LIFE">
+            <span class="priority">選択条件 03</span>
+            <h3>食事・健康・安全が本人の行動までつながる</h3>
+            <p>食事の提供だけで安心とせず、利用しない日、アレルギー・宗教、体調不良、夜間帰宅、相談先まで生活全体で切れ目がない状態を求める。食事提供と健康保証は同義ではない。</p>
+          </article>
+          <article class="card need-card supporting" data-rank="P1 · INDEPENDENCE">
+            <span class="priority">継続条件 04</span>
+            <h3>代行ではなく、自立できる支援を受けてほしい</h3>
+            <p>契約、家計、家事、通院、行政手続、生活ルールを本人が覚え、難しい時だけ相談できる。支援を使わない自由も含めて段階化されていること。</p>
+          </article>
+          <article class="card need-card supporting" data-rank="P1 · CONSENT">
+            <span class="priority">継続条件 05</span>
+            <h3>安心と本人のプライバシーを両立したい</h3>
+            <p>食事履歴や入退館を無条件に共有せず、本人が選ぶ通常連絡と、生命・安全に関わる緊急連絡を分け、誰に何を伝えるかを入居時に合意したい。</p>
+          </article>
+          <article class="card need-card value" data-rank="P2 · GROWTH">
+            <span class="priority">付加価値 06</span>
+            <h3>国際交流を安全な成長機会にしたい</h3>
+            <p>参加任意、個室への退避、差別・ハラスメント相談、部屋変更があり、学業や休息を損なわないことが前提。国際交流への追加支払意思は未確認。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tradeoffs">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">05 / TRADE-OFFS</span><h2>両方ほしい、を<br>設計条件にする</h2></div>
+          <p class="section-intro">保護者ニーズは単純な「手厚さ」ではない。手厚くするほど費用、自由、運営責任も増えるため、どちらかを隠さず選択ルールに変える。</p>
+        </div>
+        <div class="tradeoff-list">
+          <div class="tradeoff-row">
+            <div class="tradeoff-side"><strong>管理・防犯を厚く</strong><small>安心と初動力が上がる</small></div>
+            <div class="tradeoff-vs">VS</div>
+            <div class="tradeoff-side"><strong>総費用を抑える</strong><small>家計負担を下げる</small></div>
+            <div class="tradeoff-rule"><strong>判断ルール</strong><small>サービスごとの費用と対応範囲を分け、不要分を外せるか検証する。</small></div>
+          </div>
+          <div class="tradeoff-row">
+            <div class="tradeoff-side"><strong>見守りを増やす</strong><small>異変に気づきやすい</small></div>
+            <div class="tradeoff-vs">VS</div>
+            <div class="tradeoff-side"><strong>自立・私生活を守る</strong><small>成人として本人が決める</small></div>
+            <div class="tradeoff-rule"><strong>判断ルール</strong><small>通常時は本人同意、緊急時は事前に定めた閾値で連絡する。</small></div>
+          </div>
+          <div class="tradeoff-row">
+            <div class="tradeoff-side"><strong>食事を定額で付ける</strong><small>予算と栄養を管理しやすい</small></div>
+            <div class="tradeoff-vs">VS</div>
+            <div class="tradeoff-side"><strong>選択性を高める</strong><small>欠食・文化・生活時間に合う</small></div>
+            <div class="tradeoff-rule"><strong>判断ルール</strong><small>利用率、欠食返金、食事制限を示し、必須・選択の両方を価格付きで聞く。</small></div>
+          </div>
+          <div class="tradeoff-row">
+            <div class="tradeoff-side"><strong>交流を増やす</strong><small>語学・関係・成長を促す</small></div>
+            <div class="tradeoff-vs">VS</div>
+            <div class="tradeoff-side"><strong>静穏・退避を守る</strong><small>学習・睡眠・安全を優先</small></div>
+            <div class="tradeoff-rule"><strong>判断ルール</strong><small>イベント義務化を避け、住居動線と外来者動線を分ける。</small></div>
+          </div>
+          <div class="tradeoff-row">
+            <div class="tradeoff-side"><strong>長期契約で安定</strong><small>収入と居住を予測しやすい</small></div>
+            <div class="tradeoff-vs">VS</div>
+            <div class="tradeoff-side"><strong>留学・休学に対応</strong><small>予定変更の損失を抑える</small></div>
+            <div class="tradeoff-rule"><strong>判断ルール</strong><small>中途解約、再契約、退去予告、違約金の上限を契約前に示す。</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="segments">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">06 / SEGMENTS</span><h2>同じ保護者でも<br>心配の形は違う</h2></div>
+          <p class="section-intro">国籍だけでなく、距離、費用負担、契約責任、学生本人の支援条件で分ける。海外在住保護者の詳細は直接調査がなく、現段階では推論である。</p>
+        </div>
+        <div class="segment-grid">
+          <article class="card segment-card">
+            <span class="badge category">遠方・初めての一人暮らし</span>
+            <h3>日常の立上げと急病が心配</h3>
+            <ul>
+              <li>家具・食事・家事を含む入居初月の段取り</li>
+              <li>夜間発熱、連絡不能、受診の引継ぎ</li>
+              <li>本人が無理なく相談できる入口</li>
+            </ul>
+          </article>
+          <article class="card segment-card">
+            <span class="badge category">海外在住の保護者・保証関係者</span>
+            <h3>言語・時差・責任の距離が大きい</h3>
+            <ul>
+              <li>契約、送金、保証、退去条件の多言語説明</li>
+              <li>緊急連絡の言語・時間帯・代替連絡先</li>
+              <li>宗教・食・医療・生活文化への配慮</li>
+            </ul>
+          </article>
+          <article class="card segment-card">
+            <span class="badge category">家計制約が強い世帯</span>
+            <h3>値下げより予算超過を避けたい</h3>
+            <ul>
+              <li>初年度・平年・退去年の支払カレンダー</li>
+              <li>奨学金・仕送りの入金時期との整合</li>
+              <li>食事・家具・管理の選択と解約可能性</li>
+            </ul>
+          </article>
+          <article class="card segment-card">
+            <span class="badge category">医療・障害・食事制限がある学生</span>
+            <h3>一般対応の外側を先に確認したい</h3>
+            <ul>
+              <li>通院、服薬、アレルギー、避難の個別計画</li>
+              <li>建物・情報・相談窓口へのアクセス</li>
+              <li>寮が担えない範囲と大学・医療への接続</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="worksheet">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">07 / WORKSHEET</span><h2>②−②へ<br>記入する文章</h2></div>
+          <p class="section-intro">全国調査を南茨木の確認済み需要とは書かず、今回の条件から導く「選択・支援できる条件」としてまとめる。</p>
+        </div>
+        <div class="worksheet-panel">
+          <span class="worksheet-label">② 保護者のニーズ</span>
+          <p class="worksheet-copy">保護者がこの住居を選択・支援できる条件は、家賃だけでなく、管理費・食費・光熱費・ネット・入館金・保証・保険・更新・退去費まで含む年間総支払額と解約条件が契約前に分かること。また、防犯設備の有無だけでなく、夜間、病気、事故、災害、対人トラブル時に、誰が・いつ・どこまで対応し、どの条件で大学や保護者へ連絡するかを確認できること。食事や生活支援は学生の自立を妨げず、見守りは本人の同意とプライバシーを守りながら、必要時だけ支援へつながる仕組みとする。国際交流は、参加を強制せず、個室への退避、相談、部屋変更、差別・ハラスメント対応を備えた安全な成長機会であることを前提とする。</p>
+          <div class="worksheet-foot">
+            <div><strong>契約の土台</strong><span>年間総額・追加費用・解約条件</span></div>
+            <div><strong>安心の実体</strong><span>緊急時の責任者・連絡・引継ぎ</span></div>
+            <div><strong>成長の条件</strong><span>本人同意・自立・選べる交流</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="validation">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">08 / VALIDATION</span><h2>次に保護者へ<br>何を確かめるか</h2></div>
+          <p class="section-intro">南茨木の保護者への直接調査は未実施。安心かどうかを聞くだけでなく、価格・責任・情報共有の条件を具体的に置いて選んでもらう。</p>
+        </div>
+        <div class="validation-grid">
+          <article class="card validation-card">
+            <span class="mini-label">01 · MONEY</span>
+            <h3>価格を年間表で提示する</h3>
+            <ol class="question-list">
+              <li>初年度・平年・退去年の支援可能上限はいくらか。</li>
+              <li>誰が契約者、費用負担者、保証人になるか。</li>
+              <li>食事・家具・管理を外せる場合、どれを選ぶか。</li>
+              <li>留学・休学時に許容できる違約金はいくらか。</li>
+            </ol>
+          </article>
+          <article class="card validation-card">
+            <span class="mini-label">02 · EMERGENCY</span>
+            <h3>期待する対応を場面で聞く</h3>
+            <ol class="question-list">
+              <li>夜間発熱、事故、連絡不能時に誰の初動を期待するか。</li>
+              <li>どの状態から保護者へ連絡してほしいか。</li>
+              <li>受診同行や通訳へ追加料金を払うか。</li>
+              <li>災害時に欲しい情報と連絡期限は何か。</li>
+            </ol>
+          </article>
+          <article class="card validation-card">
+            <span class="mini-label">03 · CONSENT</span>
+            <h3>共有してよい情報を分ける</h3>
+            <ol class="question-list">
+              <li>入退館、食事利用、活動参加の共有を本人は望むか。</li>
+              <li>通常時と緊急時で、同意をどう切り替えるか。</li>
+              <li>保護者以外の緊急連絡先を誰にするか。</li>
+              <li>本人が同意を変更・撤回する方法は何か。</li>
+            </ol>
+          </article>
+          <article class="card validation-card">
+            <span class="mini-label">04 · EXPERIENCE</span>
+            <h3>成長価値と支払意思を分ける</h3>
+            <ol class="question-list">
+              <li>国際交流に期待する具体的成果は何か。</li>
+              <li>交流機能へ月いくら追加で払えるか。</li>
+              <li>参加頻度、個室退避、部屋変更の最低条件は何か。</li>
+              <li>不和・差別時に誰へ相談できれば選べるか。</li>
+            </ol>
+          </article>
+          <article class="card validation-card decision-gate">
+            <span class="mini-label">DECISION GATE</span>
+            <h3>回答で計画を変える</h3>
+            <ul>
+              <li>総額超過が多い → 食事・管理を選択制にする</li>
+              <li>夜間対応への期待が高い → 人件費込みで再収支</li>
+              <li>情報共有への本人同意が弱い → 日常報告を設けない</li>
+              <li>交流への支払意思が弱い → 低コスト・任意運営へ</li>
+            </ul>
+          </article>
+          <article class="card validation-card">
+            <span class="badge open">まだ言えない</span>
+            <h3>検証前に断定しないこと</h3>
+            <ul>
+              <li>保護者は国際交流へ追加料金を払う</li>
+              <li>食事定額制の方が必ず支持される</li>
+              <li>日常報告が安心と満足を高める</li>
+              <li>満室表示が同価格・同仕様の長期需要を示す</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">09 / SOURCES</span><h2>使った根拠と<br>その限界</h2></div>
+          <p class="section-intro">公開情報は2026年9月3日時点。数字は回答者・地域・費目の範囲を越えて、南茨木の入居意向や支払意思へ外挿しない。</p>
+        </div>
+        <div class="source-list">
+          <article class="source-item">
+            <span class="source-index">01</span>
+            <div><strong>配布資料「3-a.ステークホルダーの情報②〜④」</strong><small>スライド38〜40。見出しは「学生の声」だが、注記上の回答者は2023年度の新入生保護者19,664人。図版は転載せず、回答主体の訂正に使用。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">02</span>
+            <div><strong><a href="https://www.univcoop.or.jp/vision/vision_2246.html" target="_blank" rel="noopener noreferrer">全国大学生協連「2026年度保護者に聞く新入生調査」</a></strong><small>新入生保護者55,076人、177大学。下宿生の不安と地域別初期費用を使用。南茨木・OICの保護者調査ではない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">03</span>
+            <div><strong><a href="https://www.univcoop.or.jp/control/webapp/data_file/html_file/pdf_report2026.pdf" target="_blank" rel="noopener noreferrer">同調査 概要報告PDF</a></strong><small>下宿生の食事・日常生活75.7%、健康67.5%、人間関係61.4%、経済面49.1%。大阪・兵庫・和歌山の地域列を使用。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">04</span>
+            <div><strong><a href="https://unilife.co.jp/view/12855/" target="_blank" rel="noopener noreferrer">学生会館 コスモグラシア南茨木</a></strong><small>家賃、食費、管理費、入館金の事後ベンチマーク。光熱・保証・補償・再契約等を含む総額ではなく、満室理由も分からない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">05</span>
+            <div><strong><a href="https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm/" target="_blank" rel="noopener noreferrer">立命館大学 OIC Iハウス</a></strong><small>管理人日勤、オートロック、RM配置等。今回案に同等の運営体制があることを示す資料ではない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">06</span>
+            <div><strong><a href="https://www.ritsumei.ac.jp/file.jsp?id=426397" target="_blank" rel="noopener noreferrer">OIC Iハウスガイドブック 2025.08</a></strong><small>火災・地震・急病・怪我、保証人連絡、RM業務の境界を確認。大学寮の規則であり民間案へそのまま移植できない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">07</span>
+            <div><strong><a href="https://www.ritsumei.ac.jp/file.jsp?id=685130" target="_blank" rel="noopener noreferrer">立命館大学 2026年度奨学金案内</a></strong><small>OIC周辺の大学契約物件は2024年度値で家賃59,428円＋共益費7,548円。食事・家具・管理付き住宅との単純比較はできない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">08</span>
+            <div><strong><a href="https://www.caa.go.jp/policies/policy/consumer_education/consumer_education/lower_the_age_of_adulthood/introduction/" target="_blank" rel="noopener noreferrer">消費者庁「18歳から大人」特設ページ</a></strong><small>2022年4月から成年年齢は18歳。本人が契約の主体であることを確認。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">09</span>
+            <div><strong><a href="https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/" target="_blank" rel="noopener noreferrer">個人情報保護委員会 ガイドライン（通則編）</a></strong><small>民間事業者による個人データの第三者提供は原則として本人同意が必要。具体設計時は例外要件と緊急時対応を法務確認する。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">10</span>
+            <div><strong><a href="https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000017.html" target="_blank" rel="noopener noreferrer">国土交通省「外国人の民間賃貸住宅への円滑な入居」</a></strong><small>多言語の部屋探しガイド、契約書例、生活ルール。海外在住保護者が何を優先するかは示さない。</small></div>
+          </article>
+          <article class="source-item">
+            <span class="source-index">11</span>
+            <div><strong><a href="../../docs/site-surroundings-current-analysis.html">対象地・周辺環境の現況調査</a></strong><small>交通、病院、周辺住宅、騒音、水路、防災上の確認事項を整理。敷地境界での実測や行政照会が済んだことを示す資料ではない。</small></div>
+          </article>
+        </div>
+        <div class="source-limit">
+          <p><strong>証拠の限界：</strong>南茨木の保護者への直接調査は未実施。全国調査は強い背景資料だが、今回案の価格・国際交流・情報共有への選好を直接証明しない。したがって、このページの優先順位は「今回条件から導く有力仮説」であり、価格を示した本人・保護者ペア調査で確定する。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <span>WORKSHEET ②−② · TEAM REVIEW</span>
+      <span>費用 → 責任 → 同意 → 成長 · 2026.09.03</span>
+    </div>
+  </footer>
+</body>
+</html>
