@@ -56,6 +56,7 @@ class ProposalHtmlTest(unittest.TestCase):
         required = {
             "summary",
             "facts",
+            "dorm-research",
             "logic",
             "swot",
             "value",
@@ -66,6 +67,19 @@ class ProposalHtmlTest(unittest.TestCase):
             "decisions",
         }
         self.assertTrue(required.issubset(self.parser.ids), required - self.parser.ids)
+
+    def test_dorm_research_is_reachable_and_links_primary_evidence(self):
+        self.assertIn("#dorm-research", self.parser.links)
+        for source in (
+            "https://www.studyinjapan.go.jp/ja/_mt/2024/10/Seikatsu2023.pdf",
+            "https://www.mlit.go.jp/jutakukentiku/house/content/001612669.pdf",
+            "https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm/",
+            "https://www.ritsumei.ac.jp/file.jsp?id=426078",
+            "https://www.jasso.go.jp/ryugaku/related/kouryu/2016/__icsFiles/afieldfile/2021/02/18/201609yamakawafumi.pdf",
+            "https://www.jstage.jst.go.jp/article/jusokenronbunjisen/44/0/44_1520/_article/-char/ja/",
+            "https://www.mext.go.jp/a_menu/koutou/ryugaku/1412692_00003.htm",
+        ):
+            self.assertIn(source, self.parser.links)
 
     def test_swot_and_strategy_conversion_are_complete(self):
         for phrase in (
@@ -109,7 +123,8 @@ class ProposalHtmlTest(unittest.TestCase):
     def test_latest_workshop_concept_and_sheet_values_are_reflected(self):
         for phrase in (
             "お互いが、留学先",
-            "留学生 × 国内留学生",
+            "留学生 × 国内学生",
+            "国内留学型の生活基盤",
             "112室",
             "20㎡ × 112室",
             "6階未満",
