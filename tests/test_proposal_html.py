@@ -88,8 +88,8 @@ class ProposalHtmlTest(unittest.TestCase):
             "確認済み",
             "解釈",
             "仮説・未検証",
-            "13.6年",
-            "22.1年",
+            "15.7年",
+            "25.3年",
             "土地取得費7億円",
             "正式要件",
             "仮想再提案",
@@ -99,11 +99,26 @@ class ProposalHtmlTest(unittest.TestCase):
     def test_current_access_and_official_finance_judgment_are_accurate(self):
         self.assertIn("阪急3分", self.text)
         self.assertIn("モノレール5分", self.text)
-        self.assertIn("約4.53%", self.text)
+        self.assertIn("約3.96%", self.text)
         self.assertNotIn("条件内", self.text)
 
     def test_high_risk_assumptions_are_explicitly_qualified(self):
         for phrase in ("単純計算で360%", "回答者59人", "139室", "満室前提"):
+            self.assertIn(phrase, self.text)
+
+    def test_latest_workshop_concept_and_sheet_values_are_reflected(self):
+        for phrase in (
+            "お互いが、留学先",
+            "留学生 × 国内留学生",
+            "112室",
+            "20㎡ × 112室",
+            "6階未満",
+            "月300万円",
+            "2%・15〜20%・10〜15%",
+            "食堂・イベントを誰が運営するか",
+            "設定意図",
+            "テナント収入",
+        ):
             self.assertIn(phrase, self.text)
 
     def test_sources_are_direct_and_site_image_is_local(self):
