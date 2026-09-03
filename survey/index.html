@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="南茨木で計画中の国際共住寮について、留学生と国内学生の入居条件を確かめる需要調査票の試作。">
+  <title>留学生・国内学生向け需要調査｜お互いが、留学先</title>
+  <style>
+    :root {
+      --ink: #142d37;
+      --paper: #f3eee3;
+      --surface: #fffdf8;
+      --teal: #226475;
+      --gold: #d8ae54;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; line-height: 1.7; }
+    .shell { width: min(calc(100% - 40px), 880px); margin-inline: auto; }
+    .topbar { padding: 16px 0; color: #fff; background: var(--ink); }
+    .topbar .shell { display: flex; justify-content: space-between; gap: 20px; }
+    .hero { padding: 72px 0; color: #fff; background: linear-gradient(135deg, #173a47, #112a34); border-bottom: 8px solid var(--gold); }
+    h1 { margin: 10px 0 18px; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.05; letter-spacing: -.05em; }
+    .eyebrow { color: #e6cb8d; font-size: .75rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .notice { margin-top: 28px; padding: 20px; color: var(--ink); background: var(--surface); border-left: 6px solid var(--gold); }
+    .section { padding: 64px 0; }
+    h2 { margin: 8px 0 18px; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; letter-spacing: -.035em; }
+    .survey { padding: clamp(24px, 5vw, 44px); background: var(--surface); border: 2px solid var(--ink); }
+    fieldset { margin: 0 0 28px; padding: 0; border: 0; }
+    legend { margin-bottom: 12px; font-weight: 900; }
+    .choice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .choice { display: flex; gap: 10px; align-items: flex-start; padding: 14px; background: #f7f4ec; border: 1px solid #c9c0b1; cursor: pointer; }
+    .choice:has(input:checked) { background: #deecee; border-color: var(--teal); }
+    input { accent-color: var(--teal); }
+    button { padding: 13px 20px; color: #fff; background: var(--teal); border: 0; font: inherit; font-weight: 900; cursor: pointer; }
+    button:hover { background: #174d5a; }
+    .result { min-height: 58px; margin: 18px 0 0; padding: 15px 18px; background: #deecee; border-left: 5px solid var(--teal); }
+    .gate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .gate { padding: 24px; background: var(--surface); border-top: 5px solid var(--teal); }
+    .gate:nth-child(2) { border-top-color: var(--gold); }
+    .gate:nth-child(3) { border-top-color: #974a2d; }
+    .gate strong { display: block; margin-bottom: 8px; font-size: 1.2rem; }
+    .decision { margin-top: 20px; padding: 22px; color: #fff; background: var(--ink); }
+    a { color: inherit; text-underline-offset: .2em; }
+    @media (max-width: 600px) {
+      .shell { width: min(calc(100% - 24px), 880px); }
+      .topbar .shell { flex-direction: column; }
+      .hero { padding: 48px 0; }
+      .choice-grid { grid-template-columns: 1fr; }
+      .gate-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .topbar { display: none; }
+      body, .hero { color: #000; background: #fff; }
+      .hero { padding: 24px 0; border-bottom: 2px solid #000; }
+      .eyebrow { color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell"><strong>お互いが、留学先。</strong><a href="../proposal.html#dorm-research">提案本編へ戻る</a></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <span class="eyebrow">3-minute demand survey · prototype</span>
+        <h1>住みたい、を<br>建てる根拠に。</h1>
+        <p>留学生と国内学生が共に暮らす学生寮について、実際の入居条件を確かめる需要調査票の試作です。</p>
+        <div class="notice"><strong>まだ入居募集ではありません</strong><br>回答の送信・保存は行いません。</div>
+      </div>
+    </section>
+    <section class="section" id="survey-form">
+      <div class="shell">
+        <span class="eyebrow" style="color: var(--teal)">01 / SURVEY</span>
+        <h2>入居条件を、具体的に選ぶ</h2>
+        <p>「国際交流に興味があるか」ではなく、価格と期間を示したうえで住む意思を確かめます。</p>
+        <form class="survey" data-local-only onsubmit="return false">
+          <fieldset>
+            <legend>あなたに最も近いものを選んでください</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="student_group" value="domestic" required>国内学生</label>
+              <label class="choice"><input type="radio" name="student_group" value="international">留学生</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>この寮に住むことを検討しますか？</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="move_in_intent" value="yes" required>ぜひ住みたい</label>
+              <label class="choice"><input type="radio" name="move_in_intent" value="depends">条件が合えば住みたい</label>
+              <label class="choice"><input type="radio" name="move_in_intent" value="undecided">まだ分からない</label>
+              <label class="choice"><input type="radio" name="move_in_intent" value="no">住まない</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>家賃・管理費・光熱・ネットを含む月額総費用の上限は？</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="monthly_budget" value="70000" required>7万円まで</label>
+              <label class="choice"><input type="radio" name="monthly_budget" value="90000">9万円まで</label>
+              <label class="choice"><input type="radio" name="monthly_budget" value="110000">11万円まで</label>
+              <label class="choice"><input type="radio" name="monthly_budget" value="130000">13万円まで</label>
+              <label class="choice"><input type="radio" name="monthly_budget" value="150000">15万円まで</label>
+              <label class="choice"><input type="radio" name="monthly_budget" value="over_150000">15万円を超えても検討</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>希望する居住期間は？</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="stay_length" value="one_semester" required>1学期間</label>
+              <label class="choice"><input type="radio" name="stay_length" value="one_year">1年間</label>
+              <label class="choice"><input type="radio" name="stay_length" value="two_years_or_more">2年以上</label>
+              <label class="choice"><input type="radio" name="stay_length" value="undecided">まだ分からない</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>今の住まいや既存寮で満たしにくい条件は？（複数選択可）</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="checkbox" name="unmet_needs" value="university_eligibility">所属大学による入居制限</label>
+              <label class="choice"><input type="checkbox" name="unmet_needs" value="stay_length">希望期間まで住めない</label>
+              <label class="choice"><input type="checkbox" name="unmet_needs" value="total_cost">月額総費用が合わない</label>
+              <label class="choice"><input type="checkbox" name="unmet_needs" value="contract_support">保証人・契約手続の負担</label>
+              <label class="choice"><input type="checkbox" name="unmet_needs" value="privacy">個室や静かな環境</label>
+              <label class="choice"><input type="checkbox" name="unmet_needs" value="community">日常的な交流や生活支援</label>
+              <label class="choice"><input type="checkbox" name="unmet_needs" value="none">特にない</label>
+            </div>
+          </fieldset>
+          <button type="button" id="review-answer">回答内容を確認</button>
+          <p class="result" id="local-result" aria-live="polite">まだ回答されていません。</p>
+        </form>
+      </div>
+    </section>
+    <section class="section" id="decision-gate">
+      <div class="shell">
+        <span class="eyebrow" style="color: var(--teal)">02 / DECISION GATE</span>
+        <h2>回答だけで、新築を決めない</h2>
+        <p>留学生と国内学生を分けて集計し、関心より強い行動と代替案の比較まで進んだ時だけ、新築の検討材料にします。</p>
+        <div class="gate-grid">
+          <article class="gate" data-gate="survey">
+            <strong>1. 条件付き需要</strong>
+            <p>対象とする月額総費用、居住期間、既存寮で満たせない条件を示した後の入居意思を、学生区分ごとに数える。</p>
+          </article>
+          <article class="gate" data-gate="commitment">
+            <strong>2. 強い行動</strong>
+            <p>本調査の次段階で、有料体験や返金可能な予約金への意思を確認する。実際の受領は契約・返金体制の承認後に限る。</p>
+          </article>
+          <article class="gate" data-gate="alternatives">
+            <strong>3. 代替案比較</strong>
+            <p>既存寮の拡張、借上住宅、既存建物活用、新築を、確保できる室数・期間・総費用・運営負担で比較する。</p>
+          </article>
+        </div>
+        <aside class="decision" data-decision-status="not-proven"><strong>現在地：新築の必要性は未証明</strong><br>このページは質問案の確認用です。回答の収集、入居募集、予約金の受領は行っていません。</aside>
+      </div>
+    </section>
+  </main>
+  <script>
+    const form = document.querySelector("form[data-local-only]");
+    document.getElementById("review-answer").addEventListener("click", () => {
+      if (!form.reportValidity()) return;
+      document.getElementById("local-result").textContent =
+        "回答内容を確認しました。この試作では回答を送信・保存していません。";
+    });
+  </script>
+</body>
+</html>
