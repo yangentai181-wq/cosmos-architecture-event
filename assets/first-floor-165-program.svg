@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">公開交流棟と緩衝管理核165平方メートルの内部構成</title>
+  <desc id="desc">可変ラウンジ65平方メートル、交流キッチン35平方メートル、受付待合18平方メートル、トイレ手洗い20平方メートル、管理収納清掃27平方メートルを配置し、外部利用者、居住者、搬入の動線と施錠境界を分けた隣接関係の概念図。</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #142633; }
+      .room-title { font-size: 21px; font-weight: 900; }
+      .room-note { font-size: 14px; fill: #5d6b72; }
+      .small { font-size: 16px; fill: #5d6b72; }
+      .tiny { font-size: 13px; fill: #5d6b72; }
+      .route { fill: none; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+    <pattern id="publicFill" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#f8e2dc"/>
+      <path d="M6 0v24M18 0v24" stroke="#ba4934" stroke-opacity=".16" stroke-width="2"/>
+    </pattern>
+    <pattern id="serviceFill" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#f4ead2"/>
+      <path d="M0 24 24 0" stroke="#8a6218" stroke-opacity=".12"/>
+    </pattern>
+    <marker id="arrowVisitor" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#ba4934"/>
+    </marker>
+    <marker id="arrowResident" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#176b61"/>
+    </marker>
+    <marker id="arrowService" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#8a6218"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="680" rx="28" fill="#fffdf8"/>
+  <text x="50" y="58" font-size="31" font-weight="900">165㎡の内部構成｜公開部だけを閉じられる1階</text>
+  <text x="50" y="89" class="small">隣接関係と動線の概念図。室形状・寸法・出入口・避難経路を確定する平面図ではない。</text>
+
+  <g transform="translate(48 128)">
+    <text x="0" y="0" font-size="23" font-weight="900">街・駅側</text>
+    <rect x="0" y="356" width="806" height="90" rx="12" fill="#e0f0eb"/>
+    <text x="28" y="408" class="room-title">前庭・大きな軒</text>
+    <text x="28" y="431" class="room-note">集合・受付待ち・イベント後の短時間滞在</text>
+
+    <rect x="54" y="246" width="180" height="110" fill="url(#publicFill)" stroke="#ba4934" stroke-width="3"/>
+    <text x="78" y="288" class="room-title">受付・待合 18㎡</text>
+    <text x="78" y="314" class="room-note">予約・荷物・撮影可否</text>
+
+    <rect x="234" y="94" width="356" height="262" fill="url(#publicFill)" stroke="#ba4934" stroke-width="3"/>
+    <text x="324" y="204" class="room-title">可変ラウンジ 65㎡</text>
+    <text x="315" y="232" class="room-note">24人・4チーム・家具可動</text>
+    <text x="321" y="256" class="room-note">防災・学校準備・食事</text>
+
+    <rect x="590" y="94" width="216" height="166" fill="url(#publicFill)" stroke="#ba4934" stroke-width="3"/>
+    <text x="615" y="161" class="room-title">キッチン 35㎡</text>
+    <text x="615" y="187" class="room-note">4チーム・配膳・洗浄</text>
+
+    <rect x="590" y="260" width="216" height="96" fill="url(#publicFill)" stroke="#ba4934" stroke-width="3"/>
+    <text x="612" y="302" class="room-title">トイレ・手洗い 20㎡</text>
+    <text x="612" y="328" class="room-note">外部利用だけで完結</text>
+
+    <rect x="590" y="0" width="216" height="94" fill="url(#serviceFill)" stroke="#8a6218" stroke-width="3"/>
+    <text x="606" y="40" class="room-title">管理・収納・清掃 27㎡</text>
+    <text x="606" y="66" class="room-note">会計・教材・ごみ仮置き</text>
+
+    <path d="M833 -2V358" stroke="#142633" stroke-width="5" stroke-dasharray="13 10"/>
+    <rect x="814" y="134" width="39" height="82" rx="5" fill="#ffffff" stroke="#142633" stroke-width="3"/>
+    <text x="823" y="183" font-size="16" font-weight="900" transform="rotate(-90 823 183)">施錠境界</text>
+
+    <path d="M134 445V374 323H220 282" class="route" stroke="#ba4934" marker-end="url(#arrowVisitor)"/>
+    <text x="74" y="475" font-size="15" font-weight="850" fill="#ba4934">外部利用者</text>
+
+    <path d="M912 447V250 176 54" class="route" stroke="#176b61" marker-end="url(#arrowResident)"/>
+    <text x="856" y="475" font-size="15" font-weight="850" fill="#176b61">居住者</text>
+    <text x="862" y="496" class="tiny">公開部を通らない</text>
+
+    <path d="M780 445V382 282 230" class="route" stroke="#8a6218" marker-end="url(#arrowService)"/>
+    <text x="708" y="475" font-size="15" font-weight="850" fill="#8a6218">搬入・回収</text>
+
+    <rect x="854" y="0" width="118" height="354" rx="12" fill="#dce9e9" stroke="#123b4a" stroke-width="3"/>
+    <text x="900" y="72" class="room-title" text-anchor="middle">居住棟</text>
+    <text x="900" y="99" class="room-note" text-anchor="middle">縦動線</text>
+    <text x="900" y="126" class="room-note" text-anchor="middle">相談</text>
+    <text x="900" y="153" class="room-note" text-anchor="middle">宅配</text>
+    <text x="900" y="180" class="room-note" text-anchor="middle">備蓄</text>
+    <text x="900" y="207" class="room-note" text-anchor="middle">設備</text>
+    <text x="900" y="306" class="tiny" text-anchor="middle">165㎡には</text>
+    <text x="900" y="327" class="tiny" text-anchor="middle">含めない候補</text>
+  </g>
+
+  <g transform="translate(1040 142)">
+    <text x="0" y="0" font-size="21" font-weight="900">面積合計</text>
+    <text x="0" y="42" class="small">ラウンジ</text><text x="110" y="42" class="label" text-anchor="end">65</text>
+    <text x="0" y="74" class="small">キッチン</text><text x="110" y="74" class="label" text-anchor="end">35</text>
+    <text x="0" y="106" class="small">受付・待合</text><text x="110" y="106" class="label" text-anchor="end">18</text>
+    <text x="0" y="138" class="small">トイレ等</text><text x="110" y="138" class="label" text-anchor="end">20</text>
+    <text x="0" y="170" class="small">管理等</text><text x="110" y="170" class="label" text-anchor="end">27</text>
+    <line x1="0" y1="188" x2="110" y2="188" stroke="#142633" stroke-width="2"/>
+    <text x="0" y="224" font-size="26" font-weight="900">合計</text><text x="110" y="224" font-size="26" font-weight="900" text-anchor="end">165㎡</text>
+
+    <text x="0" y="286" font-size="20" font-weight="900">開閉原則</text>
+    <text x="0" y="322" class="small">平常</text>
+    <text x="0" y="348" class="tiny">予約・居住者利用</text>
+    <text x="0" y="386" class="small">イベント</text>
+    <text x="0" y="412" class="tiny">受付経由で公開</text>
+    <text x="0" y="450" class="small">終了後</text>
+    <text x="0" y="476" class="tiny">公開部だけ施錠</text>
+  </g>
+</svg>

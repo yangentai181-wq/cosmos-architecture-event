@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="南茨木の国内留学型学生寮について、通い・下宿需要、土地代込み収支、建築配分を同じ前提で検証するローカルモデル。">
+  <title>国内留学型学生寮｜需要・収支検証モデル</title>
+  <style>
+    :root {
+      --ink: #132c36;
+      --muted: #647276;
+      --paper: #f3efe5;
+      --surface: #fffdf8;
+      --line: #c9c1b2;
+      --teal: #236474;
+      --teal-soft: #deecee;
+      --gold: #d6ad55;
+      --orange: #9a4c2e;
+      --orange-soft: #f3e1d7;
+      --green: #28705d;
+      --green-soft: #dfede7;
+      --red: #9c4542;
+      --red-soft: #f2dfdc;
+      --shadow: 0 18px 52px rgba(19, 44, 54, 0.09);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(19, 44, 54, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(19, 44, 54, 0.025) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-underline-offset: .2em; }
+    button, input, select { font: inherit; }
+    .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .topbar { color: #fff; background: var(--ink); }
+    .topbar .shell { min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 16px; font-size: .82rem; }
+    .hero { padding: 76px 0 62px; color: #fff; background: linear-gradient(135deg, #173947, #112a34 68%, #2f4750); border-bottom: 8px solid var(--gold); }
+    .hero-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 50px; align-items: end; }
+    .eyebrow { color: #e6cb8d; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 800px; margin: 14px 0 22px; font-size: clamp(2.55rem, 6.2vw, 5.3rem); line-height: 1.02; letter-spacing: -.05em; }
+    .hero p { max-width: 760px; color: rgba(255,255,255,.82); font-size: 1.05rem; }
+    .hero-card { padding: 25px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); }
+    .hero-card strong { display: block; color: #e6cb8d; font-size: 2.2rem; line-height: 1.2; }
+    .section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .section:nth-of-type(even) { background: rgba(255,253,248,.48); }
+    .section-head { display: grid; grid-template-columns: .7fr 1.3fr; gap: 42px; align-items: end; margin-bottom: 30px; }
+    .section-number { color: var(--orange); font-size: .73rem; font-weight: 900; letter-spacing: .14em; }
+    h2 { margin: 6px 0 0; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.08; letter-spacing: -.035em; }
+    .lead { margin-bottom: 0; color: var(--muted); }
+    .grid { display: grid; gap: 16px; }
+    .decision-grid, .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+    .two-col { grid-template-columns: 1fr 1fr; }
+    .card { padding: 25px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .card h3 { margin-bottom: 9px; font-size: 1.2rem; }
+    .card p:last-child { margin-bottom: 0; }
+    .decision-card { border-top: 5px solid var(--teal); }
+    .decision-card.warning { border-top-color: var(--orange); }
+    .decision-card strong { display: block; margin: 8px 0; color: var(--teal); font-size: 1.65rem; }
+    .model { padding: clamp(24px, 4vw, 42px); background: var(--surface); border: 2px solid var(--ink); box-shadow: var(--shadow); }
+    .controls { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 24px 0; }
+    label { display: grid; gap: 6px; color: var(--muted); font-size: .78rem; font-weight: 800; }
+    input, select { width: 100%; padding: 11px 12px; color: var(--ink); background: #fff; border: 1px solid #9da9aa; border-radius: 0; }
+    input:focus, select:focus { outline: 3px solid rgba(35,100,116,.2); border-color: var(--teal); }
+    .help { font-size: .75rem; font-weight: 500; line-height: 1.45; }
+    .kpi { min-height: 132px; box-shadow: none; }
+    .kpi span { display: block; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .04em; }
+    .kpi strong { display: block; margin: 8px 0 4px; color: var(--teal); font-size: clamp(1.55rem, 3vw, 2.3rem); line-height: 1.15; }
+    .kpi.alert strong { color: var(--orange); }
+    .status { margin-top: 18px; padding: 15px 18px; background: var(--teal-soft); border-left: 5px solid var(--teal); }
+    .status[data-state="warning"] { background: var(--orange-soft); border-color: var(--orange); }
+    .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; font-size: .87rem; }
+    th, td { padding: 14px 13px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    th { color: #fff; background: var(--ink); font-size: .75rem; letter-spacing: .04em; }
+    th:first-child, td:first-child { text-align: left; }
+    tr:last-child td { border-bottom: 0; }
+    .architecture-grid { grid-template-columns: 1fr 1fr; }
+    .program-list { display: grid; gap: 1px; margin: 0; background: var(--line); border: 1px solid var(--line); }
+    .program-list div { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; padding: 13px 16px; background: var(--surface); }
+    .program-list dt { font-weight: 800; }
+    .program-list dd { margin: 0; text-align: right; }
+    .warning-box { padding: 22px; background: var(--orange-soft); border-left: 6px solid var(--orange); }
+    .limit-list { margin: 0; padding-left: 1.25em; }
+    .footer { padding: 34px 0; color: rgba(255,255,255,.78); background: var(--ink); font-size: .8rem; }
+    .formula { padding: 14px 16px; overflow-wrap: anywhere; background: #ebe6da; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem; }
+    [data-input-kind="assumption"] { color: #0645d6; background: #fffbea; }
+    .legend { margin-top: 16px; color: var(--muted); font-size: .78rem; }
+    .legend b { color: #0645d6; }
+    .error { color: var(--red); background: var(--red-soft); }
+
+    @media (max-width: 900px) {
+      .hero-grid, .section-head, .two-col, .architecture-grid { grid-template-columns: 1fr; }
+      .decision-grid, .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .controls { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 620px) {
+      .shell { width: min(calc(100% - 24px), var(--max)); }
+      .topbar .shell { align-items: flex-start; flex-direction: column; padding-block: 13px; }
+      .hero { padding: 48px 0 42px; }
+      .section { padding: 52px 0; }
+      .decision-grid, .kpi-grid, .controls { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .topbar, .controls, .hero-card { display: none; }
+      body { background: #fff; font-size: 10pt; }
+      .hero { padding: 24px 0; color: #000; background: #fff; border-bottom: 2px solid #000; }
+      .hero p, .eyebrow { color: #000; }
+      .section { padding: 28px 0; break-inside: avoid; }
+      .card, .model { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell">
+      <strong>MINAMI-IBARAKI / VALIDATION</strong>
+      <nav aria-label="関連資料">
+        <a href="../interest/">需要テスト画面</a>
+        <a href="../needs/">ニーズ分析</a>
+        <a href="../proposal.html">提案本編</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <span class="eyebrow">Demand × Finance × Space</span>
+          <h1>需要を、<br>建てる数に変える。</h1>
+          <p>通い型と下宿型を分け、獲得率、賃料、稼働率を変えながら、低層案の必要室数と土地代込み収支を確認する。青い入力欄は検証前の仮定であり、アンケートと予約行動で置き換える。</p>
+        </div>
+        <aside class="hero-card">
+          <span class="eyebrow">現在の基準案</span>
+          <strong>5階・168室（収支上限）</strong>
+          <p>24ユニット・個室中心の最新共有案。法規・有効面積・外構が未成立のため、設計確定値ではない。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="decision">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">00 / DECISION</span><h2>先に分かった<br>三つのこと</h2></div>
+          <p class="lead">市場母数はある。ただし、需要証明、低層化、土地代込み利回りを同時に解く必要がある。</p>
+        </div>
+        <div class="grid decision-grid">
+          <article class="card decision-card"><span class="section-number">MARKET</span><strong>下宿推計 約5.1万人</strong><p>京阪神の私立文系推計。国内学生84人は母数の0.17%だが、母数は申込者数ではない。</p></article>
+          <article class="card decision-card warning"><span class="section-number">SPACE</span><strong>設計検討幅84〜99室</strong><p>7個室Unit 84室・寄宿舎91室・共同住宅99戸は行政確認前の比較値。168室は収支上限として分ける。</p></article>
+          <article class="card decision-card warning"><span class="section-number">FINANCE</span><strong>95%時6.73%</strong><p>168室・家賃10万円の収支上限。満室は理論上限で、法規成立を意味しない。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resident-model">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">01 / RESIDENT</span><h2>下宿型の<br>獲得人数</h2></div>
+          <p class="lead">公開統計から得た母数に、商圏、認知、関心、申込、予約金支払いの各率を掛ける。初期値は予測ではなく、調査で置き換える仮定。</p>
+        </div>
+        <div class="model">
+          <div class="controls">
+            <label>京阪神・私立文系の下宿母数<input id="resident-away-base" data-input-kind="assumption" type="number" min="0" value="50928"><span class="help">2022年度JASSO絶対数×私立文系比率の推計</span></label>
+            <label>在学年数<input id="resident-study-years" data-input-kind="assumption" type="number" min="1" value="4"></label>
+            <label>南茨木で狙える割合<input id="resident-serviceable" data-input-kind="assumption" type="number" min="0" max="100" step="1" value="50"><span class="help">大学・出身地・交通を絞る</span></label>
+            <label>国内学生の必要数<input id="resident-target" data-input-kind="assumption" type="number" min="1" value="84"></label>
+            <label>認知率<input id="resident-awareness" data-input-kind="assumption" type="number" min="0" max="100" value="30"></label>
+            <label>条件付き関心率<input id="resident-qualified" data-input-kind="assumption" type="number" min="0" max="100" value="25"></label>
+            <label>申込率<input id="resident-application" data-input-kind="assumption" type="number" min="0" max="100" value="40"></label>
+            <label>予約金支払率<input id="resident-paid" data-input-kind="assumption" type="number" min="0" max="100" value="80"></label>
+          </div>
+          <div class="grid kpi-grid">
+            <div class="card kpi"><span>年間の下宿更新母数</span><strong id="resident-annual">—</strong><small>在学年数で均等割りした概算</small></div>
+            <div class="card kpi"><span>商圏内の年間母数</span><strong id="resident-serviceable-output">—</strong><small>ここから募集対象を絞る</small></div>
+            <div class="card kpi"><span>予約金支払い見込み</span><strong id="resident-paid-output">—</strong><small>全段階の仮定を掛けた値</small></div>
+            <div class="card kpi alert"><span>国内学生枠の充足倍率</span><strong id="resident-coverage">—</strong><small>1.0倍未満は不足</small></div>
+          </div>
+          <p class="status" id="resident-status" role="status">計算中</p>
+          <p class="formula">年間母数 × 商圏割合 × 認知率 × 条件付き関心率 × 申込率 × 予約金支払率</p>
+          <p class="legend"><b>青字・薄黄色</b>は未検証の入力。公表値と混ぜず、実査後に差し替える。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="commuter-model">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">02 / COMMUTER</span><h2>通い型の<br>反復参加</h2></div>
+          <p class="lead">通い型は入居者数ではなく、初回有料参加と再参加を分ける。無料の関心票だけでは運営需要とみなさない。</p>
+        </div>
+        <div class="model">
+          <div class="controls">
+            <label>京阪神・私立文系の自宅生<input id="commuter-home-base" data-input-kind="assumption" type="number" min="0" value="120337"><span class="help">2022年度JASSO絶対数×私立文系比率の推計</span></label>
+            <label>南茨木で狙える割合<input id="commuter-serviceable" data-input-kind="assumption" type="number" min="0" max="100" value="40"></label>
+            <label>募集接触率<input id="commuter-awareness" data-input-kind="assumption" type="number" min="0" max="100" value="5"></label>
+            <label>初回有料参加率<input id="commuter-first-paid" data-input-kind="assumption" type="number" min="0" max="100" value="10"></label>
+            <label>2回目参加率<input id="commuter-repeat" data-input-kind="assumption" type="number" min="0" max="100" value="30"></label>
+          </div>
+          <div class="grid kpi-grid">
+            <div class="card kpi"><span>通い商圏母数</span><strong id="commuter-serviceable-output">—</strong></div>
+            <div class="card kpi"><span>初回有料参加</span><strong id="commuter-first-output">—</strong></div>
+            <div class="card kpi alert"><span>反復参加</span><strong id="commuter-repeat-output">—</strong></div>
+          </div>
+          <p class="status" id="commuter-status" role="status">計算中</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="finance-model">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">03 / FINANCE</span><h2>土地代込みの<br>収支</h2></div>
+          <p class="lead">既存シートの建設費、管理率、固定運営費、修繕積立に土地7億円と空室を加える。目標利回り7%に必要な賃料も逆算する。</p>
+        </div>
+        <div class="model">
+          <div class="controls">
+            <label>建築シナリオ<select id="finance-scenario" data-input-kind="assumption"><option value="upper168">5階・168室（収支上限）</option><option value="dorm91">寄宿舎91室（行政確認前）</option><option value="unit84">7個室Unit・84室（シート継承）</option><option value="apartment99">共同住宅99戸（行政確認前）</option></select></label>
+            <label>建設費（円）<input id="finance-construction" data-input-kind="assumption" type="number" min="0" step="1000000" value="1154100000"><span class="help">ワーク式32.06万円/㎡相当。正式見積ではない</span></label>
+            <label>土地代（円）<input id="finance-land" data-input-kind="assumption" type="number" min="0" step="1000000" value="700000000"></label>
+            <label>室・戸数<input id="finance-rooms" data-input-kind="assumption" type="number" min="1" value="168"></label>
+            <label>1室・戸の月額賃料<input id="finance-rent" data-input-kind="assumption" type="number" min="0" step="5000" value="100000"></label>
+            <label>稼働率<input id="finance-occupancy" data-input-kind="assumption" type="number" min="1" max="100" value="95"></label>
+            <label>管理費率<input id="finance-management" data-input-kind="assumption" type="number" min="0" max="99" value="10"></label>
+            <label>固定運営費（月額）<input id="finance-operation" data-input-kind="assumption" type="number" min="0" step="100000" value="3000000"></label>
+            <label>付帯事業の年間利益<input id="finance-ancillary" data-input-kind="assumption" type="number" min="0" step="100000" value="0"><span class="help">実績確認までは0円</span></label>
+            <label>目標利回り<input id="finance-target-yield" data-input-kind="assumption" type="number" min="0.1" max="100" step="0.1" value="7"></label>
+          </div>
+          <div class="grid kpi-grid">
+            <div class="card kpi"><span>年間利益</span><strong id="finance-profit">—</strong></div>
+            <div class="card kpi"><span>建設費だけの利回り</span><strong id="finance-construction-yield">—</strong></div>
+            <div class="card kpi alert"><span>土地代を含む利回り</span><strong id="finance-total-yield">—</strong></div>
+            <div class="card kpi alert"><span>土地代込み回収年</span><strong id="finance-payback">—</strong></div>
+            <div class="card kpi"><span>目標利回り7%の必要賃料</span><strong id="finance-required-rent">—</strong><small>1室・戸あたり。食費等を含まない</small></div>
+            <div class="card kpi"><span>入力家賃との差</span><strong id="finance-required-per-person">—</strong><small>必要賃料 − 現在の入力</small></div>
+          </div>
+          <p class="status" id="finance-status" role="status">計算中</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sensitivity">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">04 / SENSITIVITY</span><h2>賃料と空室の<br>感度</h2></div>
+          <p class="lead">選択中の建築案について、賃料と稼働率だけを動かした比較。色より数値を優先し、7%未満を不成立として読む。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>1室・戸月額</th><th>稼働率</th><th>年間利益</th><th>土地込み利回り</th><th>回収年</th></tr></thead>
+            <tbody id="sensitivity-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">05 / ARCHITECTURE</span><h2>需要から決める<br>建築配分</h2></div>
+          <p class="lead">168室は収支上限として残し、茨木市の用途・容積回答後に、個室中心の84〜99室を最初の比較幅として引き直す。公開部は目的共用部810㎡の内訳として小さく検証する。</p>
+        </div>
+        <div class="grid architecture-grid">
+          <dl class="program-list">
+            <div><dt>建物</dt><dd>5階・延床3,600㎡</dd></div>
+            <div><dt>共有シート上限</dt><dd>24ユニット・168個室</dd></div>
+            <div><dt>国内学生</dt><dd>84人（上限案の半数仮置き）</dd></div>
+            <div><dt>留学生</dt><dd>84人（上限案の半数仮置き）</dd></div>
+            <div><dt>単純個室面積</dt><dd>13.39㎡／室（壁・設備控除前）</dd></div>
+            <div><dt>目的共用部</dt><dd>810㎡</dd></div>
+            <div><dt>廊下等</dt><dd>540㎡</dd></div>
+            <div><dt>公開交流核</dt><dd>165㎡基準・135〜200㎡検証幅</dd></div>
+          </dl>
+          <div>
+            <article class="card"><h3>二つの法規ルート</h3><p><strong>寄宿舎91室</strong>は共用水回りを守る案、<strong>共同住宅99戸</strong>は各戸設備と廊下不算入を仮定する案。どちらも外構・防火・実平面は未確認。</p></article>
+            <article class="warning-box"><h3>設計判断を止める条件</h3><p>茨木市の用途判定、道路側基本空地、駐車・駐輪・消防、壁・柱・設備を引いた実効個室面積が揃うまで、168室や91・99室を確定値として扱わない。</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="limits">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">06 / LIMITS</span><h2>この画面が<br>証明しないこと</h2></div>
+          <p class="lead">数値を動かせることと、需要が実在することは別。仮定はアンケート、予約金、大学・運営会社への照会で置換する。</p>
+        </div>
+        <div class="card">
+          <ul class="limit-list">
+            <li>商圏割合、認知率、関心率、申込率は未検証であり、予測値ではない。</li>
+            <li>上限案の国内学生84人が集まっても、留学生84人の獲得は別に検証が必要。</li>
+            <li>建設費は既存簡易シートの単価モデルで約32.06万円/㎡。2025年大阪府RC共同住宅の着工時予定額約36.47万円/㎡との比較はできるが、案件見積ではなく、高さ、防災、厨房、設備、地盤、金利、税、設計監理等を網羅しない。</li>
+            <li>固定運営費月300万円に、食事、RA/RM、24時間対応、募集、退去原状回復の何が含まれるか未確定。</li>
+            <li>約1,000㎡の確定面積次第で、道路側の基本空地は1.0mから1.5mへ変わる。駐車・駐輪、植栽、ごみ置場を単純な地上残余へ置けるとは限らない。</li>
+            <li>5階案は面積・外周の近似モデルであり、法規・構造・避難・実施設計の成立を証明しない。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="shell">基準日 2026-09-04｜公表値と検証仮定を分離したローカル意思決定モデル</div></footer>
+  <noscript><p class="shell error">計算にはJavaScriptが必要です。</p></noscript>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

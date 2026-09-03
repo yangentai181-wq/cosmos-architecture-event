@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">街角にひらく、奥で暮らす建築コンセプト図</title>
+  <desc id="desc">左に公開・緩衝・居住ゾーンと三つの入口を分けた配置概念を示し、公開交流核は基準165平方メートルとする。右に一階から二階の交流棟と五階の居住棟を組み合わせた断面外観概念を示す。</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #142633; }
+      .label { font-size: 22px; font-weight: 800; }
+      .small { font-size: 16px; fill: #5d6b72; }
+      .tiny { font-size: 14px; fill: #5d6b72; }
+      .route { fill: none; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+      .leader { fill: none; stroke: #5d6b72; stroke-width: 2; stroke-dasharray: 6 7; }
+    </style>
+    <pattern id="privateGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#dce9e9"/>
+      <path d="M0 24 24 0" stroke="#123b4a" stroke-opacity=".09"/>
+    </pattern>
+    <pattern id="glass" width="28" height="28" patternUnits="userSpaceOnUse">
+      <rect width="28" height="28" fill="#f8e2dc"/>
+      <path d="M7 0v28M21 0v28" stroke="#ba4934" stroke-opacity=".22" stroke-width="2"/>
+    </pattern>
+    <marker id="arrowPink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#ba4934"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#176b61"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="720" rx="28" fill="#fffdf8"/>
+  <text x="56" y="64" font-size="30" font-weight="900">街角にひらく、奥で暮らす</text>
+  <text x="56" y="94" class="small">公開性は街角と地上階に集約し、居住者の生活は別入口・別動線で守る</text>
+
+  <g transform="translate(48 132)">
+    <text x="0" y="0" class="label">配置概念</text>
+    <text x="0" y="28" class="small">B｜角の交流核を実際の活動へ展開</text>
+
+    <path d="M32 72 454 58 510 430 86 474Z" fill="#f6f2e9" stroke="#142633" stroke-width="4"/>
+    <path d="M72 102 412 90 445 320 204 342 126 421 96 438Z" fill="url(#privateGrid)" stroke="#123b4a" stroke-width="3"/>
+    <path d="M322 285 451 271 482 407 356 420 242 348Z" fill="#f4ead2" stroke="#8a6218" stroke-width="3"/>
+    <path d="M382 335 475 323 494 417 399 431 350 394Z" fill="url(#glass)" stroke="#ba4934" stroke-width="4"/>
+
+    <path d="M514 497 456 417" class="route" stroke="#ba4934" marker-end="url(#arrowPink)"/>
+    <path d="M30 492 120 418 128 206" class="route" stroke="#176b61" marker-end="url(#arrowGreen)"/>
+    <path d="M528 368 466 380" class="route" stroke="#8a6218"/>
+
+    <text x="198" y="205" class="label">居住者専用</text>
+    <text x="188" y="234" class="small">個室・共有リビング・縦動線</text>
+    <text x="316" y="330" font-size="18" font-weight="800">緩衝・管理</text>
+    <text x="381" y="374" font-size="17" font-weight="800">交流核</text>
+    <text x="381" y="398" class="tiny">キッチン＋可変ラウンジ</text>
+    <text x="381" y="420" class="tiny">基準165㎡</text>
+
+    <text x="408" y="492" font-size="16" font-weight="800" fill="#ba4934">街・駅側の公開入口</text>
+    <text x="6" y="526" font-size="16" font-weight="800" fill="#176b61">イベントを通らない帰宅動線</text>
+    <text x="430" y="350" class="tiny">搬入</text>
+    <text x="213" y="463" class="tiny">前庭・軒下・ベンチ・植栽</text>
+  </g>
+
+  <line x1="616" y1="132" x2="616" y2="650" stroke="#d9d4c8" stroke-width="2"/>
+
+  <g transform="translate(662 132)">
+    <text x="0" y="0" class="label">断面・外観概念</text>
+    <text x="0" y="28" class="small">低い交流棟を前に、五階の居住棟を後退させる</text>
+
+    <line x1="0" y1="454" x2="486" y2="454" stroke="#142633" stroke-width="4"/>
+    <rect x="226" y="92" width="238" height="362" rx="4" fill="url(#privateGrid)" stroke="#123b4a" stroke-width="4"/>
+    <rect x="252" y="132" width="186" height="26" fill="#123b4a" opacity=".16"/>
+    <rect x="252" y="194" width="186" height="26" fill="#123b4a" opacity=".16"/>
+    <rect x="252" y="256" width="186" height="26" fill="#123b4a" opacity=".16"/>
+    <rect x="252" y="318" width="186" height="26" fill="#123b4a" opacity=".16"/>
+    <rect x="252" y="380" width="186" height="26" fill="#123b4a" opacity=".16"/>
+    <path d="M32 330H268V454H32Z" fill="url(#glass)" stroke="#ba4934" stroke-width="4"/>
+    <path d="M12 326H286L264 308H34Z" fill="#ba4934"/>
+    <rect x="268" y="300" width="42" height="154" fill="#f4ead2" stroke="#8a6218" stroke-width="3"/>
+
+    <path d="M60 454V414M96 454V426M134 454V410" stroke="#176b61" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="60" cy="399" r="23" fill="#e0f0eb" stroke="#176b61" stroke-width="3"/>
+    <circle cx="96" cy="410" r="18" fill="#e0f0eb" stroke="#176b61" stroke-width="3"/>
+    <circle cx="134" cy="394" r="25" fill="#e0f0eb" stroke="#176b61" stroke-width="3"/>
+    <path d="M18 454h190" stroke="#176b61" stroke-width="8" stroke-linecap="round"/>
+
+    <text x="291" y="72" font-size="17" font-weight="800">5階・居住棟</text>
+    <text x="286" y="426" class="tiny">管理・収納・衛生</text>
+    <text x="64" y="365" font-size="17" font-weight="800">1〜2階・公開交流棟</text>
+    <text x="42" y="490" class="small">前庭</text>
+    <text x="306" y="490" class="small">居住者専用側</text>
+
+    <path d="M185 278 96 312" class="leader"/>
+    <text x="20" y="256" class="small">大きな軒と透明な地上階</text>
+    <path d="M344 70 344 92" class="leader"/>
+    <text x="286" y="32" class="small">上階を後退</text>
+    <path d="M445 226 475 226" class="leader"/>
+    <text x="312" y="188" class="small">ルーバーで視線制御</text>
+
+    <g transform="translate(0 536)">
+      <circle cx="10" cy="0" r="8" fill="#ba4934"/><text x="27" y="6" class="small">公開：見える・入れる</text>
+      <circle cx="214" cy="0" r="8" fill="#8a6218"/><text x="231" y="6" class="small">緩衝：管理する</text>
+      <circle cx="10" cy="42" r="8" fill="#176b61"/><text x="27" y="48" class="small">居住：見せない・通さない</text>
+    </g>
+  </g>
+</svg>

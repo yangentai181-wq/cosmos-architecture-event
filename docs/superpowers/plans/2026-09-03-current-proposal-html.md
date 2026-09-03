@@ -1,5 +1,7 @@
 # Current Proposal HTML Implementation Plan
 
+> 更新注記（2026-09-04）: この完了済み計画にある `assets/site-detail.png` の再利用手順は、転載許諾を確認できないため撤回した。公開版は自作の `assets/site-specific-b-comparison.svg` を使い、配布画像をコピーしない。
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** グループメンバーが学生寮案の論理と根拠を検討できる、自己完結した1ページHTMLを作る。

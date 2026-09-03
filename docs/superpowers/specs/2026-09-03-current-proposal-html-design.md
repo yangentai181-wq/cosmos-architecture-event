@@ -43,7 +43,7 @@
 ## 実装境界
 
 - `proposal.html` の単一HTMLとし、CSSは内部へ記述する。JavaScriptと外部依存は使わない。
-- 正本資料から必要な敷地図を `assets/site-detail.png` として再利用する。
+- 配布敷地図は非公開の寸法照合だけに使い、公開版には自作の `assets/site-specific-b-comparison.svg` を使う。
 - 元資料の数値や主張を勝手に確定事項へ変更しない。
 - Google Drive上の正本と `docs/concept-draft.md` / `docs/source-intake.md` を内容の基礎とする。
 

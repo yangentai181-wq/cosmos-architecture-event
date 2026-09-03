@@ -2,11 +2,11 @@
 
 - 初回読込日: 2026-09-03
 - 最新差分読込日: 2026-09-03
-- 参照元（正本）: https://drive.google.com/drive/folders/1Dtl254h5K-yPGK36UcjV2meCNGDxs3Zl
+- 参照元（正本）: チームの非公開Google Drive（公開リポジトリにはURLを保存しない）
 - 位置づけ: この文書は作業用の索引。資料内容の正本はGoogle Driveとする。
 - 差分対象:
-  - [Step1-c コンセプト策定ワークシート](https://docs.google.com/presentation/d/1Qk10Znac_u2vDwRUcI3NV3ol8lbqbGFXTF-ay4umaAQ)（更新時刻 2026-09-03 18:21 JST）
-  - [Step2-b 収益計算（簡易）](https://docs.google.com/spreadsheets/d/1LTM43v6IVHdwg_rc3_8CXl0Xvtwf6TWqZOiu1sFE6KM)（更新時刻 2026-09-03 18:01 JST）
+  - Step1-c コンセプト策定ワークシート（更新時刻 2026-09-03 18:21 JST）
+  - Step2-b 収益計算（簡易）（更新時刻 2026-09-03 18:01 JST）
 
 ## 読込済み資料
 

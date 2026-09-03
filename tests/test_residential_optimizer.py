@@ -428,6 +428,8 @@ class ReportTest(unittest.TestCase):
             self.assertIn("平面図未検証", markdown)
             self.assertIn("日本人学生1名と留学生1名", markdown)
             self.assertIn("同じペア室に住み続け", markdown)
+            self.assertIn("旧比較モデル", markdown)
+            self.assertIn("現在の提案主案ではない", markdown)
             self.assertIn("計画余白10.0%", markdown)
             self.assertIn("5.0%", markdown)
             self.assertIn("7.5%", markdown)

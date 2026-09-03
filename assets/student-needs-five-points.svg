@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">今回の条件から導ける大学生のニーズ</title>
+  <desc id="desc">年間総負担、移動、静穏、入居初日、生活の選択肢という五つのニーズを、確認済み条件と要検証条件に分けて示す。</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #142633; }
+      .eyebrow { font-size: 14px; font-weight: 800; letter-spacing: 2px; fill: #ba4934; }
+      .title { font-size: 34px; font-weight: 900; }
+      .lead { font-size: 15px; fill: #53636b; }
+      .num { font-size: 16px; font-weight: 900; fill: #fffdf8; }
+      .card-title { font-size: 21px; font-weight: 900; }
+      .body { font-size: 14px; fill: #31434c; }
+      .pill { font-size: 12px; font-weight: 800; }
+      .footer { font-size: 16px; font-weight: 800; fill: #fffdf8; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" rx="28" fill="#fffdf8"/>
+  <rect x="0" y="0" width="18" height="720" fill="#ba4934"/>
+  <text x="58" y="54" class="eyebrow">STUDENT NEEDS / DECISION INPUTS</text>
+  <text x="58" y="98" class="title">今回の条件から導ける大学生のニーズ</text>
+  <text x="58" y="128" class="lead">設備名ではなく、入居者が選ぶ理由と、次に測る条件へ置き換える</text>
+
+  <g transform="translate(48 162)">
+    <rect width="350" height="206" rx="18" fill="#f8eee7" stroke="#e4c5b7" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#ba4934"/><text x="29" y="44" class="num">01</text>
+    <text x="72" y="45" class="card-title">家賃ではなく年間総負担</text>
+    <rect x="24" y="72" width="76" height="24" rx="12" fill="#dce9e9"/><text x="38" y="89" class="pill" fill="#176b61">確認済み</text>
+    <text x="24" y="124" class="body">
+      <tspan x="24" dy="0">家賃・管理・食事・光熱・初期費用を</tspan>
+      <tspan x="24" dy="24">同じ年額の物差しで比べる。</tspan>
+    </text>
+    <text x="24" y="184" class="body" font-weight="800">食事等は選べるプランにする。</text>
+  </g>
+
+  <g transform="translate(425 162)">
+    <rect width="350" height="206" rx="18" fill="#eef4f3" stroke="#bfd1ce" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#176b61"/><text x="29" y="44" class="num">02</text>
+    <text x="72" y="45" class="card-title">生活圏全体へ移動</text>
+    <rect x="24" y="72" width="76" height="24" rx="12" fill="#dce9e9"/><text x="38" y="89" class="pill" fill="#176b61">確認済み</text>
+    <text x="24" y="124" class="body">
+      <tspan x="24" dy="0">OICは徒歩・自転車圏。阪急と</tspan>
+      <tspan x="24" dy="24">モノレールを日常移動に使える。</tspan>
+    </text>
+    <text x="24" y="184" class="body" font-weight="800">他大学は経路・定期代を要検証。</text>
+  </g>
+
+  <g transform="translate(802 162)">
+    <rect width="350" height="206" rx="18" fill="#edf1f2" stroke="#bdc9cc" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#244650"/><text x="29" y="44" class="num">03</text>
+    <text x="72" y="45" class="card-title">交通利便性＋静かに暮らす</text>
+    <rect x="24" y="72" width="62" height="24" rx="12" fill="#f4dfd8"/><text x="35" y="89" class="pill" fill="#913724">要検証</text>
+    <text x="24" y="124" class="body">
+      <tspan x="24" dy="0">幹線道路・鉄道等の近接を前提に、</tspan>
+      <tspan x="24" dy="24">睡眠・学習を守る個室をつくる。</tspan>
+    </text>
+    <text x="24" y="184" class="body" font-weight="800">24時間の騒音・振動を実測する。</text>
+  </g>
+
+  <g transform="translate(48 394)">
+    <rect width="540" height="190" rx="18" fill="#f7f3ea" stroke="#ddd1bb" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#ba4934"/><text x="29" y="44" class="num">04</text>
+    <text x="72" y="45" class="card-title">入居初日の負担を減らす</text>
+    <rect x="416" y="24" width="76" height="24" rx="12" fill="#dce9e9"/><text x="430" y="41" class="pill" fill="#176b61">確認済み</text>
+    <text x="24" y="92" class="body">
+      <tspan x="24" dy="0">家具・家電・ネット・契約手続を整え、</tspan>
+      <tspan x="24" dy="25">到着日から暮らせる状態にする。</tspan>
+    </text>
+    <text x="24" y="166" class="body" font-weight="800">初年度と継続年の負担を分けて表示。</text>
+  </g>
+
+  <g transform="translate(612 394)">
+    <rect width="540" height="190" rx="18" fill="#edf4ef" stroke="#bfd4c5" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#176b61"/><text x="29" y="44" class="num">05</text>
+    <text x="72" y="45" class="card-title">設備ではなく生活の選択肢</text>
+    <rect x="430" y="24" width="62" height="24" rx="12" fill="#f4dfd8"/><text x="441" y="41" class="pill" fill="#913724">要検証</text>
+    <text x="24" y="92" class="body">
+      <tspan x="24" dy="0">自炊／食事提供、一人／共有、参加／不参加を</tspan>
+      <tspan x="24" dy="25">本人が選べる運営にする。</tspan>
+    </text>
+    <text x="24" y="166" class="body" font-weight="800">価格付き需要調査で優先度を決める。</text>
+  </g>
+
+  <rect x="48" y="614" width="1104" height="58" rx="16" fill="#142633"/>
+  <text x="76" y="650" class="footer">結論｜設備を増やす前に、年間総負担・移動・静穏・入居初日・選択性を測る</text>
+</svg>
