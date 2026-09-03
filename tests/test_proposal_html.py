@@ -75,11 +75,25 @@ class ProposalHtmlTest(unittest.TestCase):
             "https://www.mlit.go.jp/jutakukentiku/house/content/001612669.pdf",
             "https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm/",
             "https://www.ritsumei.ac.jp/file.jsp?id=426078",
+            "https://www.ritsumei.ac.jp/file.jsp?id=426397",
+            "https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm2/",
+            "https://global.support.ritsumei.ac.jp/hc/en-us/articles/53446133085075-Short-Term-Residence-at-International-Houses-and-Global-House",
+            "https://www.ritsumei.ac.jp/news/detail/?id=998",
+            "https://www.ritsumei.ac.jp/news/detail/?id=1253",
             "https://www.jasso.go.jp/ryugaku/related/kouryu/2016/__icsFiles/afieldfile/2021/02/18/201609yamakawafumi.pdf",
             "https://www.jstage.jst.go.jp/article/jusokenronbunjisen/44/0/44_1520/_article/-char/ja/",
             "https://www.mext.go.jp/a_menu/koutou/ryugaku/1412692_00003.htm",
         ):
             self.assertIn(source, self.parser.links)
+
+    def test_dorm_research_does_not_overstate_unmet_demand(self):
+        for phrase in (
+            "在学生が国籍を問わず、1学期間",
+            "2018年度秋学期は81人",
+            "現在の供給不足を証明する数字ではない",
+            "大学を問わず",
+        ):
+            self.assertIn(phrase, self.text)
 
     def test_swot_and_strategy_conversion_are_complete(self):
         for phrase in (
