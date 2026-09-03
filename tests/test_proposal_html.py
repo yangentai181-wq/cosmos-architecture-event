@@ -57,6 +57,7 @@ class ProposalHtmlTest(unittest.TestCase):
             "summary",
             "facts",
             "logic",
+            "swot",
             "value",
             "plan",
             "site",
@@ -65,6 +66,22 @@ class ProposalHtmlTest(unittest.TestCase):
             "decisions",
         }
         self.assertTrue(required.issubset(self.parser.ids), required - self.parser.ids)
+
+    def test_swot_and_strategy_conversion_are_complete(self):
+        for phrase in (
+            "Strengths",
+            "Weaknesses",
+            "Opportunities",
+            "Threats",
+            "SO戦略",
+            "WO戦略",
+            "ST戦略",
+            "WT戦略",
+            "判断のスナップショット",
+        ):
+            self.assertIn(phrase, self.text)
+        self.assertGreaterEqual(self.source.count('class="swot-card'), 4)
+        self.assertGreaterEqual(self.source.count('class="strategy-card'), 4)
 
     def test_certainty_and_finance_caveat_are_visible(self):
         for phrase in (
@@ -110,6 +127,13 @@ class ProposalHtmlTest(unittest.TestCase):
     def test_finance_table_reflows_on_narrow_screens(self):
         self.assertIn("td::before", self.source)
         self.assertGreaterEqual(self.source.count("data-label="), 12)
+
+    def test_github_pages_entrypoint_points_to_proposal(self):
+        index_path = ROOT / "index.html"
+        self.assertTrue(index_path.exists(), "GitHub Pages用のindex.htmlが未作成")
+        index_source = index_path.read_text(encoding="utf-8")
+        self.assertIn('lang="ja"', index_source)
+        self.assertIn("proposal.html", index_source)
 
 
 if __name__ == "__main__":
