@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="南茨木の国際学生寮計画について、大学の教育・学生支援上のニーズと、民間運営者の事業成立条件を分けて整理したチーム検討資料。">
+  <meta property="og:title" content="ワークシート②−③｜大学のニーズと運営条件">
+  <meta property="og:description" content="既存寮との差、教育成果、責任分界、稼働と運営費を、事実・推論・未検証仮説に分けて整理。">
+  <meta property="og:type" content="article">
+  <title>ワークシート②−③｜大学のニーズと運営条件</title>
+  <style>
+    :root {
+      --paper: #f2f0e9;
+      --surface: #fffdf8;
+      --ink: #132d38;
+      --muted: #5b696e;
+      --line: #c8c3b7;
+      --navy: #173d52;
+      --navy-soft: #dce7ec;
+      --teal: #276d68;
+      --teal-soft: #dcebe7;
+      --violet: #67527c;
+      --violet-soft: #e9e1ef;
+      --gold: #d4b267;
+      --dark-accent: #ead39f;
+      --green: #2f6b55;
+      --green-soft: #dfece5;
+      --yellow: #6b5009;
+      --yellow-soft: #f4ead0;
+      --red: #923f3c;
+      --red-soft: #f3dfdc;
+      --max: 1160px;
+      --shadow: 0 18px 52px rgba(19, 45, 56, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(19, 45, 56, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(19, 45, 56, 0.025) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.22em;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      color: var(--teal);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4.4vw, 3.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+      line-height: 1.4;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      color: #fff;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .topbar-inner {
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+
+    .topbar strong {
+      letter-spacing: 0.12em;
+    }
+
+    .topbar-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 18px;
+    }
+
+    .topbar a {
+      color: #fff;
+      opacity: 0.84;
+    }
+
+    .hero {
+      padding: 76px 0 58px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 86% 12%, rgba(212, 178, 103, 0.26), transparent 23rem),
+        radial-gradient(circle at 10% 95%, rgba(39, 109, 104, 0.34), transparent 28rem),
+        linear-gradient(135deg, #163b4e 0%, #112d3a 56%, #272d43 100%);
+      border-bottom: 8px solid var(--gold);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(290px, 0.65fr);
+      gap: 52px;
+      align-items: end;
+    }
+
+    .kicker,
+    .eyebrow,
+    .section-number,
+    .priority,
+    .mini-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .kicker {
+      margin-bottom: 18px;
+      color: var(--dark-accent);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 24px;
+      font-size: clamp(2.55rem, 6.4vw, 5.3rem);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 18px;
+      color: var(--dark-accent);
+      font-size: clamp(1rem, 1.9vw, 1.34rem);
+      font-weight: 650;
+      letter-spacing: 0;
+      line-height: 1.55;
+    }
+
+    .hero-lead {
+      max-width: 800px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(1rem, 1.5vw, 1.16rem);
+    }
+
+    .hero-finding {
+      padding: 26px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    }
+
+    .hero-finding .eyebrow {
+      color: var(--dark-accent);
+    }
+
+    .hero-finding p {
+      margin: 12px 0 0;
+      font-size: 1.08rem;
+      line-height: 1.68;
+    }
+
+    .hero-context {
+      margin: 30px 0 0;
+      padding-top: 20px;
+      color: rgba(255, 255, 255, 0.73);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.84rem;
+    }
+
+    .legend {
+      padding: 18px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legend-inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    .legend-title {
+      margin-right: 8px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      font-size: 0.73rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .badge::before {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    .verified {
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .inference {
+      color: var(--yellow);
+      background: var(--yellow-soft);
+    }
+
+    .open {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .section {
+      padding: 82px 0;
+      border-bottom: 1px solid rgba(200, 195, 183, 0.75);
+    }
+
+    .section:nth-of-type(even) {
+      background: rgba(255, 253, 248, 0.48);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .section-number {
+      margin-bottom: 12px;
+      color: var(--teal);
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card,
+    .role-card,
+    .need-card,
+    .metric,
+    .tradeoff,
+    .source-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .card,
+    .role-card,
+    .need-card {
+      padding: 26px;
+    }
+
+    .card p:last-child,
+    .role-card p:last-child,
+    .need-card p:last-child,
+    .metric p:last-child,
+    .tradeoff p:last-child {
+      margin-bottom: 0;
+    }
+
+    .role-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .role-card::before {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 7px;
+      background: var(--navy);
+      content: "";
+    }
+
+    .role-card.operator::before {
+      background: var(--teal);
+    }
+
+    .role-card.shared::before {
+      background: var(--violet);
+    }
+
+    .role-card .mini-label {
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+
+    .role-card.operator .mini-label {
+      color: var(--teal);
+    }
+
+    .role-card.shared .mini-label {
+      color: var(--violet);
+    }
+
+    .big-equation {
+      margin: 24px 0 0;
+      padding: 26px;
+      color: #fff;
+      background: var(--ink);
+      border-left: 8px solid var(--gold);
+      font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .condition-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .condition {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 20px;
+      padding: 22px 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .condition .badge {
+      align-self: start;
+      justify-self: start;
+    }
+
+    .condition p {
+      margin: 0;
+    }
+
+    .condition strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .reasoning-list {
+      display: grid;
+      gap: 16px;
+      counter-reset: logic;
+    }
+
+    .reasoning-step {
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr) minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .reasoning-step::before {
+      counter-increment: logic;
+      content: "0" counter(logic);
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      color: #fff;
+      background: var(--navy);
+      font-weight: 850;
+    }
+
+    .reasoning-step .fact,
+    .reasoning-step .need {
+      margin: 0;
+    }
+
+    .reasoning-step .fact {
+      color: var(--muted);
+    }
+
+    .reasoning-step .need {
+      padding-left: 20px;
+      border-left: 2px solid var(--gold);
+      font-weight: 720;
+    }
+
+    .need-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .need-card {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 0.75fr) minmax(0, 1.25fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .priority {
+      color: var(--navy);
+    }
+
+    .need-card.operator-need .priority {
+      color: var(--teal);
+    }
+
+    .need-card h3 {
+      margin: 0;
+      font-size: 1.14rem;
+    }
+
+    .need-card p {
+      color: var(--muted);
+    }
+
+    .callout {
+      margin-top: 24px;
+      padding: 26px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      border-left: 8px solid var(--gold);
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 850px;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      padding: 17px 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: #fff;
+      background: var(--ink);
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td:first-child {
+      font-weight: 800;
+    }
+
+    .table-note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .metric {
+      padding: 22px;
+      border-top: 5px solid var(--navy);
+    }
+
+    .metric:nth-child(2n) {
+      border-top-color: var(--teal);
+    }
+
+    .metric:nth-child(3n) {
+      border-top-color: var(--violet);
+    }
+
+    .metric .mini-label {
+      color: var(--muted);
+    }
+
+    .metric strong {
+      display: block;
+      margin: 6px 0 8px;
+      font-size: 1.06rem;
+    }
+
+    .metric p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .tradeoff {
+      padding: 22px;
+    }
+
+    .tradeoff strong {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--violet);
+    }
+
+    .worksheet-panel {
+      padding: clamp(26px, 5vw, 52px);
+      background: var(--surface);
+      border: 2px solid var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .worksheet-panel .mini-label {
+      margin-bottom: 18px;
+      color: var(--teal);
+    }
+
+    .worksheet-copy {
+      margin: 0;
+      font-size: clamp(1.06rem, 2vw, 1.34rem);
+      line-height: 1.9;
+      font-weight: 680;
+    }
+
+    .short-copy {
+      margin: 28px 0 0;
+      padding: 22px;
+      background: var(--navy-soft);
+      border-left: 6px solid var(--navy);
+    }
+
+    .question-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: questions;
+    }
+
+    .question-list li {
+      position: relative;
+      min-height: 94px;
+      padding: 20px 20px 20px 64px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .question-list li::before {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      counter-increment: questions;
+      content: counter(questions, decimal-leading-zero);
+      color: var(--teal);
+      font-weight: 850;
+    }
+
+    .gate-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .gate {
+      padding: 20px;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .gate .mini-label {
+      color: var(--dark-accent);
+    }
+
+    .gate strong {
+      display: block;
+      margin: 8px 0;
+    }
+
+    .gate p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.86rem;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .source-item {
+      display: grid;
+      grid-template-columns: 155px minmax(0, 1fr);
+      gap: 20px;
+      padding: 20px 22px;
+      box-shadow: none;
+    }
+
+    .source-item .mini-label {
+      color: var(--teal);
+    }
+
+    .source-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .source-item strong {
+      color: var(--ink);
+    }
+
+    .closing-note {
+      margin-top: 24px;
+      padding: 22px;
+      background: var(--yellow-soft);
+      border: 1px solid #d8c589;
+    }
+
+    .closing-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 34px 0;
+      color: rgba(255, 255, 255, 0.72);
+      background: var(--ink);
+      font-size: 0.8rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-head,
+      .grid-3,
+      .grid-4,
+      .gate-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid,
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .reasoning-step {
+        grid-template-columns: 54px minmax(0, 1fr);
+      }
+
+      .reasoning-step .need {
+        grid-column: 2;
+        padding: 14px 0 0;
+        border-top: 2px solid var(--gold);
+        border-left: 0;
+      }
+
+      .need-card {
+        grid-template-columns: 90px minmax(0, 1fr);
+      }
+
+      .need-card p {
+        grid-column: 2;
+      }
+    }
+
+    @media (max-width: 660px) {
+      .shell {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .topbar-nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 54px 0 42px;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .question-list,
+      .gate-list {
+        grid-template-columns: 1fr;
+      }
+
+      .condition,
+      .source-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .reasoning-step {
+        grid-template-columns: 1fr;
+      }
+
+      .reasoning-step .need {
+        grid-column: auto;
+      }
+
+      .need-card {
+        grid-template-columns: 1fr;
+      }
+
+      .need-card p {
+        grid-column: auto;
+      }
+
+      .question-list li {
+        min-height: 0;
+      }
+    }
+
+    @media print {
+      :root {
+        --paper: #fff;
+        --surface: #fff;
+        --ink: #111;
+        --muted: #333;
+        --line: #aaa;
+        --dark-accent: #111;
+        --shadow: none;
+      }
+
+      body {
+        background: #fff;
+        font-size: 10pt;
+      }
+
+      .topbar {
+        display: none;
+      }
+
+      .hero {
+        padding: 28px 0;
+        color: #111;
+        background: #fff;
+        border-bottom: 4px solid #111;
+      }
+
+      .hero-lead,
+      .hero-context,
+      .hero-finding,
+      .hero-finding .eyebrow,
+      .kicker {
+        color: #111;
+      }
+
+      .hero-finding,
+      .callout,
+      .big-equation,
+      .gate {
+        color: #111;
+        background: #fff;
+        border: 1px solid #111;
+        box-shadow: none;
+      }
+
+      h1 span,
+      .gate .mini-label {
+        color: var(--dark-accent);
+      }
+
+      .gate p {
+        color: #111;
+      }
+
+      .section {
+        padding: 32px 0;
+        break-inside: avoid;
+      }
+
+      .table-wrap {
+        overflow: visible;
+      }
+
+      table {
+        min-width: 0;
+        font-size: 8pt;
+      }
+
+      th,
+      td {
+        padding: 8px;
+      }
+
+      .card,
+      .role-card,
+      .need-card,
+      .metric,
+      .tradeoff,
+      .table-wrap,
+      .worksheet-panel,
+      .source-item {
+        box-shadow: none;
+      }
+
+      .role-card,
+      .need-card,
+      .metric,
+      .tradeoff,
+      .source-item,
+      .worksheet-panel,
+      tr {
+        break-inside: avoid;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <strong>COSMOS ARCHITECTURE EVENT</strong>
+      <nav class="topbar-nav" aria-label="関連ページ">
+        <a href="../">②−① 大学生</a>
+        <a href="../parents/">②−② 保護者</a>
+        <a href="../community/">②−④ 近隣地域 →</a>
+        <a href="../../proposal.html">現状案・SWOT分析へ戻る ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="shell">
+        <span class="kicker">WORKSHEET 02—03 · UNIVERSITY / OPERATOR NEEDS</span>
+        <div class="hero-grid">
+          <div>
+            <h1>大学のニーズと運営条件<span>「国際寮がほしい」ではなく、大学が関わる合理性と、民間が続けられる条件を分ける。</span></h1>
+            <p class="hero-lead">大学に必要なのは、既存寮と重複しない学生支援・教育上の価値を、追加負担とリスクを抑えながら確認できること。運営者に必要なのは、大学の善意や送客に依存せず、入居・人員・安全・費用が回ること。両者は同じではなく、責任と成果を合意した範囲だけが連携になる。</p>
+          </div>
+          <aside class="hero-finding">
+            <span class="eyebrow">結論</span>
+            <p><strong>大学 ≠ 運営者。</strong><br>連携の前提は、既存2寮との役割分担、測れる教育成果、継続できる事業収支、事故時まで含む責任分界である。</p>
+          </aside>
+        </div>
+        <p class="hero-context"><strong>前提：</strong>これは配布課題が設定された時点へ戻って検討する<strong>歴史的な仮想再提案</strong>です。2026年現在、対象地には139室のコスモグラシア南茨木が完成しており、ここでは事後ベンチマークとして扱います。立命館大学との大学連携は合意済みではないため、支援・紹介・資金提供を確定条件にしません。</p>
+      </div>
+    </section>
+
+    <aside class="legend" aria-label="根拠の強さ">
+      <div class="shell legend-inner">
+        <span class="legend-title">EVIDENCE LEVEL</span>
+        <span class="badge verified">確認済み</span>
+        <span class="badge inference">根拠のある推論</span>
+        <span class="badge open">未検証仮説</span>
+      </div>
+    </aside>
+
+    <section class="section" id="role-split">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">00 / WHO NEEDS WHAT</span><h2>一つの「大学側」に<br>まとめない</h2></div>
+          <p class="section-intro">大学の中にも、国際教育、学生支援、地域連携、広報、危機管理など異なる部門があります。運営側も、所有者、賃貸管理、生活支援、食堂、プログラム運営で責任が違います。</p>
+        </div>
+        <div class="grid-3">
+          <article class="role-card">
+            <span class="mini-label">UNIVERSITY</span>
+            <h3>大学が判断すること</h3>
+            <p>学生支援上の不足、教学との整合、紹介できる条件、大学ブランドと地域関係への影響、職員負担、取得・共有してよいデータ。</p>
+          </article>
+          <article class="role-card operator">
+            <span class="mini-label">OPERATOR</span>
+            <h3>運営者が実行すること</h3>
+            <p>募集・契約・料金回収、建物管理、相談一次対応、人員配置、食事、苦情、修繕、夜間・災害対応と事業収支。</p>
+          </article>
+          <article class="role-card shared">
+            <span class="mini-label">AGREED INTERFACE</span>
+            <h3>合意して初めて共同になること</h3>
+            <p>推薦・紹介、選考条件、緊急連絡、教育プログラム、成果測定、広報表現、個人データ共有、費用負担。</p>
+          </article>
+        </div>
+        <p class="big-equation">大学は送客を保証しない。運営者は教育成果を自称しない。合意文書・担当者・予算・停止条件まで決めて、初めて「大学連携」と呼べる。</p>
+      </div>
+    </section>
+
+    <section class="section" id="current-conditions">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">01 / CURRENT CONDITIONS</span><h2>今回の条件を<br>大学と運営へ通す</h2></div>
+          <p class="section-intro">一般的な大学ニーズではなく、OICの方針、既存寮、対象地の事後状況、現在の収益入力、周辺住環境から、連携の要否と成立条件を読みます。</p>
+        </div>
+        <div class="condition-list">
+          <article class="condition">
+            <span class="badge inference">根拠のある推論</span>
+            <p><strong>大学方針とは方向が合う</strong>立命館R2030は、グローバル教育、学生の総合的な学びと成長、地域に根差すキャンパス、社会連携型の教育研究を掲げています。住居外の活動でも方向性は接続できます。</p>
+          </article>
+          <article class="condition">
+            <span class="badge verified">確認済み</span>
+            <p><strong>OICには2つの国際寮がある</strong>I-House 168室とGlobal House 201室の<strong>合計369室</strong>で、留学生と国内学生の共同生活、RMによる生活支援・交流をすでに実施しています。したがって、<strong>混住そのものは差別化にならない</strong>。既存資料の「368室」は足し算を訂正します。</p>
+          </article>
+          <article class="condition">
+            <span class="badge inference">根拠のある推論</span>
+            <p><strong>空白を示せれば民間連携の余地がある</strong>既存寮の対象・居住期間から外れる学生、他大学生、長期居住者などは候補です。ただし、応募数・待機・退寮理由・転居先がなく、必要室数はまだ決められません。</p>
+          </article>
+          <article class="condition">
+            <span class="badge open">未検証仮説</span>
+            <p><strong>収支は基礎入力と最新検証を分ける</strong>元の簡易シートは112室満室前提、賃料1室10万円、固定運営費は月300万円。最新の低層バランス検証は5階・100ペア室・200人、稼働率95%で、土地込み利回り2.83%、7%達成に必要な賃料は1人月8万9,146円、しかも食費・光熱・ネット等を含まない。どちらも市場実績ではなく、価格調査と平面・法規検証で置き換える内部モデルです。</p>
+          </article>
+          <article class="condition">
+            <span class="badge inference">根拠のある推論</span>
+            <p><strong>周辺との摩擦は大学の評判にも返る</strong>駅・OIC・買物・病院への近さがある一方、幹線道路・鉄道、隣接住宅、地域施設が近い立地です。騒音、来訪者、ごみ、駐輪、避難の失敗は運営問題であると同時に連携大学の信用問題になります。</p>
+          </article>
+          <article class="condition">
+            <span class="badge open">未検証仮説</span>
+            <p><strong>実現物件は需要の上限を示さない</strong>2026年の募集ページで139室が空室待ちでも、募集ページ上の満室は長期需要の証明ではない。実入居率、待機人数、更新率、大学別構成、退去理由は未確認です。</p>
+          </article>
+          <article class="condition">
+            <span class="badge open">未検証仮説</span>
+            <p><strong>「お互いが、留学先」は仮コンセプト</strong>国際交流型住居が、留学申請、学修継続、就職実績・大学ブランドへの効果は未確認です。配布メモの「大学は一時的な授業しか提供できない」という前提も、既存寮、RM、地域・国際連携の実績に反するため使いません。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="finance-basis">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">02 / FINANCE TRACE</span><h2>最新版の数値を<br>この場で再現する</h2></div>
+          <p class="section-intro">未公開の別ファイルを根拠にせず、大学・運営者が判断に使う低層案の入力、式、結果をここに残します。これは需要実績や正式見積りではなく、条件を変えて再検証する内部モデルです。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>区分</th><th>低層バランス案の入力</th><th>扱い</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>建物・定員</td><td>5階、100ペア室・200人</td><td>平面・避難・設備・法規は未検証</td></tr>
+              <tr><td>投資</td><td>建設費12億2,410万円 ＋ 土地代7億円 ＝ 19億2,410万円</td><td>金利・税・追加工事等は別途精査</td></tr>
+              <tr><td>賃貸</td><td>1ペア室月10万円、稼働率95%、管理費率10%</td><td>価格付き実需調査で置換する仮定</td></tr>
+              <tr><td>固定費</td><td>固定運営費 月300万円、年間修繕積立1,224.1万円</td><td>食堂、RA・RM、夜間等の重複を精査</td></tr>
+              <tr><td>再計算結果</td><td>年間利益5,435.9万円、土地込み利回り2.83%、回収35.4年</td><td>付帯事業利益は0円。市場実績ではない</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-2" style="margin-top: 18px;">
+          <article class="card">
+            <span class="mini-label">内部モデルの再現 · 現行賃料</span>
+            <h3>年間利益 5,435.9万円</h3>
+            <p>年間総賃料は「100,000円 × 100室 × 95% × 12か月」＝1億1,400万円。ここから管理費率10%＝1,140万円、固定運営費3,600万円、修繕積立1,224.1万円を引くと5,435.9万円になります。</p>
+          </article>
+          <article class="card">
+            <span class="mini-label">内部モデルの再現 · 目標7%</span>
+            <h3>必要賃料 1人月8万9,146円</h3>
+            <p>目標利益は「19億2,410万円 × 7%」＝1億3,468.7万円。管理費率10%、稼働率95%、固定費と修繕を同じにすると、必要な1ペア室賃料は月17万8,292円、2人利用で1人月8万9,146円です。</p>
+          </article>
+        </div>
+        <p class="table-note">この結果は食費・光熱・ネット等を含まないため、「7%へ届く」ことと「学生が総額を払える」ことは別問題です。低層・大共用部・低価格・高利回りを同時に固定せず、大学ニーズと市場検証を受けて設計条件を動かします。</p>
+      </div>
+    </section>
+
+    <section class="section" id="evidence-chain">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">03 / REASONING</span><h2>事実から<br>必要条件へつなぐ</h2></div>
+          <p class="section-intro">以下は「大学がそう言った」という調査結果ではありません。確認済みの方針・運営事例・敷地条件から導く、交渉前の有力仮説です。</p>
+        </div>
+        <div class="reasoning-list">
+          <article class="reasoning-step">
+            <p class="fact"><span class="badge verified">確認済み</span><br>R2030はグローバル教育、学生の成長、地域・社会連携を重視。</p>
+            <p class="need"><span class="badge inference">根拠のある推論</span><br>イベント数ではなく、学生の適応・継続・学びへどう寄与したかを示せること。</p>
+          </article>
+          <article class="reasoning-step">
+            <p class="fact"><span class="badge verified">確認済み</span><br>OIC既存寮はRM、生活支援、国際・地域交流を実装済み。</p>
+            <p class="need"><span class="badge inference">根拠のある推論</span><br>同じ機能を増やすのではなく、既存2寮との役割分担と、大学寮から漏れる対象を定義すること。</p>
+          </article>
+          <article class="reasoning-step">
+            <p class="fact"><span class="badge verified">確認済み</span><br>JASSOには、大学等が民間宿舎を借り上げて留学生住居を安定確保する支援制度がある。</p>
+            <p class="need"><span class="badge inference">根拠のある推論</span><br>民間連携は可能な型だが、借上げ・紹介・推薦のどれか、契約期間、空室負担、入居資格を分けること。</p>
+          </article>
+          <article class="reasoning-step">
+            <p class="fact"><span class="badge verified">確認済み</span><br>文部科学省のガイドラインは、留学生の学修・生活・健康等を支える体制と適切な在籍管理を大学へ求める。</p>
+            <p class="need"><span class="badge inference">根拠のある推論</span><br>学生数確保だけを目的にせず、受入れ前に専門窓口へ接続できる支援能力を確認すること。</p>
+          </article>
+          <article class="reasoning-step">
+            <p class="fact"><span class="badge verified">確認済み</span><br>民間運営には賃貸管理、防火、給食、個人情報など複数の実務が重なる。</p>
+            <p class="need"><span class="badge inference">根拠のある推論</span><br>大学名を付けても責任は移らない。所有者・管理者・食堂・大学の法務と現場責任を表にすること。</p>
+          </article>
+          <article class="reasoning-step">
+            <p class="fact"><span class="badge open">未検証仮説</span><br>国内留学や地域イベントへの関心が、長期入居や追加料金へ転換するかは未確認。</p>
+            <p class="need"><span class="badge inference">根拠のある推論</span><br>大学の紹介前に、価格付き意向調査、小規模実証、継続率とキャンセル率で確かめること。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="university-needs">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">04 / UNIVERSITY NEEDS</span><h2>大学が関わる<br>六つの条件</h2></div>
+          <p class="section-intro">大学にとっての価値は「部屋が増える」だけではありません。学生支援の穴を埋め、教学方針と整合し、大学側の負担と信用リスクを制御できることが必要です。</p>
+        </div>
+        <div class="need-list">
+          <article class="need-card">
+            <span class="priority">P0 · MUST</span>
+            <h3>支援対象の空白が実在する</h3>
+            <p>既存2寮の応募・待機・辞退・退寮・1年後の転居先を確認し、「誰に、何室、いつ必要か」を特定する。学生数の多さだけを需要に換算しない。</p>
+          </article>
+          <article class="need-card">
+            <span class="priority">P0 · MUST</span>
+            <h3>責任と職員負担が限定できる</h3>
+            <p>契約、夜間、病気、事故・病気・災害、対人問題、保護者連絡の一次対応者を明記。大学の担当部門・時間・引継ぎ条件を決め、善意の追加業務にしない。</p>
+          </article>
+          <article class="need-card">
+            <span class="priority">P1 · VALUE</span>
+            <h3>教育成果を説明できる</h3>
+            <p>国際交流をイベント参加人数で終わらせず、生活適応、異文化理解、相談への接続、プロジェクト継続、振り返りで評価する。授業評価や成績とは安易に結び付けない。</p>
+          </article>
+          <article class="need-card">
+            <span class="priority">P1 · VALUE</span>
+            <h3>既存寮を補完する</h3>
+            <p>新規渡日者の初期適応に強い大学寮に対し、2年目以降、他大学、長期居住、地域プロジェクト等の役割を検討。同じ対象・同じ価格・同じ運営を重ねない。</p>
+          </article>
+          <article class="need-card">
+            <span class="priority">P1 · TRUST</span>
+            <h3>学生の選択と公平性を守る</h3>
+            <p>交流参加を入居条件にせず、経済事情、障害、宗教、食事、言語、性別への合理的配慮と相談・退出経路を用意する。大学推薦が選択圧力にならないよう説明する。</p>
+          </article>
+          <article class="need-card">
+            <span class="priority">P2 · REPUTATION</span>
+            <h3>地域との信頼を損なわない</h3>
+            <p>地域開放は成果である前に運営負荷です。来訪時間、入口分離、音、ごみ、事故、撮影、苦情窓口を先に決め、住民参加数だけを成功指標にしない。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="operator-needs">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">05 / OPERATOR NEEDS</span><h2>運営者が続ける<br>六つの条件</h2></div>
+          <p class="section-intro">大学の評価が高くても、日々の人員と会計が回らなければ住居は続きません。設備費だけでなく、入替え、支援、食事、催事、苦情、修繕まで月次化します。</p>
+        </div>
+        <div class="need-list">
+          <article class="need-card operator-need">
+            <span class="priority">P0 · DEMAND</span>
+            <h3>大学紹介なしでも読める入居計画</h3>
+            <p>大学別・学年別・在留期間別に募集母数と転換率を置き、70%・80%・90%など複数の入居率で資金繰りを確認。推薦や一括借上げは署名後だけ上振れに入れる。</p>
+          </article>
+          <article class="need-card operator-need">
+            <span class="priority">P0 · COST</span>
+            <h3>費用の分母と重複がない</h3>
+            <p>管理、食堂、RA・RM相当、夜間、清掃、原状回復、募集、保険、修繕、プログラムの費用範囲を分ける。「2%」「15〜20%」等の未確認率は根拠確定まで使わない。</p>
+          </article>
+          <article class="need-card operator-need">
+            <span class="priority">P0 · OWNER</span>
+            <h3>各業務に責任者と代替要員がいる</h3>
+            <p>学生スタッフへ管理責任を丸投げしない。採用、研修、報酬、権限、相談先、交代、卒業時の引継ぎ、欠員時の縮小・休止条件を設ける。「24時間対応」も、常駐・電話受付・警備会社駆付けのどれか、到着目標と対応範囲を分ける。</p>
+          </article>
+          <article class="need-card operator-need">
+            <span class="priority">P1 · TURNOVER</span>
+            <h3>短期・長期の混在を運用できる</h3>
+            <p>留学生の学期入替えと長期居住者を分け、募集時期、清掃、原状回復、家具、保証、在留期間、空室期間を計画。比率維持のための募集枠も費用化する。</p>
+          </article>
+          <article class="need-card operator-need">
+            <span class="priority">P1 · OPERATIONS</span>
+            <h3>外部開放と居住を分離できる</h3>
+            <p>ピンクの外部利用ゾーンとグリーンの居住者専用ゾーンで、入口、鍵、予約、清掃、営業時間、避難、音を分ける。催事中止でも家賃事業が成立する形にする。</p>
+          </article>
+          <article class="need-card operator-need">
+            <span class="priority">P1 · COMPLIANCE</span>
+            <h3>契約・防火・給食・データを実装できる</h3>
+            <p>計画確定後に所管へ適用法令と届出を確認。賃貸管理、防火管理、食堂運営主体、個人情報、保険、委託先監督をチェックリストと記録に落とす。</p>
+          </article>
+        </div>
+        <div class="callout">
+          <h3>事業成立の判定は「利回り」一つではできない</h3>
+          <p>入居率、実効賃料、更新率、中途退去率、回収不能、募集費、原状回復、スタッフ欠員、食事利用、イベント赤字、修繕を同じ期間で計算し、大学連携あり／なしの双方で継続できるかを見る。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="responsibility">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">06 / RESPONSIBILITY</span><h2>共同事業にする前の<br>責任表</h2></div>
+          <p class="section-intro">下表は契約案ではなく、協議の起点です。「連携」の一語で対応空白を隠さず、一次対応、最終責任、費用、記録、大学への連絡条件を案件ごとに確定します。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>場面</th><th>運営者の基本役割</th><th>大学が関わり得る範囲</th><th>契約前に決めること</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>所有者・開発者</td><td>建物適法性、大規模修繕、設備更新、建物保険</td><td>教学・学生支援要件への助言</td><td>所有、資金、更新、損害、事業終了時の扱い</td></tr>
+              <tr><td>募集・紹介</td><td>条件表示、内見、審査、契約</td><td>対象学生への情報提供、推薦条件</td><td>紹介は保証ではないこと、表現審査、空室負担</td></tr>
+              <tr><td>生活相談</td><td>設備・近隣・共同生活の一次窓口</td><td>学修、在留、大学制度への接続</td><td>受付時間、引継ぎ基準、相談記録の保持</td></tr>
+              <tr><td>事故・病気・災害</td><td>現場安全、通報、避難、緊急連絡</td><td>大学危機管理・学生支援への連絡と学内対応</td><td>誰が、何分以内に、どの条件で連絡するか</td></tr>
+              <tr><td>国際教育</td><td>会場、安全、運営人員、参加任意の保証</td><td>目的・内容の監修、学びの振り返り</td><td>教育成果の定義、職員時間、謝金、名称使用</td></tr>
+              <tr><td>地域開放</td><td>来訪者、音、ごみ、保険、苦情の管理</td><td>地域連携先の紹介、共同企画</td><td>開放時間、居住部との分離、事故時責任</td></tr>
+              <tr><td>食事</td><td>食堂運営主体、衛生、アレルギー表示、会計</td><td>学生への案内、必要時の支援接続</td><td>許可・届出、欠食・休業、事故対応、費用負担</td></tr>
+              <tr><td>学生スタッフ</td><td>運営者の監督下でのピア支援、生活案内、交流促進</td><td>大学の専門窓口への接続と研修支援</td><td>医療判断・警備・法定管理・無給の深夜対応を負わせない</td></tr>
+              <tr><td>個人データ</td><td>必要最小限の収集・保護・削除</td><td>合意目的に必要な情報だけ受領</td><td>本人同意、共有項目、保存期間、緊急時の例外</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">法的な最終判断ではありません。所有・賃貸・委託・食事・イベントの契約形態が決まった段階で、所管窓口と専門家に適用関係を確認します。</p>
+      </div>
+    </section>
+
+    <section class="section" id="metrics">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">07 / METRICS</span><h2>成功を<br>四面から測る</h2></div>
+          <p class="section-intro">稼働だけ、イベントだけ、満足度だけでは偏ります。住居、支援、学び、連携負担を同時に見て、悪化時に誰が何を変えるかまで決めます。</p>
+        </div>
+        <div class="grid-4">
+          <article class="metric">
+            <span class="mini-label">HOUSING</span>
+            <strong>住居として選ばれ続けるか</strong>
+            <p>入居率、実効賃料、更新率、中途退去率、滞納、募集単価、空室日数、大学別偏り。</p>
+          </article>
+          <article class="metric">
+            <span class="mini-label">SUPPORT</span>
+            <strong>支援が必要時に機能するか</strong>
+            <p>相談件数、相談解決時間、再発率、夜間呼出し、修繕時間、事故、スタッフ欠員・交代。</p>
+          </article>
+          <article class="metric">
+            <span class="mini-label">LEARNING</span>
+            <strong>選べる学びが生まれたか</strong>
+            <p>任意参加率、継続参加、振り返り、生活適応、異文化協働の自己評価。プログラム参加率だけで評価しない。</p>
+          </article>
+          <article class="metric">
+            <span class="mini-label">TRUST</span>
+            <strong>関係者の負担が制御できるか</strong>
+            <p>近隣苦情、再発率、大学職員の対応時間、誤紹介、データ事故、連絡遅延、委託先の是正件数。</p>
+          </article>
+        </div>
+        <div class="closing-note">
+          <p><strong>データ境界：</strong>入退館、相談、健康、参加履歴は集めればよいわけではありません。利用目的と共有先を先に特定し、本人同意を基本に、集計・匿名化・保存期間・削除方法を決めます。大学への個票共有を通常運用にしません。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tradeoffs">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">08 / TRADE-OFFS</span><h2>価値の衝突を<br>設計条件にする</h2></div>
+          <p class="section-intro">大学と運営者がそれぞれ正しくても、目的は自然には一致しません。衝突を先に見せ、誰が費用とリスクを負うか決めます。</p>
+        </div>
+        <div class="grid-3">
+          <article class="tradeoff"><strong>教育の厚さ ↔ 運営費</strong><p>RM、研修、振り返り、監修を増やすほど教育価値は高まり得るが、固定費と採用難も増える。</p></article>
+          <article class="tradeoff"><strong>学生支援 ↔ 自立・プライバシー</strong><p>支援を厚くしても、日常監視や大学・保護者への無条件報告にしない。</p></article>
+          <article class="tradeoff"><strong>大学専用枠 ↔ 稼働の柔軟性</strong><p>大学枠は募集を安定させ得る一方、未充足枠の負担と他大学生の機会を制約する。</p></article>
+          <article class="tradeoff"><strong>国際比率 ↔ 空室</strong><p>比率を厳密に守るほど体験は設計しやすいが、対象不足時の空室リスクが高まる。</p></article>
+          <article class="tradeoff"><strong>地域開放 ↔ 居住の静穏</strong><p>外来者と活動を増やすほど社会連携は見えやすいが、騒音、安全、清掃、居住者負担も増える。</p></article>
+          <article class="tradeoff"><strong>成果データ ↔ 情報最小化</strong><p>説明責任には測定が必要だが、健康・相談・参加を過剰収集すると信頼を失う。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="worksheet">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">09 / WORKSHEET</span><h2>②−③へ<br>記入する文章</h2></div>
+          <p class="section-intro">チームのワークシートには、大学の希望だけでなく、連携が成立する運営条件まで一続きで記入します。</p>
+        </div>
+        <div class="worksheet-panel">
+          <span class="mini-label">完成稿 · 大学のニーズ</span>
+          <p class="worksheet-copy">大学が本計画に求めるのは、既存の国際寮と機能を重複させず、大学寮の対象・期間から外れる学生を含む生活支援の空白を補いながら、国際教育、学生の成長、地域・社会連携へ測定可能な成果を返すことである。そのためには、入居者紹介、生活相談、事故・病気・災害、教育プログラム、地域開放、個人情報について、大学・所有者・運営者・食堂・学生スタッフの責任と費用を事前に分け、大学職員の追加負担とブランドリスクを制御できる必要がある。一方、運営者は、大学の送客やイベント収益を確定収入とせず、複数の入居率、更新・退去、RA・RM相当の人員、食事、修繕、苦情対応を含めても事業が継続することを示す。大学連携は、この教育成果と事業継続性が両立し、データ共有を本人同意と必要最小限に限定できる範囲で行う。</p>
+          <p class="short-copy"><strong>短縮版：</strong>既存寮では届かない学生支援の空白を補い、国際教育・成長・地域連携の成果を測れること。大学と運営者の責任・費用・データ共有を分け、大学の送客や善意に依存せず、安全と事業収支が継続すること。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="validation">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">10 / VALIDATION</span><h2>連携を語る前に<br>確かめる</h2></div>
+          <p class="section-intro">大学への聞き取りと運営者への見積りを分け、最後に同じ責任表と収支表で突き合わせます。「興味がある」だけでは連携成立にしません。</p>
+        </div>
+        <ol class="question-list">
+          <li>OIC既存2寮の過去3年の募集数、応募数、待機、辞退、中途退寮、1年後の転居先は。</li>
+          <li>大学が現在対応できていない生活支援は、誰に、何件、どの時期に起きているか。</li>
+          <li>紹介、推薦、枠確保、一括借上げのうち、検討可能なのはどれか。大学は空室を負担するか。</li>
+          <li>大学名・ロゴを使える条件と、事故・苦情時に連携を停止する条件は何か。</li>
+          <li>国際教育センター、学生オフィス、地域連携、危機管理の担当範囲と職員時間は。</li>
+          <li>教育成果として何を測るか。既存の大学コンピテンシー等と接続する必要はあるか。</li>
+          <li>学生情報を共有する目的、項目、本人同意、保存期間、削除、緊急例外は。</li>
+          <li>交流を望まない学生や合理的配慮が必要な学生へ、どんな代替・退出経路を設けるか。</li>
+          <li>入居率70%・80%・90%で、土地、金利、人員、修繕を含む資金繰りは続くか。</li>
+          <li>食堂運営主体は誰か。食事数が減った月、休業、アレルギー事故の費用と責任は。</li>
+          <li>RA・RM相当を何人配置し、誰が採用・研修・監督・報酬・交代を担うか。</li>
+          <li>夜間の連絡不能、事故・病気・災害、対人トラブルを誰が一次対応するか。</li>
+          <li>短期留学生と長期入居者の入替え、清掃、家具、在留期間、保証をどう運用するか。</li>
+          <li>地域開放の入口、時間、音、予約、保険、撮影、ごみ、苦情窓口をどう分離するか。</li>
+          <li>大学連携が成立しない場合でも、どの対象と価格なら単独運営できるか。</li>
+          <li>3か月・1年・3年の見直し時に、継続・修正・停止を決める指標と決裁者は誰か。</li>
+        </ol>
+        <div class="gate-list" aria-label="判断ゲート">
+          <article class="gate"><span class="mini-label">GATE 1</span><strong>空白の証明</strong><p>既存寮・学生支援で届かない対象と量を匿名集計で確認。</p></article>
+          <article class="gate"><span class="mini-label">GATE 2</span><strong>小規模実証</strong><p>適法な既存施設で参加・継続・負担・苦情を測る。</p></article>
+          <article class="gate"><span class="mini-label">GATE 3</span><strong>責任と収支</strong><p>契約案、責任表、人員表、複数入居率の収支を統合。</p></article>
+          <article class="gate"><span class="mini-label">GATE 4</span><strong>条件付き連携</strong><p>期限、指標、監査、名称使用、停止条件を文書化。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="shell">
+        <div class="section-head">
+          <div><span class="section-number">11 / SOURCES</span><h2>根拠と<br>使える範囲</h2></div>
+          <p class="section-intro">大学の公式方針と既存寮の実装は確認できますが、南茨木案への協力意思、送客数、費用負担、教育効果は未確認です。法令資料は計画後の個別判断に代わるものではありません。</p>
+        </div>
+        <div class="source-list">
+          <article class="source-item"><span class="mini-label">UNIVERSITY POLICY</span><p><strong><a href="https://www.ritsumei.ac.jp/features/r2030/challenge-design/">立命館大学 R2030 Challenge Design</a></strong><br>グローバル教育、学生の成長、地域に根差すキャンパス、社会連携型教育の方向を確認。南茨木案との連携合意を示す資料ではない。</p></article>
+          <article class="source-item"><span class="mini-label">OIC IN PRACTICE</span><p><strong><a href="https://www.ritsumei.ac.jp/community_affiliations/ibaraki/">立命館大学 OIC地域連携</a></strong><br>地域連携室、自治体等との共同事業、地域・国際交流活動が既にあることを確認。「イベントを行う」だけでは新規価値にならない。</p></article>
+          <article class="source-item"><span class="mini-label">CURRENT CAMPUS</span><p><strong><a href="https://www.ritsumei.ac.jp/features/zengakkyo/council/2026/page03-7.html/">2026年度全学協議会・キャンパス整備と学生生活</a></strong><br>キャンパスを学び・出会い・課外活動・社会連携・日常生活の基盤として扱う現行説明。民間寮への要望ではない。</p></article>
+          <article class="source-item"><span class="mini-label">EXISTING DORM</span><p><strong><a href="https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm/">OICインターナショナルハウス</a></strong><br>個室ユニット、RM、管理人日勤、生活・日本語支援、国際・地域交流を確認。既存機能との重複判断に使用。</p></article>
+          <article class="source-item"><span class="mini-label">EXISTING DORM</span><p><strong><a href="https://www.ritsumei.ac.jp/international/intl_students/life_info/oicdorm2/">OICグローバルハウス</a></strong><br>OICに2寮あること、もう一つの比較対象を確認。応募・待機・退寮等の非公開値は大学へ照会が必要。</p></article>
+          <article class="source-item"><span class="mini-label">PUBLIC MODEL</span><p><strong><a href="https://www.jasso.go.jp/ryugaku/study_j/kariage.html">JASSO 留学生借り上げ宿舎支援事業</a></strong><br>大学等が民間宿舎を借り上げ、留学生住居を安定確保する制度があることを確認。今回の採択・利用可能性は未確認。</p></article>
+          <article class="source-item"><span class="mini-label">STUDENT SUPPORT</span><p><strong><a href="https://www.mext.go.jp/a_menu/koutou/ryugaku/1325305_00006.htm">文部科学省 外国人留学生の適切な受入れ・在籍管理</a></strong><br>学修、生活、心身の健康等を支える体制と適切な受入れ・在籍管理の確認先。住宅運営者へ大学の専門支援を移す根拠ではない。</p></article>
+          <article class="source-item"><span class="mini-label">RENTAL MANAGEMENT</span><p><strong><a href="https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/const/tochi_fudousan_kensetsugyo_const_tk3_000001_00004.html">国土交通省 賃貸住宅管理業法・ガイドライン</a></strong><br>管理業・サブリースの説明、契約適正化の入口。計画の所有・委託・転貸形態を確定して適用を確認する。</p></article>
+          <article class="source-item"><span class="mini-label">PRIVACY</span><p><strong><a href="https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/">個人情報保護委員会 ガイドライン（通則編）</a></strong><br>利用目的、本人同意、第三者提供、安全管理の設計根拠。大学・運営者間の個票共有を自動化しない。</p></article>
+          <article class="source-item"><span class="mini-label">FIRE SAFETY</span><p><strong><a href="https://www.fdma.go.jp/publication/hakusho/r6/chapter1/section1/para2/68008.html">消防庁 防火管理制度</a></strong><br>管理権原者、防火管理者、消防計画の基本を確認。建物用途・規模・権原関係に応じて所轄消防へ確認する。</p></article>
+          <article class="source-item"><span class="mini-label">FOOD SERVICE</span><p><strong><a href="https://www.pref.osaka.lg.jp/o100200/izumisanohoken/kikakutyousei/tokuteikyushoku.html">大阪府 特定給食施設等指導</a></strong><br>継続的な食事提供と寄宿舎が給食施設指導の対象になり得ることを確認。食数と運営形態で所管確認が必要。</p></article>
+          <article class="source-item"><span class="mini-label">LOCAL EVIDENCE</span><p><strong><a href="../../docs/site-surroundings-current-analysis.html">土地周辺の現状分析</a></strong><br>OIC規模、実現物件、周辺生活、騒音・住宅・内水等の確認済み事項と未確認事項。今回の地域・運営リスクへ接続。</p></article>
+          <article class="source-item"><span class="mini-label">PROJECT MODEL</span><p><strong><a href="../../proposal.html">現状案・SWOT・元の収益入力</a></strong><br>元の112室モデル、土地費、運営費率、食堂・イベント収益等の留保を確認。後続の低層検証値は含まない。</p></article>
+          <article class="source-item"><span class="mini-label">LATEST CALC</span><p><strong><a href="#finance-basis">ページ内・最新低層検証の入力と再計算</a></strong><br>5階100ペア室案の入力、利益式、土地込み利回り、目標7%時の必要賃料を同じ公開ページ内で再現。すべて内部仮定であり市場実績ではない。</p></article>
+          <article class="source-item"><span class="mini-label">CURRENT MARKET</span><p><strong><a href="https://unilife.co.jp/view/12855/">コスモグラシア南茨木 募集情報</a></strong><br>対象地に実現した139室の料金・設備・募集表示を事後ベンチマークとして使用。監査済み稼働率や長期収益ではない。</p></article>
+        </div>
+        <div class="closing-note">
+          <p><strong>このページで確定していないこと：</strong>立命館大学の協力意思、既存寮の需給ギャップ、紹介・借上げの方式、大学負担額、大学職員の対応時間、教育効果、南茨木での支払意思、必要室数、食堂運営主体、法令の個別適用です。ここで確定したのは、大学と運営者へ別々に確認すべき条件と、連携判断の順序です。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell"><p>Worksheet 02—03 · University / Operator Needs · 2026-09-03</p></div>
+  </footer>
+</body>
+</html>
